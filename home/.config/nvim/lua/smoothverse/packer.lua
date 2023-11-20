@@ -16,6 +16,14 @@ return require('packer').startup(function(use)
         end
     })
 
+    use({
+        'AlexvZyl/nordic.nvim',
+        as = 'nordic',
+        config = function()
+            vim.cmd('colorscheme nordic')
+        end
+    })
+
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
