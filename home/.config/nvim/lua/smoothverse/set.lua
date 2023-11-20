@@ -4,7 +4,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

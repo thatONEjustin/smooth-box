@@ -26,7 +26,10 @@ alias nedit='$smooth/home/.config/nvim/ && nvim .'
 alias credit='nvim $smooth/home/.config/alacritty/alacritty.yml'
 alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
+alias fd="fdfind --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim && clear"
+alias packages="apt search $1 | fzf"
 alias ll="lsd -lah"
+alias testAlias="echo $1"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
