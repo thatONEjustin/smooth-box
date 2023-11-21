@@ -1,0 +1,99 @@
+Nov 20 15:00:14 smoothbox systemd[1]: Starting dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit dnsmasq.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit dnsmasq.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 128.[0m
+Nov 20 15:00:14 smoothbox dnsmasq[1074]: dnsmasq: failed to create listening socket for port 53: Address already in use
+Nov 20 15:00:14 smoothbox dnsmasq[1074]: [0;1;31m[0;1;39m[0;1;31mfailed to create listening socket for port 53: Address already in use[0m
+Nov 20 15:00:14 smoothbox systemd[1]: [0;1;39m[0;1;31m[0;1;39mdnsmasq.service: Control process exited, code=exited, status=2/INVALIDARGUMENT[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit dnsmasq.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 2.[0m
+Nov 20 15:00:14 smoothbox dnsmasq[1074]: [0;1;31m[0;1;39m[0;1;31mFAILED to start up[0m
+Nov 20 15:00:14 smoothbox systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdnsmasq.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit dnsmasq.service has entered the 'failed' state with result 'exit-code'.[0m
+Nov 20 15:00:14 smoothbox systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit dnsmasq.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit dnsmasq.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 128 and the job result is failed.[0m
+Nov 20 20:42:08 smoothbox systemd[1]: Starting dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit dnsmasq.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit dnsmasq.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8090.[0m
+Nov 20 20:42:08 smoothbox dnsmasq[1065117]: dnsmasq: failed to create listening socket for port 53: Address already in use
+Nov 20 20:42:08 smoothbox dnsmasq[1065117]: [0;1;31m[0;1;39m[0;1;31mfailed to create listening socket for port 53: Address already in use[0m
+Nov 20 20:42:08 smoothbox dnsmasq[1065117]: [0;1;31m[0;1;39m[0;1;31mFAILED to start up[0m
+Nov 20 20:42:08 smoothbox systemd[1]: [0;1;39m[0;1;31m[0;1;39mdnsmasq.service: Control process exited, code=exited, status=2/INVALIDARGUMENT[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit dnsmasq.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 2.[0m
+Nov 20 20:42:08 smoothbox systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdnsmasq.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit dnsmasq.service has entered the 'failed' state with result 'exit-code'.[0m
+Nov 20 20:42:08 smoothbox systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit dnsmasq.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit dnsmasq.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8090 and the job result is failed.[0m
+Nov 20 20:42:20 smoothbox systemd[1]: Starting dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit dnsmasq.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit dnsmasq.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8173.[0m
+Nov 20 20:42:20 smoothbox dnsmasq[1067196]: dnsmasq: failed to create listening socket for port 53: Address already in use
+Nov 20 20:42:20 smoothbox dnsmasq[1067196]: [0;1;31m[0;1;39m[0;1;31mfailed to create listening socket for port 53: Address already in use[0m
+Nov 20 20:42:20 smoothbox dnsmasq[1067196]: [0;1;31m[0;1;39m[0;1;31mFAILED to start up[0m
+Nov 20 20:42:20 smoothbox systemd[1]: [0;1;39m[0;1;31m[0;1;39mdnsmasq.service: Control process exited, code=exited, status=2/INVALIDARGUMENT[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit dnsmasq.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 2.[0m
+Nov 20 20:42:20 smoothbox systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdnsmasq.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit dnsmasq.service has entered the 'failed' state with result 'exit-code'.[0m
+Nov 20 20:42:20 smoothbox systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit dnsmasq.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: http://www.ubuntu.com/support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit dnsmasq.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8173 and the job result is failed.[0m
