@@ -43,4 +43,7 @@ $ ln -s /path/to/repo/nvim $XDG_CONFIG_HOME/nvim
 
 $ ln -s /path/to/repo/alacritty.yml $HOME/.alacritty.yml
 
+$ ln -s /path/to/repo/systemd $XDG_CONFIG_HOME/systemd
+
+$ ln -s /path/to/repo/spotifyd $XDG_CONFIG_HOME/spotifyd
 ```
