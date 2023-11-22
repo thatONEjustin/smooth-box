@@ -4,10 +4,12 @@ window:
   padding:
     x: 20
     y: 20
-    dynamic_padding: false
-    decorations: full
+  dynamic_title: true
+  dynamic_padding: false
+  decorations: full
+  startup_mode: Maximized
 font: 
-  size: 14.0
+  size: 13.0
   normal:
     family: FiraCode Nerd Font Mono
     style: Regular
