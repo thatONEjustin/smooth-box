@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
         end
     })
 
+    use { 'folke/which-key.nvim' }
+
     use({
         'AlexvZyl/nordic.nvim',
         as = 'nordic',
