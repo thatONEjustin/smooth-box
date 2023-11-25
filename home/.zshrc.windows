@@ -1,3 +1,5 @@
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.cargo/bin
 
@@ -13,8 +15,8 @@ export EDITOR=nvim
 
 export configd="$HOME/.config"
 export workd="$HOME/work"
-export gitd="$HOME/github"
-export smooth="$gitd/smooth-box"
+#export gitd="$HOME/github"
+export smooth="/mnt/c/Users/justi/Documents/personal/smooth-box/"
 export tmuxd="$smooth/home/.config/tmux"
 
 # Aliases
@@ -22,8 +24,6 @@ alias zedit='nvim $smooth/home/.zshrc'
 alias zload='source $smooth/home/.zshrc'
 alias tedit='nvim $smooth/home/.tmux.conf'
 alias nedit='$smooth/home/.config/nvim/ && nvim .'
-alias credit='nvim $smooth/home/.config/alacritty/alacritty.yml'
-alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
 alias fd="fdfind --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim && clear"
 alias ll="lsd -lah"
@@ -36,13 +36,11 @@ alias bat="batcat"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-ZSH_THEME="spaceship"
-
 source $ZSH/oh-my-zsh.sh
 
 source /usr/share/zplug/init.zsh
 
-if [ "$TMUX" = "" ]; then tmux; fi
+ZSH_THEME="spaceship"
 
 # bun completions
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
