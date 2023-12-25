@@ -20,3 +20,5 @@ vim.opt.termguicolors = true
 
 vim.g.astro_typescript = 'enable'
 vim.g.astro_stylus = 'enable'
+
+vim.opt.foldmethod = 'indent'

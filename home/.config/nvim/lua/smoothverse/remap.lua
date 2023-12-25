@@ -10,5 +10,5 @@ vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 
 vim.keymap.set("n", "<C-t>", "<cmd> NvimTreeToggle<CR>")
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<M-d>", "<C-d>zz")
+vim.keymap.set("n", "<M-u>", "<C-u>zz")

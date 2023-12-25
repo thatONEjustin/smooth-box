@@ -68,4 +68,10 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+
+    use {
+        'kkoomen/vim-doge',
+        run = ':call doge#install()'
+    }
+
 end)
