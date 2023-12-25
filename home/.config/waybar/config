@@ -1,0 +1,122 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "height": 50, 
+    "spacing": 4, 
+    "margin-top": 10, 
+    "modules-left": [ 
+        "wlr/workspaces",
+        // "hyprland/window"
+    ],
+    "modules-center": [
+        "clock",
+        // "custom/weather",
+        "tray", 
+    ],
+    "modules-right": [
+        // "idle_inhibitor", 
+        "keyboard-state", 
+        "wireplumber", 
+        "network", 
+        "cpu", 
+        "memory", 
+    ],
+    /* 
+     * .modules-left
+     */
+    "wlr/workspaces": {
+        "format": "{name} <span size='x-large'>{icon}</span>",
+        "format-icons": {
+            "main": "",
+            "chat": "󰭻",
+            "code": "",
+            "xtra": "󰅏",
+            "games": "󱄄",
+            "watch": "󰑈", 
+            "urgent": "",
+          },
+        "on-click": "activate",
+    },
+   /* 
+    * .modules-center
+    */
+    "clock": {
+        "timezone": "America/Chicago",
+        "tooltip-format": "<big>{calendar}</big>",
+        "format": "<span size='large'>{:%a, %d %b | %I:%M %p} |</span>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span size='large'><b>{}</b></span>",
+                "today": "<span color='#12ff74'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "wireplumber": {
+        "format": "<span size='medium'>| {volume}%</span> <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",	
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+          },
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    /* 
+     * .modules-right
+     */
+    "idle_inhibitor": {
+        "format": "<span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "start-activated": true
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "<span size='medium'> | </span><span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+        "format-icons": {
+            "locked": "󰬶",
+            "unlocked": "󰬵"
+        }
+    },
+
+    "wireplumber": {
+        "format": "<span size='medium'>| {volume}%</span> <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",	
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "interface": "enp6s0",
+        "format": "<span size='medium'> | {bandwidthTotalBytes}</span> <span size='xx-large' line_height='1.25' rise='-3pt'>󰈀</span>",
+        "format-disconnected": "<span size='xx-large' color='#ff3e5e' line_height='1.25' rise='-3pt'>󰌙</span>"
+    },
+    "cpu": {
+        "format": "<span size='medium'> | {avg_frequency} GHz</span> <span size='xx-large' line_height='1.25' rise='-2pt'>󰻠</span>",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "<span size='medium'> | {percentage}% of {total}gb</span> <span size='xx-large' line_height='1.25' rise='-3pt'></span>"
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+        "format-icons": [""]
+    }, 
+    "custom/screenshots": {
+        "format": "<span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+        "format-icons": {
+            "default": "󰿁"
+        },
+        "on-click": "grim -g \"$(slurp)\"" 
+    },
+}
