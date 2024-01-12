@@ -18,7 +18,7 @@ vim.opt.smartindent = true
 
 vim.opt.termguicolors = true
 
-vim.g.astro_typescript = 'enable'
-vim.g.astro_stylus = 'enable'
+vim.g.astro_typescript = "enable"
+vim.g.astro_stylus = "enable"
 
-vim.opt.foldmethod = 'indent'
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
