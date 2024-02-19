@@ -6,7 +6,6 @@
     "margin-top": 10, 
     "modules-left": [ 
         "wlr/workspaces",
-        // "hyprland/window"
     ],
     "modules-center": [
         "clock",
