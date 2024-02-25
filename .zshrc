@@ -1,4 +1,3 @@
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.cargo/bin
 
@@ -16,20 +15,20 @@ export configd="$HOME/.config"
 export workd="$HOME/work"
 export gitd="$HOME/github"
 export smooth="$gitd/smooth-box"
-export tmuxd="$smooth/home/.config/tmux"
+export tmuxd="$HOME/.config/tmux"
 
 # Aliases
-alias zedit='nvim $smooth/home/.zshrc.linux'
+alias zedit='nvim $HOME/.zshrc'
 alias zload='source $HOME/.zshrc'
-alias tedit='nvim $smooth/home/.tmux.conf'
-alias nedit='$smooth/home/.config/nvim/ && nvim .'
-alias credit='nvim $smooth/home/.config/alacritty/alacritty.yml'
+alias tedit='nvim $HOME/.tmux.conf'
+alias nedit='$HOME/.config/nvim/ && nvim .'
 alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
-alias fd="fdfind --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim && clear"
-alias ll="lsd -lah"
+# alias fd="fdfind --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim && clear"
+# alias ll="lsd -lah"
 
-alias sedit='nvim ~/.config/sway/config'
+# alias sedit='nvim ~/.config/sway/config'
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -37,22 +36,28 @@ alias sedit='nvim ~/.config/sway/config'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussell"
+
 source $ZSH/oh-my-zsh.sh
+# ZSH_THEME="spaceship"
 
 # bun completions
-[ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
+# [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-source /home/justinprime/.rvm/scripts/rvm
+# TODO: Figure out an actual ruby solution? why is it so hard to get this dang language usable
 
+# rvm has yet to install ruby for me on any machine.
+# source /home/justinprime/.rvm/scripts/rvm
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
 # check if tmux and launch
 if [ "$TMUX" = "" ]; then tmux; fi
