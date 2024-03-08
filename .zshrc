@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.cargo/bin
 
@@ -21,6 +28,7 @@ export tmuxd="$HOME/.config/tmux"
 alias zedit='nvim $HOME/.zshrc'
 alias zload='source $HOME/.zshrc'
 alias tedit='nvim $HOME/.tmux.conf'
+alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
 alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
@@ -36,17 +44,18 @@ alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-ZSH_THEME="robbyrussell"
+# powerlevel10k prompt
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source $ZSH/oh-my-zsh.sh
 # ZSH_THEME="spaceship"
 
-# bun completions
-# [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
-
 # bun
-# export BUN_INSTALL="$HOME/.bun"
-# export PATH="$BUN_INSTALL/bin:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -56,6 +65,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # rvm has yet to install ruby for me on any machine.
 # source /home/justinprime/.rvm/scripts/rvm
+
+# supposed flags for ruby
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
