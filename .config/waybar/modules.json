@@ -1,0 +1,82 @@
+{
+  "sway/workspaces": {
+    "format": "{name} {icon}",
+    "format-icons": {
+      "main": "",
+      "chat": "󰭻",
+      "code": "",
+      "xtra": "󰅏",
+      "games": "󱄄",
+      "watch": "󰑈",
+      "urgent": ""
+    },
+    "on-click": "activate"
+  },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 120
+  },
+  "clock": {
+    "timezone": "America/Chicago",
+    "tooltip-format": "<big>{calendar}</big>",
+    "format": "<span size='large'>{:%a, %d %b | %I:%M %p} |</span>"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "idle_inhibitor": {
+    "format": "<span size='x-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "start-activated": true
+  },
+  "keyboard-state": {
+    "capslock": true,
+    "format": "<span size='medium'> | </span><span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+    "format-icons": {
+      "locked": "󰬶",
+      "unlocked": "󰬵"
+    }
+  },
+  "network": {
+    "interface": "enp6s0",
+    "format": "<span size='medium'> | {bandwidthTotalBytes}</span> <span size='xx-large' line_height='1.25' rise='-3pt'>󰈀</span>",
+    "format-disconnected": "<span size='xx-large' color='#ff3e5e' line_height='1.25' rise='-3pt'>󰌙</span>"
+  },
+  "custom/screenshots": {
+    "format": "<span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+    "format-icons": {
+      "default": "󰿁"
+    },
+    "on-click": "grim -g \"$(slurp)\""
+  },
+  "cpu": {
+    "format": "<span size='medium'> | {avg_frequency} GHz</span> <span size='xx-large' line_height='1.25' rise='-2pt'>󰻠</span>",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "<span size='medium'> | {percentage}% of {total}gb</span> <span size='xx-large' line_height='1.25' rise='-3pt'></span>"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+    "format-icons": [
+      ""
+    ]
+  },
+  "wireplumber": {
+    "format": "<span size='medium'>| {volume}%</span> <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  }
+}
