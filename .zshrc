@@ -32,6 +32,8 @@ alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
 alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
+alias wayreset='killall -SIGUSR2 waybar && waybar &!'
+
 # alias fd="fdfind --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim && clear"
 # alias ll="lsd -lah"
 

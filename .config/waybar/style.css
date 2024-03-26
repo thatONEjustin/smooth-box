@@ -16,7 +16,7 @@
 window#waybar {
   background-color: transparent;
   border: none;
-  color: #000;
+  color: #fff;
 }
 
 #workspaces {
@@ -25,7 +25,7 @@ window#waybar {
 }
 
 #workspaces button {
-  color: #000;
+  color: #fff;
   background-color: transparent;
   border: none;
 }
