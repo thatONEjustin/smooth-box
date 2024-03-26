@@ -3,7 +3,7 @@
   "position": "top", 
   "height": 50, 
   "spacing": 4, 
-  "margin-top": 10, 
+  "margin-top": 0, 
   "modules-left": [ 
     // "wlr/workspaces",
     "wlr/taskbar"
@@ -39,7 +39,7 @@
   },
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 20,
+    "icon-size": 30,
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",

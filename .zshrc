@@ -1,3 +1,6 @@
+# check if tmux and launch
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -59,8 +62,11 @@ source $ZSH/oh-my-zsh.sh
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/init-nvm.sh
+
+# NOTE: macOS nvm configs via homebrew
 # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
@@ -70,6 +76,3 @@ source /home/justinprime/.rvm/scripts/rvm
 # supposed flags for ruby
 # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-
-# check if tmux and launch
-if [ "$TMUX" = "" ]; then tmux; fi
