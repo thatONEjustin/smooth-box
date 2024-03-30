@@ -1,15 +1,3 @@
-# check if tmux and launch
-# if [ "$TMUX" = "" ]; then tmux; fi
-if [[ -z "$TMUX" ]]; then
-  tmux attach || tmux
-fi
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.cargo/bin
@@ -40,17 +28,25 @@ alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
 alias wayreset='killall -SIGUSR2 waybar && waybar &!'
 
+# check if tmux and launch
+if [[ -z "$TMUX" ]]; then
+  tmux attach || tmux
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # alias fd="fdfind --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim && clear"
 # alias ll="lsd -lah"
-
-# alias sedit='nvim ~/.config/sway/config'
-
+#
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fd fzf sudo archlinux zoxide)
 
 # powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
