@@ -1,5 +1,8 @@
 # check if tmux and launch
-if [ "$TMUX" = "" ]; then tmux; fi
+# if [ "$TMUX" = "" ]; then tmux; fi
+if [[ -z "$TMUX" ]]; then
+  tmux attach || tmux
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
