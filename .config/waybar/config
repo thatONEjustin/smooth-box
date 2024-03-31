@@ -5,12 +5,11 @@
   "spacing": 4, 
   "margin-top": 0, 
   "modules-left": [ 
-    // "wlr/workspaces",
     "wlr/taskbar"
   ],
   "modules-center": [
     "clock",
-    // "custom/weather",
+    "custom/weather",
     "tray", 
   ],
   "modules-right": [
@@ -68,7 +67,7 @@
     }
   },
   "wireplumber": {
-    "format": "<span size='medium'>| {volume}%</span> <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",	
+    "format": "<span size='medium'>| {volume}%</span> <span size='large' line_height='1.25' rise='-3pt'>{icon}</span>",	
     "format-muted": "",
     "format-icons": {
       "default": ["", "", ""]
