@@ -75,3 +75,6 @@ source /home/justinprime/.rvm/scripts/rvm
 # supposed flags for ruby
 # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+
+# bun completions
+[ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
