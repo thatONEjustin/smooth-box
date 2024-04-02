@@ -1,6 +1,7 @@
 \.git
 \.gitignore
 \.config-bak
-\etc
+etc*
+custom*
 
 ^/README.*

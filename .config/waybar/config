@@ -5,6 +5,7 @@
   "spacing": 4, 
   "margin-top": 0, 
   "modules-left": [ 
+    "wlr/workspaces",
     "wlr/taskbar"
   ],
   "modules-center": [
@@ -117,6 +118,7 @@
   "memory": {
     "format": "<span size='medium'> | {percentage}% of {total}gb</span> <span size='xx-large' line_height='1.25' rise='-3pt'></span>"
   },
+
   "temperature": {
     // "thermal-zone": 2,
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
