@@ -4,9 +4,11 @@
 */
 
 /* @define-color bg_color #000; */
+
 /* @define-color text_color #fff; */
 
 /* @define-color bg_color @theme_selected_bg_color; */
+
 /* @define-color text_color @theme_text_color; */
 
 * {
@@ -14,7 +16,7 @@
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: #000;
   border: none;
   color: #fff;
 }
@@ -100,3 +102,4 @@ window.main .modules-right {
     color: black;
   }
 }
+

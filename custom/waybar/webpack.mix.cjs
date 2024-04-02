@@ -1,16 +1,8 @@
 let mix = require('laravel-mix')
 let path = require('path')
 
-// mix.alias({
-//   '@waybar': path.join(__dirname)
-// })
+let public_path = path.resolve(__dirname, '../../')
 
-// console.log(__dirname)
-// console.log(path.join(__dirname, '../../.config/waybar/'))
-// mix.alias({
-//   '@waybar': path.join(__dirname, '../../.config/waybar/')
-// })
-
-// mix.postCss('main.css', '/style.css')
-
-mix.postCss('main.css', path.join(__dirname, '../../.config/waybar/style.css'))
+mix.options({ manifest: false })
+mix.setPublicPath(public_path)
+  .postCss('main.css', '.config/waybar/style.css')
