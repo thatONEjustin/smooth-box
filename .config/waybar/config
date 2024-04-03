@@ -5,26 +5,21 @@
   "spacing": 4, 
   "margin-top": 0, 
   "modules-left": [ 
-    "wlr/workspaces",
     "wlr/taskbar"
   ],
   "modules-center": [
     "clock",
     "custom/weather",
-    "tray", 
+    "tray" 
   ],
   "modules-right": [
-    // "idle_inhibitor", 
     "keyboard-state", 
     "wireplumber", 
     "network", 
     "cpu", 
-    "memory", 
+    "memory" 
   ],
-  /* 
-    * .modules-left
-    */
-  "wlr/workspaces": {
+  "sway/workspaces": {
       "format": "{name} <span size='x-large'>{icon}</span>",
       "format-icons": {
         "main": "",
@@ -43,18 +38,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": [
-    ],
-    "app_ids-mapping": {
-    },
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal"
-    }
   },
-  /* 
-  * .modules-center
-  */
   "clock": {
     "timezone": "America/Chicago",
     "tooltip-format": "<big>{calendar}</big>",
@@ -79,9 +63,6 @@
     "icon-size": 21,
     "spacing": 10
   },
-  /* 
-    * .modules-right
-    */
   "idle_inhibitor": {
     "format": "<span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
     "format-icons": {

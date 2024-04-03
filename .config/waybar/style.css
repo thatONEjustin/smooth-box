@@ -2,10 +2,10 @@
 /* @tailwind utilities; */
 /* @tailwind components; */
 * {
-  font-family: "FiraCode Nerd Font", sans-serif;
+  font-family: "FiraCode Nerd Font";
 }
 window#waybar {
-  background-color: #000;
+  background-color: rgba(0,0,0, 0.65);
   border: none;
   color: #fff;
 }
@@ -60,10 +60,10 @@ window.main .modules-right {
   color: #ff3e5e;
 }
 #clock {
-  padding-right: 5px;
+  /* padding-right: 5px; */
 }
 #tray {
-  padding-left: 5px;
+  /* padding-left: 5px; */
   margin-top: -5px;
 }
 @keyframes blink {
