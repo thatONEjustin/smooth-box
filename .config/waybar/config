@@ -5,8 +5,8 @@
   "spacing": 4, 
   "margin-top": 0, 
   "modules-left": [
-    "sway/workspaces",
-    "wlr/taskbar"
+    "sway/workspaces"
+    /* "wlr/taskbar"  */
   ],
   "modules-center": [
     "clock",
@@ -83,7 +83,7 @@
     }
   },
   "wireplumber": {
-    "format": "<span size='medium'>| {volume}%</span> <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",	
+    "format": "<span size='medium'>| {volume}%</span> <span size='xx-large' line_height='1.25' rise='-3pt'>{icon}</span>",
     "format-muted": "",
     "format-icons": {
       "default": ["", "", ""]
@@ -116,5 +116,12 @@
       "default": "󰿁"
     },
     "on-click": "grim -g \"$(slurp)\"" 
+  },
+  "custom/weather": {
+    "exec": "$HOME/.local/scripts/get_weather.sh Chicago",
+    "return-type": "json",
+    "format": "<span size='large'>{} |</span>",
+    "tooltip": false,
+    "interval": 3600
   }
 }
