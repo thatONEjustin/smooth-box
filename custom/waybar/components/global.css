@@ -1,0 +1,19 @@
+* {
+  font-family: "FiraCode Nerd Font", sans-serif;
+}
+
+window#waybar {
+  background-color: #000;
+  border: none;
+  color: #fff;
+}
+
+window.main .modules-left,
+window.main .modules-center,
+window.main .modules-right {
+  background-color: alpha(black, 0.5);
+  border: 1px solid;
+  border-color: alpha(white, 0.3);
+  border-radius: 32px;
+  padding: 6px 18px;
+}

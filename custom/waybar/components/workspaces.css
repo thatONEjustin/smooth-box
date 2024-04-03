@@ -1,0 +1,27 @@
+#workspaces {
+  font-size: 18px;
+  padding: 5px 20px 5px 0px;
+}
+
+#workspaces button {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+}
+
+#workspaces button>box>label {
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+#workspaces button.active>box>label {
+  border-color: #000;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
