@@ -4,7 +4,8 @@
   "height": 50, 
   "spacing": 4, 
   "margin-top": 0, 
-  "modules-left": [ 
+  "modules-left": [
+    "sway/workspaces",
     "wlr/taskbar"
   ],
   "modules-center": [
@@ -20,17 +21,18 @@
     "memory" 
   ],
   "sway/workspaces": {
-      "format": "{name} <span size='x-large'>{icon}</span>",
-      "format-icons": {
-        "main": "",
-        "chat": "󰭻",
-        "code": "",
-        "xtra": "󰅏",
-        "games": "󱄄",
-        "watch": "󰑈", 
-        "urgent": "",
-      },
-      "on-click": "activate",
+    "format": "<span size='x-large'>{icon}</span>",
+    "format-icons": {
+      "1": "",
+      "chat": "󰭻",
+      "2": "",
+      "3": "󱄄",
+      "4": "󰅏",
+      "5": "󰑈",
+      "TV": "",
+      "urgent": "",
+    },
+    "on-click": "activate",
   },
   "wlr/taskbar": {
     "format": "{icon}",

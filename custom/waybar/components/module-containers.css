@@ -1,9 +1,9 @@
 .modules-left {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .modules-right {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .modules-right>*:first-child {
@@ -15,5 +15,5 @@
 }
 
 .modules-right>*>label {
-  font-size: 16px;
+  font-size: 14px;
 }
