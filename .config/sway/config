@@ -151,6 +151,9 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+bindsym $mod+v splitv
+bindsym $mod+b splith
+
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
@@ -164,13 +167,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 
 # Sway has a "scratchpad", which is a bag of holding for windows.
-# You can send windows there and get them back later.
-
-# Move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
+# Show scratchpad window
 bindsym $mod+minus scratchpad show
 
 mode "resize" {
@@ -192,6 +191,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+### Window rules
+set {
+  $popup floating enable; shadows enable
+}
+
+for_window [app_id="pavucontrol"] $popup
 #
 # Status Bar:
 #
