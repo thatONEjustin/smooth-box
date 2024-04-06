@@ -63,8 +63,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/init-nvm.sh
 
 # NOTE: macOS nvm configs via homebrew
 # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
