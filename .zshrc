@@ -63,13 +63,16 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # nvm
+# export NVM_DIR="$HOME/.nvm"
+# source /usr/share/nvm/init-nvm.sh
+
 
 # NOTE: macOS nvm configs via homebrew
-# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # TODO: Figure out an actual ruby solution? why is it so hard to get this dang language usable
-source /home/justinprime/.rvm/scripts/rvm
+source $HOME/.rvm/scripts/rvm
 
 # supposed flags for ruby
 # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
