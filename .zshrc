@@ -1,6 +1,6 @@
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.cargo/bin
+export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -71,8 +71,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# TODO: Figure out an actual ruby solution? why is it so hard to get this dang language usable
-source $HOME/.rvm/scripts/rvm
+# WARN: Figure out an actual ruby solution? why is it so hard to get this dang language usable
+# source $HOME/.rvm/scripts/rvm
 
 # supposed flags for ruby
 # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
