@@ -3,3 +3,4 @@ home/.config/**/packer_compiled.lua
 *.uuid
 ./.config/nvim/lazyvim.json
 ./.config/nvim/lazy-lock.json
+.config/nvim/lazy-lock.json
