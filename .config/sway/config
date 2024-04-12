@@ -33,7 +33,6 @@ set $workspace6 TV
 
 # Gaps Definition 
 corner_radius 10
-smart_gaps off
 gaps horizontal 5
 gaps vertical 0
 gaps inner 10
@@ -69,7 +68,7 @@ workspace $workspace4 output $main_monitor
 
 workspace $workspace5 output $vert_monitor
 
-workspace $workspace6 output $TV 
+workspace $workspace6 output $TV
 
 ### Idle configuration
 #
