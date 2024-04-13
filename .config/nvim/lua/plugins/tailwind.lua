@@ -15,7 +15,7 @@ return {
       filetypes = { "*" },
       user_default_options = {
         tailwind = true,
-        names = false,
+        names = true,
         css = true,
         css_fn = true,
         always_update = true,
@@ -25,7 +25,12 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+      {
+        "roobert/tailwindcss-colorizer-cmp.nvim",
+        config = function()
+          require("tailwindcss-colorizer-cmp").setup({})
+        end,
+      },
     },
     opts = function(_, opts)
       local format_kinds = opts.formatting.format
