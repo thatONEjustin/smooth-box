@@ -6,8 +6,13 @@ for i in {1..5}; do
 	if [[ $? == 0 ]]; then
 		text=$(echo "$text" | sed -E "s/\s+/ /g")
 		if [[ $? == 0 ]]; then
-			echo "{\"text\":\"$text\"}"
-			exit
+			if [[ $text == *"Unknown location"* ]]; then
+				echo "{\"text\":\"\"}"
+				exit
+			else
+				echo "{\"text\":\"$text\"}"
+				exit
+			fi
 		fi
 	fi
 	sleep 2
