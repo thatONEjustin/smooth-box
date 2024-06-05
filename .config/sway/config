@@ -195,7 +195,7 @@ set {
 }
 
 for_window [app_id="pavucontrol"] $popup
-# for_window [app_id=""] $popup
+for_window [app_id="timer-for-harvest"] $popup
 
 for_window [app_id=".*"] $idle
 #
