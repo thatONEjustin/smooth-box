@@ -73,9 +73,6 @@ workspace $workspace6 output $TV
 ### Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh
 
-for_window [class=".*"] inhibit_idle fullscreen
-for_window [app_id=".*"] inhibit_idle fullscreen
-
 # exec swayidle -w \
 #          timeout 300 'swaylock -f -c 000000' \
 #          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
@@ -193,10 +190,14 @@ bindsym $mod+r mode "resize"
 
 ### Window rules
 set {
+  $idle inhibit_idle fullscreen
   $popup floating enable; shadows enable
 }
 
 for_window [app_id="pavucontrol"] $popup
+# for_window [app_id=""] $popup
+
+for_window [app_id=".*"] $idle
 #
 # Status Bar:
 #
