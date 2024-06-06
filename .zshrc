@@ -17,11 +17,9 @@ export tmuxd="$HOME/.config/tmux"
 
 # generic linux detection
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
-  echo 'linux-y'
   alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
   if command -v sway > /dev/null; then
-    echo 'sway'
     alias getids='swaymsg -t get_tree'
     alias wayreset='killall -SIGUSR2 waybar &!'
   fi
