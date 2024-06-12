@@ -198,6 +198,11 @@ for_window [app_id="pavucontrol"] $popup
 for_window [app_id="timer-for-harvest"] $popup
 
 for_window [app_id=".*"] $idle
+
+assign [app_id="Slack"] workspace 5
+assign [class="discord"] workspace 5
+
+assign [class="steam"] workspace 3
 #
 # Status Bar:
 #
