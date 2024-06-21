@@ -9,7 +9,7 @@ set $up k
 set $right l
 
 # Application Launcher 
-set $menu wofi --show
+set $menu rofi -show drun
 
 # Applications
 set $term wezterm
