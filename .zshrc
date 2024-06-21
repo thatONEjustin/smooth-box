@@ -37,6 +37,10 @@ alias tedit='nvim $HOME/.tmux.conf'
 alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
 
+alias ll='ls -lah'
+alias ln='ls -lahtr'
+
+
 # check if tmux and launch
 if [[ -z "$TMUX" ]]; then
   tmux attach || tmux
@@ -46,9 +50,6 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# alias fd="fdfind --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim && clear"
-# alias ll="lsd -lah"
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git fd fzf sudo archlinux zoxide)
