@@ -1,21 +1,30 @@
-# $PATH variable
+# NOTE: $PATH variable
 export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
-# zsh path
+# NOTE: zsh path
 export ZSH="$HOME/.oh-my-zsh"
 
-# neovim please
+# NOTE: neovim please
 export VISUAL=nvim
 export EDITOR=nvim
 
-# personalized directories
+# NOTE: personalized directories
 export configd="$HOME/.config"
 export workd="$HOME/work"
 export gitd="$HOME/github"
 export smooth="$gitd/smooth-box"
 export tmuxd="$HOME/.config/tmux"
 
-# generic linux detection
+# NOTE: additional package directories
+export NVM_DIR="$HOME/.nvm"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+
+# NOTE: generic linux detection
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
@@ -25,9 +34,13 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   fi
 fi
 
-# macOS detection
+# NOTE: macOS detection
 if [[ $(uname) == "Darwin" ]]; then
-  echo 'Mac OS'
+  alias sketchyreload='sketchybar --reload'
+
+  # homebrew
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 # OS agnostic aliases
@@ -36,6 +49,7 @@ alias zedit='nvim $HOME/.zshrc'
 alias tedit='nvim $HOME/.tmux.conf'
 alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
+alias ll='ls -lahtr'
 
 alias ll='ls -lah'
 alias ln='ls -lahtr'
@@ -51,9 +65,26 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# NOTE: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
+# NOTE: Node Version Manager
+if [ -d '/usr/share/nvm' ]; then
+  source /usr/share/nvm/init-nvm.sh
+fi
+
+# NOTE: Ruby Version Manager
+if [ -d "$HOME/.rvm/scripts/" ]; then
+  source $HOME/.rvm/scripts/rvm
+fi
+
+# WARN: bun shouldn't be tied to the user directory like this. just need to make sure I point to the .bun/_bun dirs?
+# bun completions
+[ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
+
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git fd fzf sudo archlinux zoxide)
 
+# TODO: Move away from p10k
+#
 # powerlevel10k prompt
 # source /usr/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
 ZSH_THEME="powerlevel10k/powerlevel10k" 
@@ -62,22 +93,3 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source $ZSH/oh-my-zsh.sh
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/init-nvm.sh
-
-
-# NOTE: macOS nvm configs via homebrew
-# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# WARN: Figure out an actual ruby solution? why is it so hard to get this dang language usable
-source $HOME/.rvm/scripts/rvm
-
-# bun completions
-[ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
