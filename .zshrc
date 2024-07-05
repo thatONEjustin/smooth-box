@@ -22,8 +22,6 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-
-
 # NOTE: generic linux detection
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
@@ -54,7 +52,6 @@ alias ll='ls -lahtr'
 alias ll='ls -lah'
 alias ln='ls -lahtr'
 
-
 # check if tmux and launch
 if [[ -z "$TMUX" ]]; then
   tmux attach || tmux
@@ -81,7 +78,7 @@ fi
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git fd fzf sudo archlinux zoxide)
+plugins=(git fd fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 
 # TODO: Move away from p10k
 #
