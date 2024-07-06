@@ -15,7 +15,7 @@ return {
       filetypes = { "*" },
       user_default_options = {
         tailwind = true,
-        names = true,
+        names = false,
         css = true,
         css_fn = true,
         always_update = true,
