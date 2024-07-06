@@ -1,5 +1,5 @@
-@import './components/utils.css'; 
 @import './components/global.css';
+@import './components/utils.css'; 
 @import './components/workspaces.css';
 @import './components/module-containers.css';
 @import './components/modules.css';

@@ -1,9 +1,20 @@
-* {
-  font-family: $main_font;
-}
+/*
+ * Dracula color scheme
+ * */
 
-window#waybar {
-  background-color: $background;
-  border: none;
-  color: $foreground;
-}
+$background: #282a36;
+$foreground: #f8f8f2;
+$selection: #44475a;
+$cyan: #8be9fd;
+$green: #50fa7b;
+$orange: #ffb86c;
+$pink: #ff79c6;
+$purple: #bd93f9;
+$red: #ff5555;
+$yellow: #f1fa8c;
+
+/*
+ * Fonts
+ * */
+$text_font: "FiraCode Nerd Font";
+$icon_font: "SauceCodePro NFM, Regular";

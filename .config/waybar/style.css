@@ -2,24 +2,21 @@
  * Dracula color scheme
  * */
 
-/*$firacode: "FiraCode Nerd Font";*/
-
-/*$source_code_pro: "SauceCodePro NFM, Regular";*/
-
-/*$main_font: "FiraCode Nerd Font";*/
+/*
+ * Fonts
+ * */
 
 * {
   font-family: "SauceCodePro NFM, Regular";
 }
 
 window#waybar {
-  background-color: #282a36;
-  border: none;
-  color: #f8f8f2;
-}
+    background-color: #282a36;
+    border: none;
+    color: #f8f8f2;
+  }
 
 #workspaces {
-  font-size: 18px;
 }
 
 #workspaces button {
@@ -27,18 +24,25 @@ window#waybar {
     background-color: transparent;
     border-top: 3px solid transparent;
     border-radius: 0px;
-    /*padding-right: 15px;*/
-    /*min-width: 40px;*/
+
+    padding: 5px 15px;
+    font-size: 24px;
   }
 
+#workspaces button:first-child {
+      font-size: calc(24px + 2px);
+    }
+
 #workspaces button.focused {
-      border-top: 3px solid #f1fa8c;
+      border-top: 3px solid #8be9fd;
       background-color: #44475a;
+      color: #8be9fd;
     }
 
 #workspaces button:hover {
       background-color: #44475a;
       box-shadow: none;
+      border-top: 3px solid #f8f8f2;
     }
 
 .modules-left {
@@ -63,15 +67,6 @@ window#waybar {
 
 #keyboard-state label.locked span+span {
   color: #ff3e5e;
-}
-
-#clock {
-  /* padding-right: 5px; */
-}
-
-#tray {
-  padding-left: 5px;
-  margin-top: -5px;
 }
 
 @keyframes blink {

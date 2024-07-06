@@ -36,6 +36,10 @@ corner_radius 10
 gaps horizontal 5
 gaps vertical 0
 gaps inner 10
+smart_gaps on
+
+font pango:'FiraCode Nerd Font Mono' 12
+# font pango:'SauceCodePro NFM' 12
 
 ### Output configuration
 #

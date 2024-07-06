@@ -6,6 +6,7 @@
     "height": 50, 
     "spacing": 4, 
     "margin-top": 0, 
+    "reload_style_on_change": true,
     "include" : [
       "$HOME/.config/waybar/modules.json"
     ],
@@ -32,6 +33,7 @@
     "height": 50, 
     "spacing": 4, 
     "margin-top": 0, 
+    "reload_style_on_change": true,
     "include" : [
       "$HOME/.config/waybar/modules.json"
     ],
@@ -46,16 +48,18 @@
     "height": 50, 
     "spacing": 4, 
     "margin-top": 0, 
+    "reload_style_on_change": true,
     "include" : [
       "$HOME/.config/waybar/modules.json"
     ],
     "modules-left": [
-      "clock",
-      "custom/weather",
+      "sway/window"
     ],
     "modules-center": [
     ],
     "modules-right": [
+      "clock",
+      "custom/weather",
       "tray" 
     ]
   }
