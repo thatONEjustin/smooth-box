@@ -86,6 +86,14 @@ plugins=(git fd fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlig
 # source /usr/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
 ZSH_THEME="powerlevel10k/powerlevel10k" 
 
+# NOTE: ZSH_HIST settings so we remove dupes
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
