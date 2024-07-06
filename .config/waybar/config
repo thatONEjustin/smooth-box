@@ -1,25 +1,62 @@
-{
-  "layer": "top", 
-  "position": "top", 
-  "height": 50, 
-  "spacing": 4, 
-  "margin-top": 0, 
-  "include" : [
-    "$HOME/.config/waybar/modules.json"
-  ],
-  "modules-left": [
-    "sway/workspaces"
-  ],
-  "modules-center": [
-    "clock",
-    "custom/weather",
-    "tray" 
-  ],
-  "modules-right": [
-    "keyboard-state", 
-    "wireplumber", 
-    "network", 
-    "cpu", 
-    "memory" 
-  ]
-}
+[
+  {
+    "output": "DP-1",
+    "layer": "top", 
+    "position": "bottom", 
+    "height": 50, 
+    "spacing": 4, 
+    "margin-top": 0, 
+    "include" : [
+      "$HOME/.config/waybar/modules.json"
+    ],
+    "modules-left": [
+      "sway/workspaces"
+    ],
+    "modules-center": [
+      "clock",
+      "custom/weather",
+      "tray" 
+    ],
+    "modules-right": [
+      "keyboard-state", 
+      "wireplumber", 
+      "network", 
+      "cpu", 
+      "memory" 
+    ]
+  },
+  {
+    "output": "DP-1",
+    "layer": "top",
+    "position": "top", 
+    "height": 50, 
+    "spacing": 4, 
+    "margin-top": 0, 
+    "include" : [
+      "$HOME/.config/waybar/modules.json"
+    ],
+    "modules-center": [
+      "sway/window"
+    ]
+  },
+  {
+    "output": "HDMI-A-1",
+    "layer": "top",
+    "position": "top", 
+    "height": 50, 
+    "spacing": 4, 
+    "margin-top": 0, 
+    "include" : [
+      "$HOME/.config/waybar/modules.json"
+    ],
+    "modules-left": [
+      "clock",
+      "custom/weather",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+      "tray" 
+    ]
+  }
+]

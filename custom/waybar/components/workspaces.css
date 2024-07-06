@@ -1,27 +1,22 @@
 #workspaces {
   font-size: 18px;
-  padding: 5px 20px 5px 0px;
-}
 
-#workspaces button {
-  color: #fff;
-  background-color: transparent;
-  border: none;
-}
+  button {
+    color: $foreground;
+    background-color: transparent;
+    border-top: 3px solid transparent;
+    border-radius: 0px;
+    /*padding-right: 15px;*/
+    /*min-width: 40px;*/
 
-#workspaces button>box>label {
-  padding-bottom: 5px;
-  border-bottom: 2px solid transparent;
-  border-radius: 2px;
-  box-shadow: none;
-}
+    &.focused {
+      border-top: 3px solid $yellow;
+      background-color: $selection;
+    }
 
-#workspaces button.active>box>label {
-  border-color: #000;
-}
-
-#workspaces button:hover {
-  background: transparent;
-  box-shadow: none;
-  border: none;
+    &:hover {
+      background-color: $selection;
+      box-shadow: none;
+    }
+  }
 }

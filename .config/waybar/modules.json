@@ -3,7 +3,6 @@
     "format": "<span size='x-large'>{icon}</span>",
     "format-icons": {
       "1": "",
-      "chat": "󰭻",
       "2": "",
       "3": "󱄄",
       "4": "󰅏",
@@ -90,5 +89,8 @@
     "format": "<span size='large'>{} |</span>",
     "tooltip": false,
     "interval": 3600
+  },
+  "sway/window": {
+    "icon": true
   }
 }
