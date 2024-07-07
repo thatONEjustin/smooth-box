@@ -33,12 +33,11 @@
     "height": 50, 
     "spacing": 4, 
     "margin-top": 0, 
-    "reload_style_on_change": true,
+    "mode": "invisible",
+    "reload_style_on_change": false,
     "include" : [
-      "$HOME/.config/waybar/modules.json"
     ],
     "modules-center": [
-      "sway/window"
     ]
   },
   {
@@ -47,7 +46,7 @@
     "position": "top", 
     "height": 50, 
     "spacing": 4, 
-    "margin-top": 0, 
+    "margin-top": 0,
     "reload_style_on_change": true,
     "include" : [
       "$HOME/.config/waybar/modules.json"
