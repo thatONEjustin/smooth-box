@@ -7,24 +7,24 @@ set $font_size 12
 # Super key
 set $mod Mod4
 
-# Home row direction keys, like vim
+## Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
 
-# Applications
+## Applications
 set $menu rofi -show drun
 set $term wezterm
 set $browser chromium
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
 
-# Monitor/GPU xrandr outputs
+## Monitor/GPU xrandr outputs
 set $main_monitor DP-1
 set $vert_monitor DP-2
 set $TV HDMI-A-1
 
-# Workspaces
+## Workspaces
 set $workspace1 1
 set $workspace2 2
 set $workspace3 3
@@ -33,7 +33,7 @@ set $workspace5 5
 set $workspace6 TV
 
 
-# Gaps Definition 
+## Gaps Definition 
 corner_radius 10
 gaps horizontal 5
 gaps vertical 0
@@ -41,15 +41,14 @@ gaps inner 10
 smart_gaps on
 smart_corner_radius enable
 
-# Font settings
+## Font settings
 font pango:$font $font_size
 
-### Output configuration
-#
+## Output configuration
 # output <display> <type> <path/to/wallpaper.jpg> <fill, fit, stretch, center, tile>
 output $main_monitor bg ~/.local/share/backgrounds/smoothverse/nightwing-blue.jpg fit
 
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+## You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 {
     pos 1080 0 
     res 2560x1440@144Hz 
@@ -67,30 +66,29 @@ output HDMI-A-1 {
     res 1920x1080
 }
 
-### Workspaces 
+## Workspaces 
 workspace $workspace1 output $main_monitor
 workspace $workspace2 output $main_monitor
 workspace $workspace3 output $main_monitor
 workspace $workspace4 output $main_monitor
 
 workspace $workspace5 output $vert_monitor
-
 workspace $workspace6 output $TV
 
-
-# Window rules
+## Window rules
 set {
   $idle inhibit_idle fullscreen
   $popup floating enable; shadows enable;
   $scratch scratchpad
 }
-# Popup assignments
+
+## Popup assignments
 for_window [app_id="pavucontrol"] $popup
 for_window [app_id="blueman-manager"] $popup
 for_window [app_id="timer-for-harvest"] $popup
 for_window [app_id="[(a-z\.)]+.Calculator"] $popup
 
-# idle
+## this sets up idle rules 
 for_window [app_id=".*"] $idle
 
 ### Workspace app assignments
@@ -104,65 +102,61 @@ assign [class="steam"] workspace 3
 ### Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+# Key bindings
 
-### Key bindings
-
-# Start a terminal
+## Start a terminal
 bindsym $mod+Return exec $term
 # bindsym $mod+f exec $browser
 
-# Kill focused window
+## Kill focused window
 bindsym $mod+Shift+q kill
 
-# Start your launcher
+## Start your launcher
 bindsym $mod+space exec $menu
 
-# Take a screenshot
+## Take a screenshot
 bindsym $mod+Shift+p exec $screenshot
 
-# Despite the name, also works for non-floating windows.
+## Despite the name, also works for non-floating windows.
 # floating_modifier $mod normal
 
-# Reload the configuration file
+## Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Exit sway (logs you out of your Wayland session)
+## Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-# Move your focus around
+## Move your focus around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# Or use $mod+[up|down|left|right]
+## Or use $mod+[up|down|left|right]
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# Move the focused window with the same, but add Shift
+## Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# Ditto, with arrow keys
+## Ditto, with arrow keys
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Switch to workspace
+## Switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 
-# Move focused container to workspace
+## Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
@@ -171,13 +165,13 @@ bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 
-# Sway has a "scratchpad", which is a bag of holding for windows.
+## Sway has a "scratchpad", which is a bag of holding for windows.
 bindsym $mod+Shift+minus move scratchpad
 
-# Show scratchpad window
+## Show scratchpad window
 bindsym $mod+minus scratchpad show
 
-# Switch the current container between different layout styles
+## Switch the current container between different layout styles
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -185,45 +179,43 @@ bindsym $mod+e layout toggle split
 bindsym $mod+v splitv
 bindsym $mod+b splith
 
-# Make the current focus fullscreen
+## Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
-# Toggle the current focus between tiling and floating mode
+## Toggle the current focus between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
 
-# Swap focus between the tiling area and the floating area
+## Swap focus between the tiling area and the floating area
 # bindsym $mod+space focus mode_toggle
 
-# Move focus to the parent container
+## Move focus to the parent container
 bindsym $mod+a focus parent
 
-
+## Resize mode bindings
 mode "resize" {
   bindsym $left resize shrink width 10px
   bindsym $down resize grow height 10px
   bindsym $up resize shrink height 10px
   bindsym $right resize grow width 10px
 
-  # Ditto, with arrow keys
+  ## Ditto, with arrow keys
   bindsym Left resize shrink width 10px
   bindsym Down resize grow height 10px
   bindsym Up resize shrink height 10px
   bindsym Right resize grow width 10px
 
-  # Return to default mode
+  ## Return to default mode
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+## waybar setup
 bar {
     swaybar_command waybar
     position bottom
 }
 
+## keep this at the bottom
 include /etc/sway/config.d/*
