@@ -1,10 +1,26 @@
 # User settings
+set $bg_path ~/.local/share/backgrounds/smoothverse
+set $main_wallpaper nightwing-blue.jpg
+
+## font
 set $font 'FiraCode Nerd Font Mono'
 set $font_size 12
 
-## main bindings / aliases 
+## colors
+set $bg #282a36
+set $fg #f8f8f2
+set $br #44475a
+set $cyan #8be9fd
+set $green #50fa7b
+set $orange #ffb86c
+set $pink #ff79c6
+set $purple #bd93f9
+set $red #ff5555
+set $yellow #f1fa8c
 
-# Super key
+# main bindings / aliases 
+
+## Super key
 set $mod Mod4
 
 ## Home row direction keys, like vim
@@ -32,8 +48,7 @@ set $workspace4 4
 set $workspace5 5
 set $workspace6 TV
 
-
-## Gaps Definition 
+## Gaps Definition
 corner_radius 10
 gaps horizontal 5
 gaps vertical 0
@@ -44,9 +59,18 @@ smart_corner_radius enable
 ## Font settings
 font pango:$font $font_size
 
+# Client
+## class                border  backgr. text    indicator child_border
+client.focused          $br     $br     $fg     $cyan     $br
+client.focused_inactive $bg     $bg     $fg     $cyan     $bg
+client.unfocused        $bg     $bg     $fg     $cyan     $bg
+#client.urgent          $br     $br     $fg     $bg       $br #currently not implemented
+#client.placeholder     $br     $br     $fg     $bg       $br #currently not implemented
+client.background $bg
+
 ## Output configuration
-# output <display> <type> <path/to/wallpaper.jpg> <fill, fit, stretch, center, tile>
-output $main_monitor bg ~/.local/share/backgrounds/smoothverse/nightwing-blue.jpg fit
+### output <display> <type> <path/to/wallpaper.jpg> <fill, fit, stretch, center, tile>
+output $main_monitor bg $bg_path/$main_wallpaper fit
 
 ## You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 {
@@ -161,7 +185,6 @@ bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
-
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 
