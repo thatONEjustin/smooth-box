@@ -1,5 +1,10 @@
-### Variables
-# "Super" Key. Use Mod1 for Alt.
+# User settings
+set $font 'FiraCode Nerd Font Mono'
+set $font_size 12
+
+## main bindings / aliases 
+
+# Super key
 set $mod Mod4
 
 # Home row direction keys, like vim
@@ -8,14 +13,10 @@ set $down j
 set $up k
 set $right l
 
-# Application Launcher 
-set $menu rofi -show drun
-
 # Applications
+set $menu rofi -show drun
 set $term wezterm
 set $browser chromium
-
-# Screenshots
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
 
 # Monitor/GPU xrandr outputs
@@ -31,20 +32,22 @@ set $workspace4 4
 set $workspace5 5
 set $workspace6 TV
 
+
 # Gaps Definition 
 corner_radius 10
 gaps horizontal 5
 gaps vertical 0
 gaps inner 10
 smart_gaps on
+smart_corner_radius enable
 
-font pango:'FiraCode Nerd Font Mono' 12
-# font pango:'SauceCodePro NFM' 12
+# Font settings
+font pango:$font $font_size
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output <display> <type> <path/to/wallpaper.jpg> <fill, fit, stretch, center, tile>
+output $main_monitor bg ~/.local/share/backgrounds/smoothverse/nightwing-blue.jpg fit
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 {
@@ -74,14 +77,33 @@ workspace $workspace5 output $vert_monitor
 
 workspace $workspace6 output $TV
 
+
+# Window rules
+set {
+  $idle inhibit_idle fullscreen
+  $popup floating enable; shadows enable;
+  $scratch scratchpad
+}
+# Popup assignments
+for_window [app_id="pavucontrol"] $popup
+for_window [app_id="blueman-manager"] $popup
+for_window [app_id="timer-for-harvest"] $popup
+for_window [app_id="[(a-z\.)]+.Calculator"] $popup
+
+# idle
+for_window [app_id=".*"] $idle
+
+### Workspace app assignments
+# assign [app_id="[(a-z\.)]+.wezterm"] workspace 2
+assign [app_id="Slack"] workspace 5
+
+assign [class="discord"] workspace 5
+assign [class="steam"] workspace 3
+
+
 ### Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh
 
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -98,6 +120,7 @@ bindsym $mod+Shift+q kill
 # Start your launcher
 bindsym $mod+space exec $menu
 
+# Take a screenshot
 bindsym $mod+Shift+p exec $screenshot
 
 # Despite the name, also works for non-floating windows.
@@ -114,6 +137,7 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+
 # Or use $mod+[up|down|left|right]
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -147,6 +171,12 @@ bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 
+# Sway has a "scratchpad", which is a bag of holding for windows.
+bindsym $mod+Shift+minus move scratchpad
+
+# Show scratchpad window
+bindsym $mod+minus scratchpad show
+
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -167,11 +197,6 @@ bindsym $mod+Shift+space floating toggle
 # Move focus to the parent container
 bindsym $mod+a focus parent
 
-# Sway has a "scratchpad", which is a bag of holding for windows.
-bindsym $mod+Shift+minus move scratchpad
-
-# Show scratchpad window
-bindsym $mod+minus scratchpad show
 
 mode "resize" {
   bindsym $left resize shrink width 10px
@@ -191,26 +216,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-### Window rules
-set {
-  $idle inhibit_idle fullscreen
-  $popup floating enable; shadows enable
-}
-
-for_window [app_id="pavucontrol"] $popup
-for_window [app_id="timer-for-harvest"] $popup
-for_window [app_id="[(a-z\.)]+.Calculator"] $popup
-
-for_window [app_id=".*"] $idle
-
-### Workspace assignments
-# assign [app_id="[(a-z\.)]+.wezterm"] workspace 2
-
-assign [app_id="Slack"] workspace 5
-
-assign [class="discord"] workspace 5
-assign [class="steam"] workspace 3
 
 #
 # Status Bar:
