@@ -8,6 +8,11 @@ export ZSH="$HOME/.oh-my-zsh"
 export VISUAL=nvim
 export EDITOR=nvim
 
+# NOTE: pager
+if command -v sway > /dev/null; then
+  export MANPAGER="/usr/bin/most -s"
+fi
+
 # NOTE: personalized directories
 export configd="$HOME/.config"
 export workd="$HOME/work"
@@ -78,7 +83,7 @@ fi
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git fd fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
+plugins=(git fd fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 # TODO: Move away from p10k
 #
