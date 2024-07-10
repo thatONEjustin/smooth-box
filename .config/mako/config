@@ -1,4 +1,11 @@
-border-radius=12
-padding=10
 default-timeout=1000
 ignore-timeout=1
+
+font=FiraCode Nerd Font 14
+
+border-radius=12
+padding=10
+
+background-color=#282a36FF
+text-color=#f8f8f2FF
+border-color=#44475aFF
