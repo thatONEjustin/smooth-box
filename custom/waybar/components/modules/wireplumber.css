@@ -1,6 +1,6 @@
 #wireplumber {
   background-color: $background;
-  color: $yellow;
+  color: $orange;
 
   border-top-left-radius: $module_spacing;
   border-bottom-left-radius: $module_spacing;

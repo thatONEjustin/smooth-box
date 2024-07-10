@@ -127,7 +127,7 @@ window#waybar {
 
 #memory {
   background-color: #282a36;
-  color: #ffb86c;
+  color: #f1fa8c;
   margin-right: 0px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -135,7 +135,7 @@ window#waybar {
 
 #wireplumber {
   background-color: #282a36;
-  color: #f1fa8c;
+  color: #ffb86c;
 
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
