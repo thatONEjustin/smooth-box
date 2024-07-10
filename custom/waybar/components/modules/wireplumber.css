@@ -1,0 +1,7 @@
+#wireplumber {
+  background-color: $background;
+  color: $yellow;
+
+  border-top-left-radius: $module_spacing;
+  border-bottom-left-radius: $module_spacing;
+}

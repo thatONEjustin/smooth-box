@@ -1,19 +1,31 @@
-.modules-left {
-  margin-left: 5px;
+
+.modules {
+  &-left,
+  &-center,
+  &-right {
+    padding: 0 $module_spacing;
+    margin-bottom: 10px;
+  }
+
+  &-center,
+  &-right {
+    .module {
+      padding: 0 $module_spacing;
+    }
+  }
+
+  &-center {
+    background-color: $background;
+    border-radius: $module_spacing;
+  }
+
+  &-right {
+    margin-right: $module_spacing;
+  }
 }
 
 .modules-right {
-  margin-right: 5px;
-}
-
-.modules-right>*:first-child {
-  padding-left: 10px;
-}
-
-.modules-right>*:last-child {
-  padding-right: 10px;
-}
-
-.modules-right>*>label {
-  font-size: 16px;
+  .module {
+    margin-right: 4px;
+  }
 }

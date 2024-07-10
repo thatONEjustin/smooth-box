@@ -1,0 +1,12 @@
+#keyboard-state {
+  label.locked span+span {
+    color: $red;
+  }
+}
+
+@keyframes blink {
+  to {
+    background-color: $red;
+    color: $background;
+  }
+}

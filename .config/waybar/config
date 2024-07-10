@@ -3,8 +3,6 @@
     "output": "DP-1",
     "layer": "top", 
     "position": "bottom", 
-    "height": 50, 
-    "spacing": 4, 
     "margin-top": 0, 
     "reload_style_on_change": true,
     "include" : [
@@ -19,11 +17,12 @@
       "tray" 
     ],
     "modules-right": [
-      "keyboard-state", 
-      "wireplumber", 
-      "network", 
-      "cpu", 
-      "memory" 
+      "keyboard-state",
+      "wireplumber",
+      "pulseaudio/slider",
+      "network",
+      "cpu",
+      "memory"
     ]
   },
   {

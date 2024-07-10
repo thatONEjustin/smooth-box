@@ -1,8 +1,7 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    'postcss-nesting': {},
+    'postcss-nested': {},
     'postcss-simple-vars': {},
-    autoprefixer: {},
   }
 }

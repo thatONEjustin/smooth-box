@@ -1,10 +1,6 @@
-#keyboard-state label.locked span+span {
-  color: #ff3e5e;
-}
-
-@keyframes blink {
-  to {
-    background-color: #eb3d4b;
-    color: black;
-  }
-}
+@import './modules/audio-slider.css';
+@import './modules/keyboard-indicator.css';
+@import './modules/cpu.css';
+@import './modules/ram.css';
+@import './modules/wireplumber.css';
+@import './modules/network.css';

@@ -1,14 +1,15 @@
 #workspaces {
   $icon_font_size: 24px;
-  $arch_icon_size: calc($icon_font_size + 2px);
+  $arch_icon_size: calc($icon_font_size + 4px);
 
   button {
     color: $foreground;
-    background-color: transparent;
+    background-color: $background;
     border-top: 3px solid transparent;
-    border-radius: 0px;
+    border-radius: $module_spacing;
 
-    padding: 5px 15px;
+    margin-right: 8px;
+    padding: 5px 25px;
     font-size: $icon_font_size;
 
     &:first-child {

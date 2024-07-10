@@ -23,17 +23,17 @@
   "clock": {
     "timezone": "America/Chicago",
     "tooltip-format": "<big>{calendar}</big>",
-    "format": "<span size='large'>{:%a, %d %b | %I:%M %p} |</span>",
+    "format": "<span size='large'>{:%a, %d %b %I:%M %p}</span>",
     "calendar": {
       "mode": "month",
       "format": {
         "months": "<span size='large'><b>{}</b></span>",
-        "today": "<span color='#12ff74'><b><u>{}</u></b></span>"
+        "today": "<span color='#50fa7b'><b><u>{}</u></b></span>"
       }
     }
   },
   "wireplumber": {
-    "format": "{volume}% <span size='large'>{icon} </span>",
+    "format": "{volume}% <span size='x-large' rise='-4pt'>{icon}</span>",
     "format-muted": "",
     "format-icons": {
       "default": [
@@ -44,12 +44,17 @@
     },
     "on-click": "pavucontrol"
   },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
   "tray": {
     "icon-size": 21,
     "spacing": 10
   },
   "idle_inhibitor": {
-    "format": "<span size='large'>{icon} </span>",
+    "format": "<span size='x-large' rise='-3pt'>{icon}</span>",
     "format-icons": {
       "activated": "",
       "deactivated": ""
@@ -58,7 +63,7 @@
   },
   "keyboard-state": {
     "capslock": true,
-    "format": "| <span size='large'>{icon} </span>",
+    "format": "<span size='x-large' rise='-3pt'>{icon}</span>",
     "format-icons": {
       "locked": "󰬶",
       "unlocked": "󰬵"
@@ -66,15 +71,15 @@
   },
   "network": {
     "interface": "enp6s0",
-    "format": "| {bandwidthTotalBytes} <span size='large'>󰈀 </span>",
-    "format-disconnected": "<span color='#ff3e5e'>󰌙 </span>"
+    "format": "{bandwidthTotalBytes} <span size='x-large' rise='-3pt'>󰈀</span>",
+    "format-disconnected": "<span color='#ff3e5e'>󰌙</span>"
   },
   "cpu": {
-    "format": "| {avg_frequency} GHz <span size='large'>󰻠 </span>",
+    "format": "{avg_frequency} GHz <span size='x-large' rise='-3pt'></span>",
     "tooltip": false
   },
   "memory": {
-    "format": "| {percentage}% of {total}gb <span size='large'> </span>"
+    "format": "{percentage}% of {total}gb <span size='x-large' rise='-3pt'></span>"
   },
   "custom/screenshots": {
     "format": "{icon}",
@@ -86,7 +91,7 @@
   "custom/weather": {
     "exec": "$HOME/.local/scripts/get_weather.sh Chicago",
     "return-type": "json",
-    "format": "<span size='large'>{} |</span>",
+    "format": "<span size='large'>{}</span>",
     "tooltip": false,
     "interval": 3600
   },

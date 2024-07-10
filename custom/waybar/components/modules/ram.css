@@ -1,0 +1,7 @@
+#memory {
+  background-color: $background;
+  color: $orange;
+  margin-right: 0px;
+  border-top-right-radius: $module_spacing;
+  border-bottom-right-radius: $module_spacing;
+}

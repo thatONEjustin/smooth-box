@@ -4,7 +4,8 @@
 
 window {
   &#waybar {
-    background-color: $background;
+    /*background-color: $background;*/
+    background-color: transparent;
     border: none;
     color: $foreground;
   }

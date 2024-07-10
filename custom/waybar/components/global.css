@@ -18,3 +18,8 @@ $yellow: #f1fa8c;
  * */
 $text_font: "FiraCode Nerd Font";
 $icon_font: "SauceCodePro NFM, Regular";
+
+/*
+ * Spacing
+ * */
+$module_spacing: 8px;
