@@ -59,7 +59,9 @@ alias ln='ls -lahtr'
 
 # check if tmux and launch
 if [[ -z "$TMUX" ]]; then
-  tmux attach || tmux
+  # NOTE: For now I'm just going to run tmux willy nilly so I can be a tiling guy
+  # tmux attach || tmux
+  tmux
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
