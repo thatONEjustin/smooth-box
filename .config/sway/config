@@ -53,7 +53,7 @@ corner_radius 10
 gaps horizontal 5
 gaps vertical 0
 gaps inner 10
-smart_gaps on
+smart_gaps off
 smart_corner_radius enable
 
 ## Font settings
@@ -121,6 +121,7 @@ assign [app_id="Slack"] workspace 5
 
 assign [class="discord"] workspace 5
 assign [class="steam"] workspace 3
+assign [class="[(a-z\.)]+.discord-screenaudio"] workspace 3
 
 
 ### Idle configuration
