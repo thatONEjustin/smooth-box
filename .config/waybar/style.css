@@ -15,7 +15,6 @@
 }
 
 window#waybar {
-    /*background-color: $background;*/
     background-color: transparent;
     border: none;
     color: #f8f8f2;
@@ -31,7 +30,7 @@ window#waybar {
     border-radius: 8px;
 
     margin-right: 8px;
-    padding: 5px 25px;
+    padding: 0px 25px;
     font-size: 24px;
   }
 
@@ -59,8 +58,12 @@ window#waybar {
   }
 
 .modules-center .module, .modules-right .module {
-      padding: 0 8px;
+      padding: 0 calc(8px * 1);
     }
+
+.modules-left {
+    margin-left: 8px;
+  }
 
 .modules-center {
     background-color: #282a36;
@@ -70,6 +73,10 @@ window#waybar {
 .modules-right {
     margin-right: 8px;
   }
+
+.modules-right .module {
+      padding: 0 calc(8px * 1.5);
+    }
 
 .modules-right .module {
     margin-right: 4px;
@@ -137,5 +144,13 @@ window#waybar {
 #network {
   background-color: #282a36;
   color: #ff79c6;
+}
+
+#custom-weather {
+  color: #ff79c6;
+}
+
+#clock {
+  color: #f1fa8c;
 }
 

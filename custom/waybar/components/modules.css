@@ -4,3 +4,6 @@
 @import './modules/ram.css';
 @import './modules/wireplumber.css';
 @import './modules/network.css';
+@import './modules/custom-weather.css';
+@import './modules/clock.css';
+

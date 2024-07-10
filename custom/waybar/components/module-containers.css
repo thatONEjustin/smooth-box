@@ -1,4 +1,3 @@
-
 .modules {
   &-left,
   &-center,
@@ -10,8 +9,12 @@
   &-center,
   &-right {
     .module {
-      padding: 0 $module_spacing;
+      padding: 0 calc($module_spacing * 1);
     }
+  }
+
+  &-left {
+    margin-left: $module_spacing;
   }
 
   &-center {
@@ -21,6 +24,10 @@
 
   &-right {
     margin-right: $module_spacing;
+
+    .module {
+      padding: 0 calc($module_spacing * 1.5);
+    }
   }
 }
 
