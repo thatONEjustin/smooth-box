@@ -70,7 +70,7 @@ client.background $bg
 
 ## Output configuration
 ### output <display> <type> <path/to/wallpaper.jpg> <fill, fit, stretch, center, tile>
-output $main_monitor bg $bg_path/$main_wallpaper fit
+# output $main_monitor bg $bg_path/$main_wallpaper fit
 
 ## You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 {
@@ -111,6 +111,8 @@ for_window [app_id="pavucontrol"] $popup
 for_window [app_id="blueman-manager"] $popup
 for_window [app_id="timer-for-harvest"] $popup
 for_window [app_id="[(a-z\.)]+.Calculator"] $popup
+for_window [app_id="waypaper"] $popup
+
 
 ## this sets up idle rules 
 for_window [app_id=".*"] $idle
