@@ -55,6 +55,7 @@ gaps vertical 0
 gaps inner 10
 smart_gaps off
 smart_corner_radius enable
+default_border none
 
 ## Font settings
 font pango:$font $font_size
@@ -85,6 +86,7 @@ output DP-2 {
     transform 270
 }
 
+# TV 
 output HDMI-A-1 {
     pos 3640 0
     res 1920x1080
@@ -101,7 +103,7 @@ workspace $workspace6 output $TV
 
 ## Window rules
 set {
-  $idle inhibit_idle fullscreen
+  $idle inhibit_idle fullscreen;
   $popup floating enable; shadows enable;
   $scratch scratchpad
 }
@@ -124,7 +126,6 @@ assign [app_id="Slack"] workspace 5
 assign [class="discord"] workspace 5
 assign [class="steam"] workspace 3
 assign [class="[(a-z\.)]+.discord-screenaudio"] workspace 3
-
 
 ### Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh

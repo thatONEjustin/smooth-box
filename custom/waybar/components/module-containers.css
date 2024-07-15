@@ -18,8 +18,7 @@
   }
 
   &-center {
-    background-color: $background;
-    border-radius: $module_spacing;
+    /*border-radius: $module_spacing;*/
   }
 
   &-right {
@@ -27,12 +26,31 @@
 
     .module {
       padding: 0 calc($module_spacing * 1.5);
+      /*margin-right: 4px;*/
     }
   }
 }
 
-.modules-right {
-  .module {
-    margin-right: 4px;
+.DP-1 {
+  .modules {
+    &-center {
+      background-color: $background;
+      border-radius: $module_spacing;
+    }
+  }
+}
+
+.HDMI-A-1 {
+  .modules {
+    &-left,
+    &-center,
+    &-right {
+      margin-top: 10px;
+    }
+
+    &-right {
+      background-color: $background;
+      border-radius: $module_spacing;
+    }
   }
 }
