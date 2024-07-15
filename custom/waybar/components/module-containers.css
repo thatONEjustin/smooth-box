@@ -32,10 +32,23 @@
 }
 
 .DP-1 {
-  .modules {
-    &-center {
+  &.bottom {
+    .modules {
+      &-center {
+        background-color: $background;
+        border-radius: $module_spacing;
+      }
+    }
+  }
+}
+
+/*
+ * This is the only way I've gotten a whole section to render a bg
+ */
+window#waybar {
+  &.top {
+    &.DP-1 {
       background-color: $background;
-      border-radius: $module_spacing;
     }
   }
 }
@@ -48,7 +61,9 @@
       margin-top: 10px;
     }
 
+    &-left,
     &-right {
+      padding: $module_spacing 0;
       background-color: $background;
       border-radius: $module_spacing;
     }

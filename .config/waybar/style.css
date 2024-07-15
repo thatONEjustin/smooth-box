@@ -78,9 +78,17 @@ window#waybar {
       /*margin-right: 4px;*/
     }
 
-.DP-1 .modules-center {
+.DP-1.bottom .modules-center {
+        background-color: #282a36;
+        border-radius: 8px;
+      }
+
+/*
+ * This is the only way I've gotten a whole section to render a bg
+ */
+
+window#waybar.top.DP-1 {
       background-color: #282a36;
-      border-radius: 8px;
     }
 
 .HDMI-A-1 .modules-left,
@@ -89,7 +97,9 @@ window#waybar {
       margin-top: 10px;
     }
 
-.HDMI-A-1 .modules-right {
+.HDMI-A-1 .modules-left,
+    .HDMI-A-1 .modules-right {
+      padding: 8px 0;
       background-color: #282a36;
       border-radius: 8px;
     }
