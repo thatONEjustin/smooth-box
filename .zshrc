@@ -44,6 +44,11 @@ if [[ $(uname) == "Darwin" ]]; then
   # homebrew
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+  # check if tmux and launch
+  if [[ -z "$TMUX" ]]; then
+    tmux attach || tmux
+  fi
 fi
 
 # OS agnostic aliases
@@ -56,13 +61,6 @@ alias ll='ls -lahtr'
 
 alias ll='ls -lah'
 alias ln='ls -lahtr'
-
-# check if tmux and launch
-if [[ -z "$TMUX" ]]; then
-  # NOTE: For now I'm just going to run tmux willy nilly so I can be a tiling guy
-  # tmux attach || tmux
-  tmux
-fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
