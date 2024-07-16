@@ -32,6 +32,7 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
   if command -v sway > /dev/null; then
+    alias getdisplays='swaymsg -t get_outputs'
     alias getids='swaymsg -t get_tree'
     alias wayreset='killall -SIGUSR2 waybar &!'
   fi

@@ -6,6 +6,8 @@ set $main_wallpaper nightwing-blue.jpg
 set $font 'FiraCode Nerd Font Mono'
 set $font_size 12
 
+set $resize 20px
+
 ## colors
 set $bg #282a36
 set $fg #f8f8f2
@@ -121,11 +123,11 @@ for_window [app_id=".*"] $idle
 
 ### Workspace app assignments
 # assign [app_id="[(a-z\.)]+.wezterm"] workspace 2
-assign [app_id="Slack"] workspace 5
+assign [app_id="Slack"] workspace $workspace5
 
-assign [class="discord"] workspace 5
-assign [class="steam"] workspace 3
-assign [class="[(a-z\.)]+.discord-screenaudio"] workspace 3
+assign [class="discord"] workspace $workspace5
+assign [class="steam"] workspace $workspace3
+assign [class="[(a-z\.)]+.discord-screenaudio"] workspace $workspace3  
 
 ### Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh
@@ -220,16 +222,16 @@ bindsym $mod+a focus parent
 
 ## Resize mode bindings
 mode "resize" {
-  bindsym $left resize shrink width 10px
-  bindsym $down resize grow height 10px
-  bindsym $up resize shrink height 10px
-  bindsym $right resize grow width 10px
+  bindsym $left resize shrink width $resize
+  bindsym $down resize grow height $resize
+  bindsym $up resize shrink height $resize
+  bindsym $right resize grow width $resize
 
   ## Ditto, with arrow keys
-  bindsym Left resize shrink width 10px
-  bindsym Down resize grow height 10px
-  bindsym Up resize shrink height 10px
-  bindsym Right resize grow width 10px
+  bindsym Left resize shrink width $resize
+  bindsym Down resize grow height $resize
+  bindsym Up resize shrink height $resize
+  bindsym Right resize grow width $resize
 
   ## Return to default mode
   bindsym Return mode "default"
