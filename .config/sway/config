@@ -122,12 +122,12 @@ for_window [app_id="waypaper"] $popup
 for_window [app_id=".*"] $idle
 
 ### Workspace app assignments
-# assign [app_id="[(a-z\.)]+.wezterm"] workspace 2
 assign [app_id="Slack"] workspace $workspace5
 
 assign [class="discord"] workspace $workspace5
+assign [class="vesktop"] workspace $workspace5
+
 assign [class="steam"] workspace $workspace3
-assign [class="[(a-z\.)]+.discord-screenaudio"] workspace $workspace3  
 
 ### Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh
