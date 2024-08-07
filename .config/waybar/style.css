@@ -1,28 +1,22 @@
 /*
  * Dracula color scheme
  * */
-
 /*
  * Fonts
  * */
-
 /*
  * Spacing
  * */
-
 * {
   font-family: "SauceCodePro NFM, Regular";
 }
-
 window#waybar {
     background-color: transparent;
     border: none;
     color: #f8f8f2;
   }
-
 #workspaces {
 }
-
 #workspaces button {
     color: #f8f8f2;
     background-color: #282a36;
@@ -33,86 +27,69 @@ window#waybar {
     padding: 0px 25px;
     font-size: 24px;
   }
-
 #workspaces button:first-child {
       font-size: calc(24px + 4px);
     }
-
 #workspaces button.focused {
       border-top: 3px solid #8be9fd;
       background-color: #44475a;
       color: #8be9fd;
     }
-
 #workspaces button:hover {
       background-color: #44475a;
       box-shadow: none;
       border-top: 3px solid #f8f8f2;
     }
-
 .modules-left,
   .modules-center,
   .modules-right {
     padding: 0 8px;
   }
-
 .modules-center .module, .modules-right .module {
       padding: 0 calc(8px * 1);
     }
-
 .modules-left {
     margin-left: 8px;
   }
-
 .modules-center {
     /*border-radius: $module_spacing;*/
   }
-
 .modules-right {
     margin-right: 8px;
   }
-
 .modules-right .module {
       padding: 0 calc(8px * 1.5);
       /*margin-right: 4px;*/
     }
-
-.DP-1.bottom .modules-left,
-      .DP-1.bottom .modules-center,
-      .DP-1.bottom .modules-right {
+.DP-3.bottom .modules-left,
+      .DP-3.bottom .modules-center,
+      .DP-3.bottom .modules-right {
         margin-bottom: 10px;
       }
-
-.DP-1.bottom .modules-center {
+.DP-3.bottom .modules-center {
         background-color: #282a36;
         border-radius: 8px;
       }
-
 /*
  * This is the only way I've gotten a whole section to render a bg
  */
-
-window#waybar.top.DP-1 {
+window#waybar.top..DP-3 {
       background-color: #282a36;
     }
-
 .HDMI-A-1 .modules-left,
     .HDMI-A-1 .modules-center,
     .HDMI-A-1 .modules-right {
       margin-top: 10px;
     }
-
 .HDMI-A-1 .modules-left,
     .HDMI-A-1 .modules-right {
       padding: 8px 0;
       background-color: #282a36;
       border-radius: 8px;
     }
-
 #pulseaudio-slider {
   background-color: #282a36;
 }
-
 #pulseaudio-slider slider {
     min-height: 0px;
     min-width: 0px;
@@ -122,36 +99,30 @@ window#waybar.top.DP-1 {
     box-shadow: none;
     background-color: #8be9fd;
   }
-
 #pulseaudio-slider trough {
     min-height: 5px;
     min-width: 100px;
     border-radius: 5px;
     background-color: shade(#282a36, 2.5);
   }
-
 #pulseaudio-slider highlight {
     min-width: 10px;
     border-radius: 5px;
     background-color: alpha(#8be9fd, 0.3);
   }
-
 #keyboard-state label.locked span+span {
     color: #ff5555;
   }
-
 @keyframes blink {
   to {
     background-color: #ff5555;
     color: #282a36;
   }
 }
-
 #cpu {
   background-color: #282a36;
   color: #8be9fd;
 }
-
 #memory {
   background-color: #282a36;
   color: #f1fa8c;
@@ -159,7 +130,6 @@ window#waybar.top.DP-1 {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-
 #wireplumber {
   background-color: #282a36;
   color: #ffb86c;
@@ -167,20 +137,16 @@ window#waybar.top.DP-1 {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-
 #network {
   background-color: #282a36;
   color: #ff79c6;
 }
-
 #custom-weather {
   color: #ff79c6;
 }
-
 #clock {
   color: #f1fa8c;
 }
-
 #window {
   font-family: "FiraCode Nerd Font";
 }

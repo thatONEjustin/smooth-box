@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # fix_zsh_history.sh
 
 cd ~

@@ -1,6 +1,9 @@
 /*
  * Dracula color scheme
  * */
+$main_monitor: .DP-3;
+$vert_monitor: .DP-1;
+$TV: .HDMI-A-1;
 
 $background: #282a36;
 $foreground: #f8f8f2;

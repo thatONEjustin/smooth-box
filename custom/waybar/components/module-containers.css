@@ -30,7 +30,7 @@
   }
 }
 
-.DP-1 {
+$main_monitor {
   &.bottom {
     .modules {
       &-left,
@@ -52,13 +52,13 @@
  */
 window#waybar {
   &.top {
-    &.DP-1 {
+    &.$main_monitor {
       background-color: $background;
     }
   }
 }
 
-.HDMI-A-1 {
+$TV {
   .modules {
     &-left,
     &-center,

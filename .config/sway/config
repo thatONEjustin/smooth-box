@@ -38,7 +38,7 @@ set $browser chromium
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
 
 ## Monitor/GPU xrandr outputs
-set $main_monitor DP-2
+set $main_monitor DP-3
 set $vert_monitor DP-1
 # set $TV HDMI-A-1
 
@@ -48,7 +48,7 @@ set $workspace2 2
 set $workspace3 3
 set $workspace4 4
 set $workspace5 5
-set $workspace6 TV
+# set $workspace6 TV
 
 ## Gaps Definition
 corner_radius 10
@@ -76,20 +76,20 @@ client.background $bg
 # output $main_monitor bg $bg_path/$main_wallpaper fit
 
 ## You can get the names of your outputs by running: swaymsg -t get_outputs
-output DP-1 {
+output $main_monitor {
     pos 1080 0 
     res 2560x1440@144Hz 
     adaptive_sync on
 }
 
-output DP-2 {
+output $vert_monitor {
     pos 0 0 
     res 1920x1080 
     transform 270
 }
 
 # TV 
-# output HDMI-A-1 {
+# output $TV {
 #     pos 3640 0
 #     res 1920x1080
 # }
