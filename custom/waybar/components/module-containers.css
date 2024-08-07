@@ -3,7 +3,6 @@
   &-center,
   &-right {
     padding: 0 $module_spacing;
-    margin-bottom: 10px;
   }
 
   &-center,
@@ -34,6 +33,12 @@
 .DP-1 {
   &.bottom {
     .modules {
+      &-left,
+      &-center,
+      &-right {
+        margin-bottom: 10px;
+      }
+
       &-center {
         background-color: $background;
         border-radius: $module_spacing;

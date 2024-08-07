@@ -36,6 +36,7 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     alias getdisplays='swaymsg -t get_outputs'
     alias getids='swaymsg -t get_tree'
     alias wayreset='killall -SIGUSR2 waybar &!'
+    alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
   fi
 
 fi
@@ -97,7 +98,7 @@ fi
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git fd fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
+plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 # TODO: Move away from p10k
 #

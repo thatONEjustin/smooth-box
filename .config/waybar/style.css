@@ -54,7 +54,6 @@ window#waybar {
   .modules-center,
   .modules-right {
     padding: 0 8px;
-    margin-bottom: 10px;
   }
 
 .modules-center .module, .modules-right .module {
@@ -77,6 +76,12 @@ window#waybar {
       padding: 0 calc(8px * 1.5);
       /*margin-right: 4px;*/
     }
+
+.DP-1.bottom .modules-left,
+      .DP-1.bottom .modules-center,
+      .DP-1.bottom .modules-right {
+        margin-bottom: 10px;
+      }
 
 .DP-1.bottom .modules-center {
         background-color: #282a36;
@@ -174,5 +179,9 @@ window#waybar.top.DP-1 {
 
 #clock {
   color: #f1fa8c;
+}
+
+#window {
+  font-family: "FiraCode Nerd Font";
 }
 

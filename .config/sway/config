@@ -38,9 +38,9 @@ set $browser chromium
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
 
 ## Monitor/GPU xrandr outputs
-set $main_monitor DP-1
-set $vert_monitor DP-2
-set $TV HDMI-A-1
+set $main_monitor DP-2
+set $vert_monitor DP-1
+# set $TV HDMI-A-1
 
 ## Workspaces
 set $workspace1 1
@@ -89,10 +89,10 @@ output DP-2 {
 }
 
 # TV 
-output HDMI-A-1 {
-    pos 3640 0
-    res 1920x1080
-}
+# output HDMI-A-1 {
+#     pos 3640 0
+#     res 1920x1080
+# }
 
 ## Workspaces 
 workspace $workspace1 output $main_monitor
@@ -101,7 +101,7 @@ workspace $workspace3 output $main_monitor
 workspace $workspace4 output $main_monitor
 
 workspace $workspace5 output $vert_monitor
-workspace $workspace6 output $TV
+# workspace $workspace6 output $TV
 
 ## Window rules
 set {
@@ -122,7 +122,7 @@ for_window [app_id="waypaper"] $popup
 for_window [app_id=".*"] $idle
 
 ### Workspace app assignments
-assign [app_id="Slack"] workspace $workspace5
+assign [class="Slack"] workspace $workspace5
 
 assign [class="discord"] workspace $workspace5
 assign [class="vesktop"] workspace $workspace5
