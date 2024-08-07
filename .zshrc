@@ -1,6 +1,7 @@
 # NOTE: $PATH variable
 export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
+
 # NOTE: zsh path
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -35,6 +36,15 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     alias getdisplays='swaymsg -t get_outputs'
     alias getids='swaymsg -t get_tree'
     alias wayreset='killall -SIGUSR2 waybar &!'
+  fi
+
+  if [ -d "/home/linuxbrew" ]; then
+    export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+    export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+    export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
+    export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
+    export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
   fi
 fi
 
@@ -90,7 +100,7 @@ plugins=(git fd fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlig
 #
 # powerlevel10k prompt
 # source /usr/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
-ZSH_THEME="powerlevel10k/powerlevel10k" 
+# ZSH_THEME="powerlevel10k/powerlevel10k" 
 
 # NOTE: ZSH_HIST settings so we remove dupes
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -104,3 +114,4 @@ setopt HIST_SAVE_NO_DUPS
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source $ZSH/oh-my-zsh.sh
+
