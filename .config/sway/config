@@ -38,9 +38,9 @@ set $browser chromium
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
 
 ## Monitor/GPU xrandr outputs
-set $main_monitor DP-3
-set $vert_monitor DP-1
-# set $TV HDMI-A-1
+set $main_monitor DP-1
+set $vert_monitor DP-2
+set $TV HDMI-A-1
 
 ## Workspaces
 set $workspace1 1
@@ -48,7 +48,7 @@ set $workspace2 2
 set $workspace3 3
 set $workspace4 4
 set $workspace5 5
-# set $workspace6 TV
+set $workspace6 TV
 
 ## Gaps Definition
 corner_radius 10
@@ -89,10 +89,10 @@ output $vert_monitor {
 }
 
 # TV 
-# output $TV {
-#     pos 3640 0
-#     res 1920x1080
-# }
+output $TV {
+    pos 3640 0
+    res 1920x1080
+}
 
 ## Workspaces 
 workspace $workspace1 output $main_monitor
@@ -101,7 +101,7 @@ workspace $workspace3 output $main_monitor
 workspace $workspace4 output $main_monitor
 
 workspace $workspace5 output $vert_monitor
-# workspace $workspace6 output $TV
+workspace $workspace6 output $TV
 
 ## Window rules
 set {

@@ -61,19 +61,19 @@ window#waybar {
       padding: 0 calc(8px * 1.5);
       /*margin-right: 4px;*/
     }
-.DP-3.bottom .modules-left,
-      .DP-3.bottom .modules-center,
-      .DP-3.bottom .modules-right {
+.DP-1.bottom .modules-left,
+      .DP-1.bottom .modules-center,
+      .DP-1.bottom .modules-right {
         margin-bottom: 10px;
       }
-.DP-3.bottom .modules-center {
+.DP-1.bottom .modules-center {
         background-color: #282a36;
         border-radius: 8px;
       }
 /*
  * This is the only way I've gotten a whole section to render a bg
  */
-window#waybar.top..DP-3 {
+window#waybar.top..DP-1 {
       background-color: #282a36;
     }
 .HDMI-A-1 .modules-left,
