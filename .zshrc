@@ -49,6 +49,8 @@ if uname -r | grep -q 'microsoft' ; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
     export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
     export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
+
+    eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
   fi
 fi
 
@@ -72,7 +74,6 @@ alias zedit='nvim $HOME/.zshrc'
 alias tedit='nvim $HOME/.tmux.conf'
 alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
-alias ll='ls -lahtr'
 
 alias ll='ls -lah'
 alias ln='ls -lahtr'
@@ -104,7 +105,8 @@ plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighti
 #
 # powerlevel10k prompt
 # source /usr/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
-ZSH_THEME="powerlevel10k/powerlevel10k" 
+# ZSH_THEME="powerlevel10k/powerlevel10k" 
+
 
 # NOTE: ZSH_HIST settings so we remove dupes
 setopt HIST_EXPIRE_DUPS_FIRST
