@@ -1,7 +1,6 @@
 # NOTE: $PATH variable
 export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
-
 # NOTE: zsh path
 export ZSH="$HOME/.oh-my-zsh"
 
