@@ -4,6 +4,14 @@ export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin
 # NOTE: zsh path
 export ZSH="$HOME/.oh-my-zsh"
 
+# NOTE: ZSH_HIST settings so we remove dupes
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 # NOTE: neovim please
 export VISUAL=nvim
 export EDITOR=nvim
@@ -27,6 +35,7 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+
 # NOTE: generic linux detection
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
@@ -49,17 +58,17 @@ if uname -r | grep -q 'microsoft' ; then
     export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
     export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
-    eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
   fi
 fi
 
 # NOTE: macOS detection
 if [[ $(uname) == "Darwin" ]]; then
-  alias sketchyreload='sketchybar --reload'
+  # alias sketchyreload='sketchybar --reload'
 
   # homebrew
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
   # check if tmux and launch
   if [[ -z "$TMUX" ]]; then
@@ -97,25 +106,21 @@ fi
 # bun completions
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
 
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 # TODO: Move away from p10k
 #
 # powerlevel10k prompt
 # source /usr/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
-# ZSH_THEME="powerlevel10k/powerlevel10k" 
+if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
+  ZSH_THEME="powerlevel10k/powerlevel10k" 
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+else 
+  # NOTE: should only effect WSL
 
+  eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
+fi
 
-# NOTE: ZSH_HIST settings so we remove dupes
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
