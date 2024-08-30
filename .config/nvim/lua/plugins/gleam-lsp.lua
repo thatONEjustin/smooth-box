@@ -3,7 +3,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        gleam = {},
+        gleam = {
+          enabled = true,
+        },
       },
     },
   },
