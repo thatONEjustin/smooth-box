@@ -3,13 +3,31 @@ return {
   cmd = { "TodoTrouble", "TodoTelescope" },
   event = "LazyFile",
   opts = {
+    sign_priority = 16, -- sign priority
+    keywords = {
+      FIXED = {
+        icon = "󰄯 ", -- icon used for the sign, and in search results
+        color = "#50FA7B", -- can be a hex color, or a named color (see below)
+        -- signs = false, -- configure signs for some keywords individually
+      },
+      TODO = { icon = "󰄰 ", color = "test" },
+      HACK = { icon = " ", color = "#BD93F9" },
+      WARN = { icon = " ", color = "#F1FA8C", alt = { "WARNING", "XXX" } },
+      NOTE = { icon = " ", color = "default" },
+      TEST = { icon = "󰇉 ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+    },
     colors = {
-      error = { "DiagnosticError", "ErrorMsg", "#ff5555" },
-      warning = { "DiagnosticWarn", "WarningMsg", "#f1fa8c" },
-      info = { "DiagnosticInfo", "#8be9fd" },
-      hint = { "DiagnosticHint", "#50fa7b" },
-      default = { "Identifier", "#bd93f9" },
-      test = { "Identifier", "#ff79c6" },
+      test = { "TestIdentifier", "#FF79C6" },
+
+      -- FIX: text
+      -- -- BUG: ALT
+      -- FIXED: completed
+      -- TODO: text
+      -- HACK: text
+      -- WARN: text
+      -- -- XXX: this alt works
+      -- NOTE: text identifier should assign "hint"
+      -- -- INFO: this alt works
     },
   },
   -- stylua: ignore
