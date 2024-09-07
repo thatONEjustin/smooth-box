@@ -6,7 +6,19 @@
     "margin-top": 0, 
     "reload_style_on_change": true,
     "include" : [
-      "$HOME/.config/waybar/modules.json"
+      "$HOME/.config/waybar/modules/workspaces.json",
+      "$HOME/.config/waybar/modules/taskbar.json",
+      "$HOME/.config/waybar/modules/clock.json",
+      "$HOME/.config/waybar/modules/wireplumber.json",
+      "$HOME/.config/waybar/modules/audio_slider.json",
+      "$HOME/.config/waybar/modules/tray.json",
+      "$HOME/.config/waybar/modules/idle_inhibitor.json",
+      "$HOME/.config/waybar/modules/keyboard-state.json",
+      "$HOME/.config/waybar/modules/cpu.json",
+      "$HOME/.config/waybar/modules/memory.json",
+      "$HOME/.config/waybar/modules/screenshots.json",
+      "$HOME/.config/waybar/modules/weather.json",
+      "$HOME/.config/waybar/modules/window.json"
     ],
     "modules-left": [
       "sway/workspaces"

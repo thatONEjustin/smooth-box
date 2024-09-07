@@ -1,6 +1,6 @@
 # User settings
 set $bg_path ~/.local/share/backgrounds/smoothverse
-set $main_wallpaper nightwing-blue.jpg
+# set $main_wallpaper nightwing-blue.jpg
 
 ## font
 set $font 'FiraCode Nerd Font Mono'
@@ -47,8 +47,9 @@ set $workspace1 1
 set $workspace2 2
 set $workspace3 3
 set $workspace4 4
-set $workspace5 5
+set $workspace5 VERT
 set $workspace6 TV
+set $workspace7 GAMES
 
 ## Gaps Definition
 corner_radius 10
@@ -102,35 +103,12 @@ workspace $workspace4 output $main_monitor
 
 workspace $workspace5 output $vert_monitor
 workspace $workspace6 output $TV
-
-## Window rules
-set {
-  $idle inhibit_idle fullscreen;
-  $popup floating enable; shadows enable;
-  $scratch scratchpad
-}
-
-## Popup assignments
-for_window [app_id="pavucontrol"] $popup
-for_window [app_id="blueman-manager"] $popup
-for_window [app_id="timer-for-harvest"] $popup
-for_window [app_id="[(a-z\.)]+.Calculator"] $popup
-for_window [app_id="waypaper"] $popup
-
-
-## this sets up idle rules 
-for_window [app_id=".*"] $idle
-
-### Workspace app assignments
-assign [class="Slack"] workspace $workspace5
-
-assign [class="discord"] workspace $workspace5
-assign [class="vesktop"] workspace $workspace5
-
-assign [class="steam"] workspace $workspace3
+workspace $workspace7 output $main_monitor
 
 ### Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh
+exec swww-daemon
+
 
 # Key bindings
 
@@ -185,6 +163,7 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
+bindsym $mod+7 workspace $workspace7
 
 ## Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -193,6 +172,7 @@ bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
 
 ## Sway has a "scratchpad", which is a bag of holding for windows.
 bindsym $mod+Shift+minus move scratchpad
@@ -239,6 +219,36 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+
+## Window rules
+set {
+  $idle inhibit_idle fullscreen;
+  $popup floating enable; shadows enable;
+  $scratch scratchpad
+}
+
+## Popup assignments
+for_window [app_id="pavucontrol"] $popup
+for_window [app_id="blueman-manager"] $popup
+for_window [app_id="timer-for-harvest"] $popup
+for_window [app_id="[(a-z\.)]+.Calculator"] $popup
+for_window [app_id="waypaper"] $popup
+for_window [con_mark="Friends List" class="(steam)"] $popup
+for_window [class="steam_.*"] floating disable; fullscreen enable;
+
+
+## this sets up idle rules 
+for_window [app_id=".*"] $idle
+
+### Workspace app assignments
+assign [class="Slack"] workspace $workspace5
+
+assign [class="discord"] workspace $workspace5
+assign [class="vesktop"] workspace $workspace5
+
+assign [class="(steam)"] workspace $workspace3
+assign [class="steam_.*"] workspace $workspace7;
 
 ## waybar setup
 bar {
