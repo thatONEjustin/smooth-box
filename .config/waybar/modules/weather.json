@@ -1,0 +1,9 @@
+{
+  "custom/weather": {
+    "exec": "$HOME/.local/scripts/get_weather.sh Chicago",
+    "return-type": "json",
+    "format": "<span size='large'>{}</span>",
+    "tooltip": false,
+    "interval": 3600
+  }
+}

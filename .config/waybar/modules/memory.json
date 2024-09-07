@@ -1,0 +1,5 @@
+{
+  "memory": {
+    "format": "{percentage}% of {total}gb <span size='x-large' rise='-3pt'></span>"
+  }
+}

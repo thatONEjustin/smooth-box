@@ -1,0 +1,16 @@
+{
+  "sway/workspaces": {
+    "format": "<span size='x-large'>{icon}</span>",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󱄄",
+      "4": "󰅏",
+      "VERT": "",
+      "GAMES": "󰓓",
+      "TV": "",
+      "urgent": ""
+    },
+    "on-click": "activate"
+  }
+}

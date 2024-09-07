@@ -1,0 +1,9 @@
+{
+  "custom/screenshots": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "󰿁"
+    },
+    "on-click": "grim -g \"$(slurp)\""
+  }
+}

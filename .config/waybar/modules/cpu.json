@@ -1,0 +1,6 @@
+{
+  "cpu": {
+    "format": "{avg_frequency} GHz <span size='x-large' rise='-3pt'></span>",
+    "tooltip": false
+  }
+}

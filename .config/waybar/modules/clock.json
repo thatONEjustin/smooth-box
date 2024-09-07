@@ -1,0 +1,14 @@
+{
+  "clock": {
+    "timezone": "America/Chicago",
+    "tooltip-format": "<big>{calendar}</big>",
+    "format": "<span size='large'>{:%a, %d %b %I:%M %p}</span>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span size='large'><b>{}</b></span>",
+        "today": "<span color='#50fa7b'><b><u>{}</u></b></span>"
+      }
+    }
+  }
+}

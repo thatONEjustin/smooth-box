@@ -1,0 +1,7 @@
+{
+  "network": {
+    "interface": "enp6s0",
+    "format": "{bandwidthTotalBytes} <span size='x-large' rise='-3pt'>󰈀</span>",
+    "format-disconnected": "<span color='#ff3e5e'>󰌙</span>"
+  }
+}

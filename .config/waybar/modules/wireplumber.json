@@ -1,0 +1,14 @@
+{
+  "wireplumber": {
+    "format": "{volume}% <span size='x-large' rise='-4pt'>{icon}</span>",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  }
+}

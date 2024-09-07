@@ -1,0 +1,10 @@
+{
+  "keyboard-state": {
+    "capslock": true,
+    "format": "<span size='x-large' rise='-3pt'>{icon}</span>",
+    "format-icons": {
+      "locked": "󰬶",
+      "unlocked": "󰬵"
+    }
+  }
+}
