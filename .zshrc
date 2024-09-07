@@ -35,20 +35,7 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-
-# NOTE: generic linux detection
-if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
-  alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
-
-  if command -v sway > /dev/null; then
-    alias getdisplays='swaymsg -t get_outputs'
-    alias getids='swaymsg -t get_tree'
-    alias wayreset='killall -SIGUSR2 waybar &!'
-    alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
-  fi
-
-fi
-
+# NOTE: WSL / windows detection
 if uname -r | grep -q 'microsoft' ; then
   if [ -d "/home/linuxbrew" ]; then
     export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
@@ -90,6 +77,22 @@ alias nedit='$HOME/.config/nvim/ && nvim .'
 
 alias ll='ls -lah'
 alias ln='ls -lahtr'
+
+# NOTE: linux specific aliases
+if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
+  # NOTE: Generic
+  alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
+
+  # NOTE: swayfx
+  if command -v sway > /dev/null; then
+    alias getdisplays='swaymsg -t get_outputs'
+    alias getids='swaymsg -t get_tree'
+    alias wayreset='killall -SIGUSR2 waybar &!'
+    alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
+    alias swayedit='nvim $HOME/.config/sway'
+  fi
+
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
