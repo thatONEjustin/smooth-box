@@ -26,6 +26,6 @@ This has been entirely replaced by GNU Stow. Its why there's a giant structure c
 
 ```shell
 $ brew install stow
-$ git clone this-repo
+$ git clone https://github.com/thatONEjustin/smooth-box.git
 $ stow --target="$HOME" --dir="$HOME/github/smooth-box" .
 ```
