@@ -47,7 +47,7 @@ set $workspace1 1
 set $workspace2 2
 set $workspace3 3
 set $workspace4 4
-set $workspace5 VERT
+set $workspace5 5
 set $workspace6 TV
 set $workspace7 GAMES
 
@@ -247,7 +247,7 @@ assign [class="Slack"] workspace $workspace5
 assign [class="discord"] workspace $workspace5
 assign [class="vesktop"] workspace $workspace5
 
-assign [class="(steam)"] workspace $workspace3
+assign [class="steam"] workspace $workspace3
 assign [class="steam_.*"] workspace $workspace7;
 
 ## waybar setup
