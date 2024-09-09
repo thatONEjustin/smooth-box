@@ -1,5 +1,14 @@
 # NOTE: $PATH variable
-export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
+# export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+fi
+
+if [ -s "/usr/bin/cargo" ]; then
+  export PATH=$HOME/.cargo/bin:$PATH
+fi
 
 # NOTE: zsh path
 export ZSH="$HOME/.oh-my-zsh"
