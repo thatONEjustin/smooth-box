@@ -99,8 +99,10 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     alias wayreset='killall -SIGUSR2 waybar &!'
     alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
     alias swayedit='nvim $HOME/.config/sway'
-  fi
 
+    export NNN_FIFO=/tmp/nnn.fifo
+    export NNN_PLUG='v:preview-tui'
+  fi
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
