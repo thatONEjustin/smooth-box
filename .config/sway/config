@@ -32,7 +32,7 @@ set $up k
 set $right l
 
 ## Applications
-set $menu rofi -show drun
+set $menu rofi -show drun -m 2
 set $term wezterm
 set $browser chromium
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
