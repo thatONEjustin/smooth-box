@@ -42,6 +42,10 @@ set $main_monitor DP-1
 set $vert_monitor DP-2
 set $TV HDMI-A-1
 
+## exec on sway start
+exec xrandr --output $main_monitor --primary
+
+
 ## Workspaces
 set $workspace1 1
 set $workspace2 2
@@ -225,6 +229,7 @@ bindsym $mod+r mode "resize"
 set {
   $idle inhibit_idle fullscreen;
   $popup floating enable; shadows enable;
+  $games floating disable; fullscreen enable;
   $scratch scratchpad
 }
 
@@ -235,7 +240,7 @@ for_window [app_id="timer-for-harvest"] $popup
 for_window [app_id="[(a-z\.)]+.Calculator"] $popup
 for_window [app_id="waypaper"] $popup
 for_window [con_mark="Friends List" class="(steam)"] $popup
-for_window [class="steam_.*"] floating disable; fullscreen enable;
+for_window [class="steam_app_.*"] $games
 
 
 ## this sets up idle rules 
@@ -248,7 +253,7 @@ assign [class="discord"] workspace $workspace5
 assign [class="vesktop"] workspace $workspace5
 
 assign [class="steam"] workspace $workspace3
-assign [class="steam_.*"] workspace $workspace7;
+assign [class="steam_app_.*"] workspace $workspace7
 
 ## waybar setup
 bar {

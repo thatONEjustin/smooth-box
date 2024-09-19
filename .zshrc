@@ -94,7 +94,8 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 
   # NOTE: swayfx
   if command -v sway > /dev/null; then
-    alias getdisplays='swaymsg -t get_outputs'
+    # alias getdisplays='swaymsg -t get_outputs'
+    alias getdisplays='xrandr --listmonitors'
     alias getids='swaymsg -t get_tree'
     alias wayreset='killall -SIGUSR2 waybar &!'
     alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
