@@ -10,10 +10,10 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- NOTE: import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
 
-    --coding.mini-surround
+    -- NOTE: import extras modules below
+
+    -- coding
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
 
     -- languages
@@ -32,7 +32,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.vue" },
 
-    -- import/override with your plugins
+    -- plugins folder
     { import = "plugins" },
   },
   defaults = {
