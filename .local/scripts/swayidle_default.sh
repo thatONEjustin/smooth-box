@@ -1,5 +1,5 @@
 #!/bin/bash
 
 swayidle -w \
-	timeout 1800 'systemctl suspend'
-# timeout 900 '$HOME/.local/scripts/swaylock_default.sh' \
+  timeout 900 '$HOME/.local/scripts/swaylock_default.sh' \
+  timeout 3600 'systemctl suspend'
