@@ -12,6 +12,7 @@
       "$HOME/.config/waybar/modules/wireplumber.json",
       "$HOME/.config/waybar/modules/audio_slider.json",
       "$HOME/.config/waybar/modules/tray.json",
+      "$HOME/.config/waybar/modules/bluetooth.json",
       "$HOME/.config/waybar/modules/idle_inhibitor.json",
       "$HOME/.config/waybar/modules/keyboard_state.json",
       "$HOME/.config/waybar/modules/cpu.json",

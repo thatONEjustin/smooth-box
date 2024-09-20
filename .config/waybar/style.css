@@ -110,6 +110,10 @@ window#waybar.top..DP-1 {
     border-radius: 5px;
     background-color: alpha(#8be9fd, 0.3);
   }
+#keyboard-state {
+  background-color: #282a36;
+  color: #8be9fd;
+}
 #keyboard-state label.locked span+span {
     color: #ff5555;
   }
@@ -146,6 +150,26 @@ window#waybar.top..DP-1 {
 }
 #clock {
   color: #f1fa8c;
+}
+#bluetooth {
+  background-color: #282a36;
+}
+#bluetooth.disabled,
+  #bluetooth.off {
+    color: #44475a;
+  }
+#bluetooth.on,
+  #bluetooth.connected {
+    color: #50fa7b;
+  }
+#bluetooth.discoverable,
+  #bluetooth.pairable {
+    color: #8be9fd;
+  }
+@keyframes blink {
+  to {
+    color: #ff5555;
+  }
 }
 #window {
   font-family: "FiraCode Nerd Font";

@@ -42,9 +42,6 @@ set $main_monitor DP-1
 set $vert_monitor DP-2
 set $TV HDMI-A-1
 
-## exec on sway start
-exec xrandr --output $main_monitor --primary
-
 
 ## Workspaces
 set $workspace1 1
@@ -108,10 +105,6 @@ workspace $workspace4 output $main_monitor
 workspace $workspace5 output $vert_monitor
 workspace $workspace6 output $TV
 workspace $workspace7 output $main_monitor
-
-### Idle configuration
-exec $HOME/.local/scripts/swayidle_default.sh
-exec swww-daemon
 
 
 # Key bindings
@@ -241,6 +234,8 @@ for_window [app_id="[(a-z\.)]+.Calculator"] $popup
 for_window [app_id="waypaper"] $popup
 for_window [con_mark="Friends List" class="(steam)"] $popup
 for_window [class="steam_app_.*"] $games
+# for_window [app_id="gamescope"] $games
+# for_window [con_mark="Steam"] $games
 
 
 ## this sets up idle rules 
@@ -254,12 +249,25 @@ assign [class="vesktop"] workspace $workspace5
 
 assign [class="steam"] workspace $workspace3
 assign [class="steam_app_.*"] workspace $workspace7
+# assign [app_id="gamescope"] workspace $workspace7
+# assign [con_mark="Steam"] workspace $workspace7
 
 ## waybar setup
 bar {
     swaybar_command waybar
     position bottom
 }
+
+# INFO: Exec scripts on sway startup
+
+## exec_always on sway start
+exec_always xrandr --output $main_monitor --primary
+
+## Idle configuration
+exec $HOME/.local/scripts/swayidle_default.sh
+exec swww-daemon
+# exec blueman-applet
+
 
 ## keep this at the bottom
 include /etc/sway/config.d/*
