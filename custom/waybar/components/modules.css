@@ -1,9 +1,10 @@
 @import './modules/audio-slider.css';
-@import './modules/keyboard-indicator.css';
+@import './modules/keyboard-state.css';
 @import './modules/cpu.css';
 @import './modules/ram.css';
 @import './modules/wireplumber.css';
 @import './modules/network.css';
 @import './modules/custom-weather.css';
 @import './modules/clock.css';
+@import './modules/bluetooth.css';
 @import './modules/sway-window.css';

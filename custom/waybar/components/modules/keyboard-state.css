@@ -1,4 +1,7 @@
 #keyboard-state {
+  background-color: $background;
+  color: $cyan;
+
   label.locked span+span {
     color: $red;
   }

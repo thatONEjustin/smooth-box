@@ -1,0 +1,24 @@
+#bluetooth {
+  background-color: $background;
+
+  &.disabled,
+  &.off {
+    color: $selection;
+  }
+
+  &.on,
+  &.connected {
+    color: $green;
+  }
+
+  &.discoverable,
+  &.pairable {
+    color: $cyan;
+  }
+}
+
+@keyframes blink {
+  to {
+    color: $red;
+  }
+}
