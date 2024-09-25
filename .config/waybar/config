@@ -45,6 +45,7 @@
     "position": "top",
     "height": 30,
     "margin-top": 0,
+    "mode": "invisible",
     "reload_style_on_change": false,
     "include" : [
     ],

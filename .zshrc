@@ -28,6 +28,7 @@ export EDITOR=nvim
 # NOTE: pager
 if command -v sway > /dev/null; then
   export MANPAGER="/usr/bin/most -s"
+
 fi
 
 # NOTE: personalized directories
@@ -47,10 +48,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # NOTE: WSL / windows detection
 if uname -r | grep -q 'microsoft' ; then
   if [ -d "/home/linuxbrew" ]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
     eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
   fi
 fi
@@ -62,6 +59,9 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
     export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
     export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
+
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # NOTE: macOS detection
@@ -142,6 +142,9 @@ else
   eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
 fi
 
+if command -V keychain > /dev/null; then
+  eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
+fi
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
