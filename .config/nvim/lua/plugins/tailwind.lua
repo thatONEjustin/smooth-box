@@ -5,6 +5,15 @@ return {
       servers = {
         tailwindcss = {
           enable = true,
+          lint = {
+            invalidApply = "ignore",
+          },
+        },
+        tailwindCSS = {
+          enable = true,
+          lint = {
+            invalidApply = "ignore",
+          },
         },
       },
     },
