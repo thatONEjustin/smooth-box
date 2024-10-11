@@ -9,12 +9,6 @@ return {
             invalidApply = "ignore",
           },
         },
-        tailwindCSS = {
-          enable = true,
-          lint = {
-            invalidApply = "ignore",
-          },
-        },
       },
     },
   },
