@@ -1,6 +1,7 @@
 # NOTE: $PATH variable
 # export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.deno/bin/deno:$PATH
 
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
@@ -145,6 +146,17 @@ fi
 if command -V keychain > /dev/null; then
   eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
 fi
+
+# NOTE: this is for local always on tmux
+# right now i'm using title bars + border indicators
+# to justify the use of tiling more and get used
+# to the navigation because more and more linux 
+# compatibility is happening.
+#
+# if [[ -z "$TMUX" ]]; then
+#   tmux attach || tmux
+# fi
+
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 

@@ -59,7 +59,7 @@ gaps vertical 0
 gaps inner 10
 smart_gaps off
 smart_corner_radius enable
-default_border none
+# default_border none
 
 ## Font settings
 font pango:$font $font_size
@@ -71,7 +71,7 @@ client.focused_inactive $bg     $bg     $fg     $cyan     $bg
 client.unfocused        $bg     $bg     $fg     $cyan     $bg
 #client.urgent          $br     $br     $fg     $bg       $br #currently not implemented
 #client.placeholder     $br     $br     $fg     $bg       $br #currently not implemented
-client.background $bg
+client.background       $bg
 
 ## Output configuration
 ### output <display> <type> <path/to/wallpaper.jpg> <fill, fit, stretch, center, tile>
