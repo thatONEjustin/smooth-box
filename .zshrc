@@ -1,5 +1,7 @@
 # NOTE: $PATH variable
 # export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
+#
+# TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.deno/bin/deno:$PATH
 
@@ -29,7 +31,6 @@ export EDITOR=nvim
 # NOTE: pager
 if command -v sway > /dev/null; then
   export MANPAGER="/usr/bin/most -s"
-
 fi
 
 # NOTE: personalized directories
@@ -156,6 +157,9 @@ fi
 # if [[ -z "$TMUX" ]]; then
 #   tmux attach || tmux
 # fi
+
+# TODO: Figure out if there's a better way to launch zsh
+# also worth considering moving shells but thats arbitrary
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
