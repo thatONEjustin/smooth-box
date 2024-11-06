@@ -55,15 +55,17 @@ if uname -r | grep -q 'microsoft' ; then
 fi
 
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
-    export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-    export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
-    export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
-    export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
-    export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
+  export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+  export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
+  export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
+  export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
+  export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  export GTK_THEME="Dracula"
+
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # NOTE: macOS detection
@@ -110,10 +112,11 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   fi
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# NOTE: supposedly this should go before the instant prompt call
+if command -V keychain > /dev/null; then
+  eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
 fi
+
 
 # NOTE: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
 # NOTE: Node Version Manager
@@ -141,15 +144,17 @@ fi
 # source /usr/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
 if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
   ZSH_THEME="powerlevel10k/powerlevel10k" 
+
+  # NOTE: instant prompt for p10k
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 else 
   # NOTE: should only effect WSL
 
   eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
-fi
-
-if command -V keychain > /dev/null; then
-  eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
 fi
 
 # NOTE: this is for local always on tmux
@@ -169,3 +174,5 @@ fi
 plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
+export PATH="/home/justinprime/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/justinprime/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
