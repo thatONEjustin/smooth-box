@@ -4,9 +4,50 @@ return {
     opts = {
       servers = {
         tailwindcss = {
-          enable = true,
           lint = {
+            cssConflict = "ignore",
+            unknownAtRules = "ignore",
             invalidApply = "ignore",
+          },
+          config = {
+            validate = true,
+            lint = {
+              cssConflict = "ignore",
+              unknownAtRules = "ignore",
+              invalidApply = "ignore",
+            },
+          },
+          settings = {
+            validate = true,
+            lint = {
+              cssConflict = "ignore",
+              unknownAtRules = "ignore",
+              invalidApply = "ignore",
+            },
+          },
+        },
+        svelte = {
+          css = {
+            enable = false,
+          },
+          plugin = {
+            css = {
+              enable = false,
+            },
+          },
+          config = {
+            plugin = {
+              css = {
+                enable = false,
+              },
+            },
+          },
+          settings = {
+            plugin = {
+              css = {
+                enable = false,
+              },
+            },
           },
         },
       },

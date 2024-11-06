@@ -126,6 +126,10 @@ if [ -d "$HOME/.rvm/scripts/" ]; then
   source $HOME/.rvm/scripts/rvm
 fi
 
+if [ -d "$HOME/.deno/" ]; then
+  export PATH=$HOME/.deno/bin:$PATH
+fi
+
 # WARN: bun shouldn't be tied to the user directory like this. just need to make sure I point to the .bun/_bun dirs?
 # bun completions
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
