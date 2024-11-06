@@ -1,5 +1,7 @@
 {
   "sway/window": {
-    "icon": true
+    "icon": true,
+    "format": "<span size='x-large' rise='-3pt'>{title}</span>",
+    "max-length": 69
   }
 }

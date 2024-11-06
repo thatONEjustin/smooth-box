@@ -1,0 +1,7 @@
+#pulseaudio {
+  background-color: $background;
+  color: $orange;
+
+  border-top-left-radius: $module_spacing;
+  border-bottom-left-radius: $module_spacing;
+}

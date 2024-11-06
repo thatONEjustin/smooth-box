@@ -14,6 +14,7 @@
       "$HOME/.config/waybar/modules/tray.json",
       "$HOME/.config/waybar/modules/bluetooth.json",
       "$HOME/.config/waybar/modules/idle_inhibitor.json",
+      "$HOME/.config/waybar/modules/pulseaudio.json",
       "$HOME/.config/waybar/modules/keyboard_state.json",
       "$HOME/.config/waybar/modules/cpu.json",
       "$HOME/.config/waybar/modules/memory.json",
@@ -23,7 +24,8 @@
       "$HOME/.config/waybar/modules/window.json"
     ],
     "modules-left": [
-      "sway/workspaces"
+      "sway/workspaces",
+      "sway/window"
     ],
     "modules-center": [
       "clock",
@@ -31,9 +33,9 @@
       "tray"
     ],
     "modules-right": [
-      "keyboard-state",
-      "wireplumber",
+      "pulseaudio",
       "pulseaudio/slider",
+      "idle_inhibitor",
       "network",
       "cpu",
       "memory"

@@ -123,6 +123,16 @@ window#waybar.top..DP-1 {
     color: #282a36;
   }
 }
+#idle_inhibitor {
+  background-color: #282a36;
+  color: #8be9fd;
+}
+@keyframes blink {
+  to {
+    background-color: #ff5555;
+    color: #282a36;
+  }
+}
 #cpu {
   background-color: #282a36;
   color: #8be9fd;
@@ -135,6 +145,13 @@ window#waybar.top..DP-1 {
   border-bottom-right-radius: 8px;
 }
 #wireplumber {
+  background-color: #282a36;
+  color: #ffb86c;
+
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#pulseaudio {
   background-color: #282a36;
   color: #ffb86c;
 

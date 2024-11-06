@@ -1,8 +1,10 @@
 @import './modules/audio-slider.css';
 @import './modules/keyboard-state.css';
+@import './modules/idle_inhibitor.css';
 @import './modules/cpu.css';
 @import './modules/ram.css';
 @import './modules/wireplumber.css';
+@import './modules/pulseaudio.css';
 @import './modules/network.css';
 @import './modules/custom-weather.css';
 @import './modules/clock.css';

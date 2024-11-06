@@ -1,0 +1,11 @@
+#idle_inhibitor {
+  background-color: $background;
+  color: $cyan;
+}
+
+@keyframes blink {
+  to {
+    background-color: $red;
+    color: $background;
+  }
+}
