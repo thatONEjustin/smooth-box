@@ -4,6 +4,7 @@
 # TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.deno/bin/deno:$PATH
+export PATH=$HOME/audio-orchestrator-ffmpeg/bin/ffmpeg:$PATH
 
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
