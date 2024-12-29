@@ -32,7 +32,7 @@ set $up k
 set $right l
 
 ## Applications
-set $menu rofi -show drun -m 2
+set $menu rofi -show drun -m DP-1
 set $term wezterm
 set $browser chromium
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
@@ -238,8 +238,10 @@ for_window [app_id="timer-for-harvest"] $popup
 for_window [app_id="[(a-z\.)]+.Calculator"] $popup
 for_window [app_id="waypaper"] $popup
 for_window [app_id="org.gnome.Nautilus"] $popup
+
 for_window [con_mark="Friends List" class="(steam)"] $popup
 for_window [class="steam_app_.*"] $games
+for_window [class="steam_app_2767030"] $games
 # for_window [app_id="gamescope"] $games
 # for_window [con_mark="Steam"] $games
 
@@ -253,8 +255,10 @@ assign [class="Slack"] workspace $workspace5
 assign [class="discord"] workspace $workspace5
 assign [class="vesktop"] workspace $workspace5
 
-assign [class="steam"] workspace $workspace3
+assign [class="steam"] workspace $workspace4
 assign [class="steam_app_.*"] workspace $workspace7
+
+
 # assign [app_id="gamescope"] workspace $workspace7
 # assign [con_mark="Steam"] workspace $workspace7
 
@@ -267,13 +271,13 @@ bar {
 # INFO: Exec scripts on sway startup
 
 ## exec_always on sway start
-exec xrandr --output $main_monitor --primary
+# exec_always xrandr --output $main_monitor --primary
 
 ## Idle configuration
 exec $HOME/.local/scripts/swayidle_default.sh
 exec swww-daemon
 exec blueman-applet
-
+exec $HOME/.local/scripts/set_default_monitor.sh
 
 ## keep this at the bottom
 include /etc/sway/config.d/*
