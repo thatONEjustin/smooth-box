@@ -1,4 +1,9 @@
-  font-family = "FiraCode Nerd Font"
-  font-size = 18
+font-family = FiraCode Nerd Font
+font-size = 18
 
-  theme = "Dracula+"
+theme = Dracula+
+
+initial-command = /usr/bin/nu
+quick-terminal-position = top
+
+keybind=global:super+backslash=toggle_quick_terminal
