@@ -1,6 +1,10 @@
 # NOTE: $PATH variable
 # export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
-#
+
+
+export PATH="/home/justinprime/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/justinprime/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
 # TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.deno/bin/deno:$PATH
@@ -108,6 +112,8 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
     alias swayedit='nvim $HOME/.config/sway'
 
+    alias set_primary_display='~/.local/scripts/set_default_monitor.sh'
+
     export NNN_FIFO=/tmp/nnn.fifo
     export NNN_PLUG='v:preview-tui'
   fi
@@ -132,6 +138,8 @@ fi
 
 if [ -d "$HOME/.deno/" ]; then
   export PATH=$HOME/.deno/bin:$PATH
+  export PATH=$HOME/.deno/bin/deno:$PATH
+  . "/home/justinprime/.deno/env"
 fi
 
 # WARN: bun shouldn't be tied to the user directory like this. just need to make sure I point to the .bun/_bun dirs?
@@ -175,5 +183,6 @@ fi
 plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
-export PATH="/home/justinprime/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/justinprime/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# Turso
+export PATH="$PATH:/home/justinprime/.turso"
