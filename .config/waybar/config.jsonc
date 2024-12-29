@@ -1,11 +1,11 @@
 [
   {
     "output": "DP-1",
-    "layer": "top", 
-    "position": "bottom", 
-    "margin-top": 0, 
+    "layer": "top",
+    "position": "bottom",
+    "margin-top": 0,
     "reload_style_on_change": true,
-    "include" : [
+    "include": [
       "$HOME/.config/waybar/modules/workspaces.json",
       "$HOME/.config/waybar/modules/taskbar.json",
       "$HOME/.config/waybar/modules/clock.json",
@@ -49,8 +49,7 @@
     "margin-top": 0,
     "mode": "invisible",
     "reload_style_on_change": false,
-    "include" : [
-    ],
+    "include": [],
     "modules-center": [
       "sway/window"
     ]
@@ -62,7 +61,7 @@
     "height": 50,
     "margin-top": 0,
     "reload_style_on_change": true,
-    "include" : [
+    "include": [
       "$HOME/.config/waybar/modules/window.json",
       "$HOME/.config/waybar/modules/clock.json",
       "$HOME/.config/waybar/modules/weather.json",
@@ -71,12 +70,11 @@
     "modules-left": [
       "sway/window"
     ],
-    "modules-center": [
-    ],
+    "modules-center": [],
     "modules-right": [
       "clock",
       "custom/weather",
-      "tray" 
+      "tray"
     ]
   }
 ]
