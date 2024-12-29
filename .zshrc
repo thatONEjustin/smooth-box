@@ -7,6 +7,7 @@ export PHP_INI_SCAN_DIR="/home/justinprime/.config/herd-lite/bin:$PHP_INI_SCAN_D
 
 # TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 export PATH=$HOME/.deno/bin/deno:$PATH
 export PATH=$HOME/audio-orchestrator-ffmpeg/bin/ffmpeg:$PATH
 
@@ -139,7 +140,10 @@ fi
 if [ -d "$HOME/.deno/" ]; then
   export PATH=$HOME/.deno/bin:$PATH
   export PATH=$HOME/.deno/bin/deno:$PATH
-  . "/home/justinprime/.deno/env"
+    
+  if [ -s "/home/justinprime/.deno/env" ]; then
+    . "/home/justinprime/.deno/env"
+  fi
 fi
 
 # WARN: bun shouldn't be tied to the user directory like this. just need to make sure I point to the .bun/_bun dirs?
