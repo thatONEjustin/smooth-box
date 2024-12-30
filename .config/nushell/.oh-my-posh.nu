@@ -4,13 +4,13 @@ if ($env.config? | is-not-empty) {
 }
 
 $env.POWERLINE_COMMAND = 'oh-my-posh'
-$env.POSH_THEME = (echo "/Users/justin/.cache/oh-my-posh/config.e7c7ed1ded8535ed8687e2798f4cf7ba28e9aa0612febb769ea454ee1e2209c9.omp.json")
+$env.POSH_THEME = (echo "/home/justinprime/github/smooth-box/custom/oh-my-posh/themes/1_shell.omp.json")
 $env.PROMPT_INDICATOR = ""
-$env.POSH_SESSION_ID = (echo "afa25f46-d131-4f91-b26b-2e6a7f73e1ed")
+$env.POSH_SESSION_ID = (echo "5d435a19-49f7-4b62-a65b-257fbea309aa")
 $env.POSH_SHELL = "nu"
 $env.POSH_SHELL_VERSION = (version | get version)
 
-let _omp_executable: string = (echo "/opt/homebrew/bin/oh-my-posh")
+let _omp_executable: string = (echo "/usr/bin/oh-my-posh")
 
 # PROMPTS
 
