@@ -4,3 +4,4 @@ home/.config/**/packer_compiled.lua
 ./.config/nvim/lazyvim.json
 ./.config/nvim/lazy-lock.json
 .config/nvim/lazy-lock.json
+.config/nushell/.oh-my-posh.nu
