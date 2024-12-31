@@ -1,5 +1,5 @@
-#!/bin/zsh
-# first_run.zsh
+#!/bin/bash
+# first_run.sh
 #
 # Working on my first install script!
 
