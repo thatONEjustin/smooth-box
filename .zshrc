@@ -126,6 +126,7 @@ if command -V keychain > /dev/null; then
   eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
 else
   eval "$(ssh-agent)"
+  eval "$(ssh-add)"
 fi
 
 # NOTE: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
