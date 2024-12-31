@@ -15,6 +15,10 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 fi
 
+if [ -d "/home/justinprime/go/bin/" ]; then
+  export PATH=/home/justinprime/go/bin:$PATH
+fi
+
 if [ -s "/usr/bin/cargo" ]; then
   export PATH=$HOME/.cargo/bin:$PATH
 fi

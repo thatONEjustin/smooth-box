@@ -1,4 +1,4 @@
-$env.path ++= ["/usr/local/bin", "/opt/homebrew/bin/"]
+$env.path ++= ["/usr/local/bin", "/opt/homebrew/bin/", "/home/justinprime/go/bin/"]
 
 $env.config.buffer_editor = "nvim"
 $env.config.show_banner = false
