@@ -1,18 +1,30 @@
-# NOTE: $PATH variable
-# export PATH=/opt/homebrew/opt/ruby/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
-
-
-export PATH="/home/justinprime/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/justinprime/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-
 # TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=$HOME/.deno/bin/deno:$PATH
-export PATH=$HOME/audio-orchestrator-ffmpeg/bin/ffmpeg:$PATH
+if [ -d "$HOME/.deno/" ]; then
+  export PATH=$HOME/.deno/bin:$PATH
+  export PATH=$HOME/.deno/bin/deno:$PATH
+    
+  if [ -s "/home/justinprime/.deno/env" ]; then
+    . "/home/justinprime/.deno/env"
+  fi
+fi
+
+if [ -d "$HOME/audio-orchestrator-ffmpeg/bin/ffmpeg" ]; then
+  export PATH=$HOME/audio-orchestrator-ffmpeg/bin/ffmpeg:$PATH
+fi
+
+if [ -d "/home/justinprime/.config/herd-lite/bin" ]; then
+  export PATH="/home/justinprime/.config/herd-lite/bin:$PATH"
+  export PHP_INI_SCAN_DIR="/home/justinprime/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+fi
 
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+fi
+
+if [ -d "/home/justinprime/.turso" ]; then
+  export PATH=/home/justinprime/.turso:$PATH
 fi
 
 if [ -d "/home/justinprime/go/bin/" ]; then
@@ -57,12 +69,6 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# NOTE: WSL / windows detection
-if uname -r | grep -q 'microsoft' ; then
-  if [ -d "/home/linuxbrew" ]; then
-    eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
-  fi
-fi
 
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
@@ -78,34 +84,25 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-# NOTE: macOS detection
-if [[ $(uname) == "Darwin" ]]; then
-  # alias sketchyreload='sketchybar --reload'
 
-  # homebrew
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-
-  # check if tmux and launch
-  if [[ -z "$TMUX" ]]; then
-    tmux attach || tmux
-  fi
-fi
-
-# OS agnostic aliases
-alias zload='source $HOME/.zshrc'
+# INFO: OS agnostic aliases
+alias zload='w'
 alias zedit='nvim $HOME/.zshrc'
 alias tedit='nvim $HOME/.tmux.conf'
 alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
-
 alias ll='ls -lah'
 alias ln='ls -lahtr'
 
-# NOTE: linux specific aliases
+# INFO: macOS specific
+if [[ $(uname) == "Darwin" ]]; then
+  # eval "$(ssh-agent)"
+  alias sketchyreload='sketchybar --reload'
+fi 
+
+# INFO: linux specific aliases
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
-  # NOTE: Generic
+
   alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
   # NOTE: swayfx
@@ -127,8 +124,9 @@ fi
 # NOTE: supposedly this should go before the instant prompt call
 if command -V keychain > /dev/null; then
   eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
+else
+  eval "$(ssh-agent)"
 fi
-
 
 # NOTE: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
 # NOTE: Node Version Manager
@@ -141,24 +139,14 @@ if [ -d "$HOME/.rvm/scripts/" ]; then
   source $HOME/.rvm/scripts/rvm
 fi
 
-if [ -d "$HOME/.deno/" ]; then
-  export PATH=$HOME/.deno/bin:$PATH
-  export PATH=$HOME/.deno/bin/deno:$PATH
-    
-  if [ -s "/home/justinprime/.deno/env" ]; then
-    . "/home/justinprime/.deno/env"
-  fi
-fi
 
 # WARN: bun shouldn't be tied to the user directory like this. just need to make sure I point to the .bun/_bun dirs?
 # bun completions
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
 
 
-# TODO: Move away from p10k
-#
-# powerlevel10k prompt
-# source /usr/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
+# TODO: Continue learning omp format to move away from all of this.
+# NOTE: ZSH Theme configuration 
 if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
   ZSH_THEME="powerlevel10k/powerlevel10k" 
 
@@ -170,10 +158,31 @@ if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 else 
   # NOTE: should only effect WSL
-
-  eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
+  # WARN: So I had this which was a duplicate of the entry below it, which seems to have a much cleaner test for WSL.
+  # eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
 fi
 
+# NOTE: WSL / windows detection
+if uname -r | grep -q 'microsoft' ; then
+  if [ -d "/home/linuxbrew" ]; then
+    eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
+  fi
+fi
+
+# NOTE: macOS detection
+if [[ $(uname) == "Darwin" ]]; then
+  # eval "$(ssh-agent)"
+  alias sketchyreload='sketchybar --reload'
+
+  # TODO: Clean up nvm mess
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+  # check if tmux and launch
+  if [[ -z "$TMUX" ]]; then
+    tmux attach || tmux
+  fi
+fi
 # NOTE: this is for local always on tmux
 # right now i'm using title bars + border indicators
 # to justify the use of tiling more and get used
@@ -184,13 +193,12 @@ fi
 #   tmux attach || tmux
 # fi
 
-# TODO: Figure out if there's a better way to launch zsh
-# also worth considering moving shells but thats arbitrary
 
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# NOTE: ZSH plugins
 plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
-# Turso
-export PATH="$PATH:/home/justinprime/.turso"
+if [[ $(uname) == "Darwin" ]]; then
+  eval "$(ssh-agent)"
+fi
