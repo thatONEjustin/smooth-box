@@ -86,7 +86,7 @@ fi
 
 
 # INFO: OS agnostic aliases
-alias zload='w'
+alias zload='source $HOME/.zshrc'
 alias zedit='nvim $HOME/.zshrc'
 alias tedit='nvim $HOME/.tmux.conf'
 alias tkill='tmux kill-session -a'
