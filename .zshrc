@@ -121,13 +121,6 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   fi
 fi
 
-# NOTE: supposedly this should go before the instant prompt call
-if command -V keychain > /dev/null; then
-  eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
-else
-  eval "$(ssh-agent)"
-  eval "$(ssh-add)"
-fi
 
 # NOTE: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
 # NOTE: Node Version Manager
@@ -184,21 +177,21 @@ if [[ $(uname) == "Darwin" ]]; then
     tmux attach || tmux
   fi
 fi
-# NOTE: this is for local always on tmux
-# right now i'm using title bars + border indicators
-# to justify the use of tiling more and get used
-# to the navigation because more and more linux 
-# compatibility is happening.
-#
-# if [[ -z "$TMUX" ]]; then
-#   tmux attach || tmux
-# fi
+
+if [[ -z "$TMUX" ]]; then
+  tmux attach || tmux
+fi
 
 
 # NOTE: ZSH plugins
 plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
+
+# NOTE: supposedly this should go before the instant prompt call
+if command -V keychain > /dev/null; then
+  eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
+fi
 
 if [[ $(uname) == "Darwin" ]]; then
   eval "$(ssh-agent)"
