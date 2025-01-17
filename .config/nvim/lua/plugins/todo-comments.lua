@@ -10,15 +10,18 @@ return {
         color = "#50FA7B", -- can be a hex color, or a named color (see below)
         -- signs = false, -- configure signs for some keywords individually
       },
-      TODO = { icon = "󰄰 ", color = "test" },
-      HACK = { icon = " ", color = "#BD93F9" },
+      TODO = { icon = "󰄰 ", color = "custom_todo" },
+      HACK = { icon = " ", color = "#FFB86C" },
       WARN = { icon = " ", color = "#F1FA8C", alt = { "WARNING", "XXX" } },
-      NOTE = { icon = " ", color = "default" },
-      TEST = { icon = "󰇉 ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+      NOTE = { icon = " ", color = "custom_note" },
+      INFO = { icon = " ", color = "custom_info" },
+      TEST = { icon = "󰇉 ", color = "custom_test", alt = { "TESTING", "PASSED", "FAILED" } },
     },
     colors = {
-      test = { "TestIdentifier", "#FF79C6" },
-
+      custom_test = { "TestIdentifier", "#8be9fd" },
+      custom_note = { "CustomNote", "#BD93F9" },
+      custom_info = { "CustomNote", "#50FA7B" },
+      custom_todo = { "CustomTodo", "#FF79C6" },
       -- FIX: text
       -- -- BUG: ALT
       -- FIXED: completed
@@ -28,6 +31,7 @@ return {
       -- -- XXX: this alt works
       -- NOTE: text identifier should assign "hint"
       -- -- INFO: this alt works
+      -- TEST: okay the customs work works
     },
   },
   -- stylua: ignore
