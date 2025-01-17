@@ -105,7 +105,7 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 
   alias cleansyslog='sudo truncate -s 0 /var/log/syslog'
 
-  # NOTE: swayfx
+  # INFO: swayfx
   if command -v sway > /dev/null; then
     # alias getdisplays='swaymsg -t get_outputs'
     alias getdisplays='xrandr --listmonitors'
@@ -122,13 +122,11 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 fi
 
 
-# NOTE: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
-# NOTE: Node Version Manager
+# INFO: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
 if [ -d '/usr/share/nvm' ]; then
   source /usr/share/nvm/init-nvm.sh
 fi
 
-# NOTE: Ruby Version Manager
 if [ -d "$HOME/.rvm/scripts/" ]; then
   source $HOME/.rvm/scripts/rvm
 fi
@@ -189,6 +187,7 @@ plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighti
 source $ZSH/oh-my-zsh.sh
 
 # NOTE: supposedly this should go before the instant prompt call
+# NOTE: leaving this in because keychain availability means auto login quietly
 if command -V keychain > /dev/null; then
   eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
 fi
