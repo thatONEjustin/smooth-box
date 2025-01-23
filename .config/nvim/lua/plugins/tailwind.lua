@@ -26,6 +26,24 @@ return {
             },
           },
         },
+        cssls = {
+          css = {
+            lint = {
+              cssConflict = "ignore",
+              unknownAtRules = "ignore",
+              invalidApply = "ignore",
+            },
+          },
+          settings = {
+            css = {
+              lint = {
+                cssConflict = "ignore",
+                unknownAtRules = "ignore",
+                invalidApply = "ignore",
+              },
+            },
+          },
+        },
         svelte = {
           css = {
             enable = false,
