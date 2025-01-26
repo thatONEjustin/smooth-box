@@ -36,6 +36,8 @@ return {
       "python",
       "query",
       "regex",
+      "scss",
+      "svelte",
       "toml",
       "tsx",
       "typescript",
