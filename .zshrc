@@ -136,11 +136,26 @@ fi
 # bun completions
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
 
+# NOTE: supposedly this should go before the instant prompt call
+# NOTE: leaving this in because keychain availability means auto login quietly
+# if command -V keychain > /dev/null; then
+#   eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
+# fi
+#
+# if [[ $(uname) == "Darwin" ]]; then
+#   eval "$(ssh-agent)"
+# fi
+
+# if eval "$(ssh-agent)" 1> /dev/null; then
+#
+# fi
 
 # TODO: Continue learning omp format to move away from all of this.
 # NOTE: ZSH Theme configuration 
 if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
   ZSH_THEME="powerlevel10k/powerlevel10k" 
+
+  eval "$(ssh-agent)" 1> /dev/null
 
   # NOTE: instant prompt for p10k
   if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -182,16 +197,7 @@ fi
 
 
 # NOTE: ZSH plugins
-plugins=(git fzf sudo archlinux zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
+plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
-# NOTE: supposedly this should go before the instant prompt call
-# NOTE: leaving this in because keychain availability means auto login quietly
-if command -V keychain > /dev/null; then
-  eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
-fi
-
-if [[ $(uname) == "Darwin" ]]; then
-  eval "$(ssh-agent)"
-fi
