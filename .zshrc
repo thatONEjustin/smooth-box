@@ -1,6 +1,14 @@
 # TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# HACK: This should be incorporated into first_run.sh
+# export NPROCS=$(grep -c proc /proc/cpuinfo)
+# export PREFIX=$([ $(id -u) -eq 0 ] && echo /usr || echo ~/.local)
+
+if [ -d "$HOME/.config/herd-lite" ]; then
+    export PATH="$HOME/.config/herd-lite/bin:$PATH"
+fi
+
 if [ -d "$HOME/.deno/" ]; then
   export PATH=$HOME/.deno/bin:$PATH
   export PATH=$HOME/.deno/bin/deno:$PATH
@@ -169,12 +177,6 @@ else
   # eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
 fi
 
-# NOTE: WSL / windows detection
-if uname -r | grep -q 'microsoft' ; then
-  if [ -d "/home/linuxbrew" ]; then
-    eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
-  fi
-fi
 
 # NOTE: macOS detection
 if [[ $(uname) == "Darwin" ]]; then
