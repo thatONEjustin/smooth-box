@@ -1,80 +1,84 @@
 [
-  {
-    "output": "DP-1",
-    "layer": "top",
-    "position": "bottom",
-    "margin-top": 0,
-    "reload_style_on_change": true,
-    "include": [
-      "$HOME/.config/waybar/modules/workspaces.json",
-      "$HOME/.config/waybar/modules/taskbar.json",
-      "$HOME/.config/waybar/modules/clock.json",
-      "$HOME/.config/waybar/modules/wireplumber.json",
-      "$HOME/.config/waybar/modules/audio_slider.json",
-      "$HOME/.config/waybar/modules/tray.json",
-      "$HOME/.config/waybar/modules/bluetooth.json",
-      "$HOME/.config/waybar/modules/idle_inhibitor.json",
-      "$HOME/.config/waybar/modules/pulseaudio.json",
-      "$HOME/.config/waybar/modules/keyboard_state.json",
-      "$HOME/.config/waybar/modules/cpu.json",
-      "$HOME/.config/waybar/modules/memory.json",
-      "$HOME/.config/waybar/modules/screenshots.json",
-      "$HOME/.config/waybar/modules/weather.json",
-      "$HOME/.config/waybar/modules/network.json",
-      "$HOME/.config/waybar/modules/window.json"
-    ],
-    "modules-left": [
-      "sway/workspaces",
-      "sway/window"
-    ],
-    "modules-center": [
-      "clock",
-      "custom/weather",
-      "tray"
-    ],
-    "modules-right": [
-      "pulseaudio",
-      "pulseaudio/slider",
-      "idle_inhibitor",
-      "network",
-      "cpu",
-      "memory"
-    ]
-  },
-  {
-    "output": "DP-1",
-    "layer": "top",
-    "position": "top",
-    "height": 30,
-    "margin-top": 0,
-    "mode": "invisible",
-    "reload_style_on_change": false,
-    "include": [],
-    "modules-center": [
-      "sway/window"
-    ]
-  },
-  {
-    "output": "HDMI-A-1",
-    "layer": "top",
-    "position": "top",
-    "height": 50,
-    "margin-top": 0,
-    "reload_style_on_change": true,
-    "include": [
-      "$HOME/.config/waybar/modules/window.json",
-      "$HOME/.config/waybar/modules/clock.json",
-      "$HOME/.config/waybar/modules/weather.json",
-      "$HOME/.config/waybar/modules/tray.json"
-    ],
-    "modules-left": [
-      "sway/window"
-    ],
-    "modules-center": [],
-    "modules-right": [
-      "clock",
-      "custom/weather",
-      "tray"
-    ]
-  }
+    {
+        "output": "DP-1",
+        "layer": "top",
+        "position": "bottom",
+        "margin-top": 0,
+        "reload_style_on_change": true,
+        "include": [
+            "$HOME/.config/waybar/modules/workspaces.json",
+            "$HOME/.config/waybar/modules/hypr-workspaces.json",
+            "$HOME/.config/waybar/modules/taskbar.json",
+            "$HOME/.config/waybar/modules/clock.json",
+            "$HOME/.config/waybar/modules/wireplumber.json",
+            "$HOME/.config/waybar/modules/audio_slider.json",
+            "$HOME/.config/waybar/modules/tray.json",
+            "$HOME/.config/waybar/modules/bluetooth.json",
+            "$HOME/.config/waybar/modules/idle_inhibitor.json",
+            "$HOME/.config/waybar/modules/pulseaudio.json",
+            "$HOME/.config/waybar/modules/keyboard_state.json",
+            "$HOME/.config/waybar/modules/cpu.json",
+            "$HOME/.config/waybar/modules/memory.json",
+            "$HOME/.config/waybar/modules/screenshots.json",
+            "$HOME/.config/waybar/modules/weather.json",
+            "$HOME/.config/waybar/modules/network.json",
+            "$HOME/.config/waybar/modules/hypr-window.json",
+            "$HOME/.config/waybar/modules/window.json"
+        ],
+        "modules-left": [
+            "hyprland/workspaces",
+            "sway/workspaces",
+            "hyprland/window",
+            "sway/window"
+        ],
+        "modules-center": [
+            "clock",
+            "custom/weather",
+            "tray"
+        ],
+        "modules-right": [
+            "pulseaudio",
+            "pulseaudio/slider",
+            "idle_inhibitor",
+            "network",
+            "cpu",
+            "memory"
+        ]
+    },
+    {
+        "output": "DP-1",
+        "layer": "top",
+        "position": "top",
+        "height": 30,
+        "margin-top": 0,
+        "mode": "invisible",
+        "reload_style_on_change": false,
+        "include": [],
+        "modules-center": [
+            "sway/window"
+        ]
+    },
+    {
+        "output": "HDMI-A-1",
+        "layer": "top",
+        "position": "top",
+        "height": 50,
+        "margin-top": 0,
+        "reload_style_on_change": true,
+        "include": [
+            "$HOME/.config/waybar/modules/window.json",
+            "$HOME/.config/waybar/modules/clock.json",
+            "$HOME/.config/waybar/modules/weather.json",
+            "$HOME/.config/waybar/modules/tray.json"
+        ],
+        "modules-left": [
+            "sway/window"
+        ],
+        "modules-center": [],
+        "modules-right": [
+            "clock",
+            "custom/weather",
+            "tray"
+        ]
+    }
 ]

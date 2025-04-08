@@ -15,12 +15,12 @@ return {
       WARN = { icon = " ", color = "#F1FA8C", alt = { "WARNING", "XXX" } },
       NOTE = { icon = " ", color = "custom_note" },
       INFO = { icon = " ", color = "custom_info" },
-      TEST = { icon = "󰇉 ", color = "custom_test", alt = { "TESTING", "PASSED", "FAILED" } },
+      TEST = { icon = "󰇉 ", color = "custom_info", alt = { "TESTING", "PASSED", "FAILED" } },
     },
     colors = {
       custom_test = { "TestIdentifier", "#8be9fd" },
       custom_note = { "CustomNote", "#BD93F9" },
-      custom_info = { "CustomNote", "#50FA7B" },
+      custom_info = { "CustomInfo", "#50FA7B" },
       custom_todo = { "CustomTodo", "#FF79C6" },
       -- FIX: text
       -- -- BUG: ALT
@@ -30,7 +30,7 @@ return {
       -- WARN: text
       -- -- XXX: this alt works
       -- NOTE: text identifier should assign "hint"
-      -- -- INFO: this alt works
+      -- -- INFO: this alt no longer works
       -- TEST: okay the customs work works
     },
   },

@@ -30,7 +30,7 @@ window#waybar {
 #workspaces button:first-child {
       font-size: calc(24px + 4px);
     }
-#workspaces button.focused {
+#workspaces button.focused, #workspaces button.active {
       border-top: 3px solid #8be9fd;
       background-color: #44475a;
       color: #8be9fd;

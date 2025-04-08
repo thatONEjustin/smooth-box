@@ -34,7 +34,7 @@ set $right l
 ## Applications
 set $menu rofi -show drun -m DP-1
 set $term wezterm
-set $browser chromium
+set $browser zen
 set $screenshot slurp | grim -g - $(date '+%F_%T').png
 
 ## Monitor/GPU xrandr outputs

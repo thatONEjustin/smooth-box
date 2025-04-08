@@ -15,7 +15,7 @@
       font-size: $arch_icon_size;
     }
 
-    &.focused {
+    &.focused, &.active {
       border-top: 3px solid $cyan;
       background-color: $selection;
       color: $cyan;

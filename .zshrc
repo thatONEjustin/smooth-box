@@ -59,8 +59,13 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # NOTE: pager
-if command -v sway > /dev/null; then
-  export MANPAGER="/usr/bin/most -s"
+# if command -v sway > /dev/null; then
+#   export MANPAGER="/usr/bin/most -s"
+# fi
+
+
+if [ -s "/usr/bin/most" ]; then
+    export MANPAGER="/usr/bin/most -s"
 fi
 
 # NOTE: personalized directories
@@ -101,6 +106,9 @@ alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
 alias ll='ls -lah'
 alias ln='ls -lahtr'
+
+# HACK: hyprland specific exit (because keybinds break on config save)
+alias hyprkill='hyprctl dispatch exit'
 
 # INFO: macOS specific
 if [[ $(uname) == "Darwin" ]]; then
@@ -202,4 +210,3 @@ fi
 plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
-
