@@ -35,6 +35,10 @@ window#waybar {
       background-color: #44475a;
       color: #8be9fd;
     }
+#workspaces button.urgent {
+        border-top: 3px solid #ff5555;
+        color: #44475a;
+    }
 #workspaces button:hover {
       background-color: #44475a;
       box-shadow: none;
@@ -58,7 +62,7 @@ window#waybar {
     margin-right: 8px;
   }
 .modules-right .module {
-      padding: 0 calc(8px * 1.5);
+      padding: 0 calc(8px * 2);
       /*margin-right: 4px;*/
     }
 .DP-1.bottom .modules-left,
@@ -73,7 +77,7 @@ window#waybar {
 /*
  * This is the only way I've gotten a whole section to render a bg
  */
-window#waybar.top..DP-1 {
+window#waybar.top.DP-1 {
       background-color: #282a36;
     }
 .HDMI-A-1 .modules-left,
@@ -165,6 +169,44 @@ window#waybar.top..DP-1 {
 #custom-weather {
   color: #ff79c6;
 }
+#custom-launcher {
+
+  color: #f1fa8c;
+}
+#custom-launcher.module {
+    color: #8be9fd;
+    background-color: #282a36;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    transition: color 200ms ease-in-out;
+
+    margin-right: 8px;
+    padding: 0px 25px;
+    font-size: 24px;
+  }
+#custom-launcher.module:first-child {
+      font-size: calc(24px + 4px);
+    }
+#custom-launcher.module.focused {
+      border-top: 3px solid #8be9fd;
+      background-color: #44475a;
+      color: #8be9fd;
+    }
+#custom-launcher.module.active {
+      border-top: 3px solid #ff79c6;
+      background-color: #44475a;
+      color: #ff79c6;
+    }
+#custom-launcher.module.urgent {
+        border-top: 3px solid #ff5555;
+        color: #44475a;
+    }
+#custom-launcher.module:hover {
+        background-color: #ff79c6;
+        box-shadow: none;
+        border: 3px solid #ff79c6;
+        color: #282a36;
+    }
 #clock {
   color: #f1fa8c;
 }

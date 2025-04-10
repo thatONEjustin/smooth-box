@@ -1,0 +1,7 @@
+{
+    "custom/launcher": {
+        "on-click": "nwg-menu",
+        "format": "<span size='x-large'>{icon}</span>",
+        "format-icons": ""
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "smoothbox_nwg-drawer",
+    "main": "main.css",
+    "scripts": {
+        "build": "postcss ./main.css -o $smooth/.config/nwg-drawer/drawer.css",
+        "watch": "postcss ./main.css -o $smooth/.config/nwg-drawer/drawer.css --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "postcss": "^8.5.3",
+        "postcss-cli": "^11.0.1",
+        "postcss-import": "^16.1.0",
+        "postcss-nested": "^7.0.2",
+        "postcss-simple-vars": "^7.0.1"
+    }
+}

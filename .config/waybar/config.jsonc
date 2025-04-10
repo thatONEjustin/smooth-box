@@ -23,9 +23,11 @@
             "$HOME/.config/waybar/modules/weather.json",
             "$HOME/.config/waybar/modules/network.json",
             "$HOME/.config/waybar/modules/hypr-window.json",
-            "$HOME/.config/waybar/modules/window.json"
+            "$HOME/.config/waybar/modules/window.json",
+            "$HOME/.config/waybar/modules/custom_launcher.json"
         ],
         "modules-left": [
+            "custom/launcher",
             "hyprland/workspaces",
             "sway/workspaces",
             "hyprland/window",

@@ -7,6 +7,7 @@
 @import './modules/pulseaudio.css';
 @import './modules/network.css';
 @import './modules/custom-weather.css';
+@import './modules/custom-launcher.css';
 @import './modules/clock.css';
 @import './modules/bluetooth.css';
 @import './modules/sway-window.css';

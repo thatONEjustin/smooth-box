@@ -24,13 +24,13 @@
     margin-right: $module_spacing;
 
     .module {
-      padding: 0 calc($module_spacing * 1.5);
+      padding: 0 calc($module_spacing * 2);
       /*margin-right: 4px;*/
     }
   }
 }
 
-$main_monitor {
+.$main_monitor {
   &.bottom {
     .modules {
       &-left,
@@ -52,13 +52,13 @@ $main_monitor {
  */
 window#waybar {
   &.top {
-    &.$main_monitor {
+     &.$main_monitor {
       background-color: $background;
     }
   }
 }
 
-$TV {
+.$TV {
   .modules {
     &-left,
     &-center,

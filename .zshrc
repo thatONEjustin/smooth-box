@@ -97,7 +97,6 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-
 # INFO: OS agnostic aliases
 alias zload='source $HOME/.zshrc'
 alias zedit='nvim $HOME/.zshrc'
@@ -106,6 +105,9 @@ alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
 alias ll='ls -lah'
 alias ln='ls -lahtr'
+
+# INFO: waybar specific
+alias wayreset='killall -SIGUSR2 waybar &!'
 
 # HACK: hyprland specific exit (because keybinds break on config save)
 alias hyprkill='hyprctl dispatch exit'
@@ -195,18 +197,15 @@ if [[ $(uname) == "Darwin" ]]; then
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-  # check if tmux and launch
-  if [[ -z "$TMUX" ]]; then
-    tmux attach || tmux
-  fi
 fi
 
 if [[ -z "$TMUX" ]]; then
   tmux attach || tmux
 fi
 
+# source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # NOTE: ZSH plugins
-plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete colored-man-pages)
+plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh

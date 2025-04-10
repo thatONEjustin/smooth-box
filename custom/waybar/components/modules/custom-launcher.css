@@ -1,11 +1,15 @@
-#workspaces {
+#custom-launcher {
   $icon_font_size: 24px;
   $arch_icon_size: calc($icon_font_size + 4px);
-  button {
-    color: $foreground;
+
+  color: $yellow;
+
+  &.module {
+    color: $cyan;
     background-color: $background;
-    border-top: 3px solid transparent;
+    border: 3px solid transparent;
     border-radius: $module_spacing;
+    transition: color 200ms ease-in-out;
 
     margin-right: 8px;
     padding: 0px 25px;
@@ -15,10 +19,16 @@
       font-size: $arch_icon_size;
     }
 
-    &.focused, &.active {
+    &.focused {
       border-top: 3px solid $cyan;
       background-color: $selection;
       color: $cyan;
+    }
+
+    &.active {
+      border-top: 3px solid $pink;
+      background-color: $selection;
+      color: $pink;
     }
 
     &.urgent {
@@ -27,9 +37,10 @@
     }
 
     &:hover {
-      background-color: $selection;
-      box-shadow: none;
-      border-top: 3px solid $foreground;
+        background-color: $pink;
+        box-shadow: none;
+        border: 3px solid $pink;
+        color: $darker;
     }
   }
 }
