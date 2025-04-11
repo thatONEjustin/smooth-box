@@ -194,13 +194,18 @@ fi
 
 # NOTE: macOS detection
 if [[ $(uname) == "Darwin" ]]; then
-  # eval "$(ssh-agent)"
-  alias sketchyreload='sketchybar --reload'
+    # Herd injected PHP binary.
+    export PATH="/Users/justin/Library/Application Support/Herd/bin/":$PATH
+    # Herd injected PHP 8.3 configuration.
+    export HERD_PHP_83_INI_SCAN_DIR="/Users/justin/Library/Application Support/Herd/config/php/83/"
+    # Herd injected PHP 8.4 configuration.
+    export HERD_PHP_84_INI_SCAN_DIR="/Users/justin/Library/Application Support/Herd/config/php/84/"
 
-  # TODO: Clean up nvm mess
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+    alias sketchyreload='sketchybar --reload'
 
+    # TODO: Clean up nvm mess
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 if [[ -z "$TMUX" ]]; then
@@ -213,3 +218,7 @@ fi
 plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
+
+
+
+
