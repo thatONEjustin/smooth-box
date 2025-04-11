@@ -105,12 +105,17 @@ alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
 alias ll='ls -lah'
 alias ln='ls -lahtr'
+alias linksettings='cd $smooth/ && stow --target="$HOME" --dir="$HOME/github/smooth-box" .'
+
+# INFO: debugging
+alias getdisplays='xrandr --listmonitors'
 
 # INFO: waybar specific
 alias wayreset='killall -SIGUSR2 waybar &!'
 
-# HACK: hyprland specific exit (because keybinds break on config save)
+# NOTE: weird stuff I need for testing
 alias hyprkill='hyprctl dispatch exit'
+alias cleanpavu='rm ~/.config/pavucontrol.ini'
 
 # INFO: macOS specific
 if [[ $(uname) == "Darwin" ]]; then
@@ -126,7 +131,6 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   # INFO: swayfx
   if command -v sway > /dev/null; then
     # alias getdisplays='swaymsg -t get_outputs'
-    alias getdisplays='xrandr --listmonitors'
     alias getids='swaymsg -t get_tree'
     alias wayreset='killall -SIGUSR2 waybar &!'
     alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
@@ -173,7 +177,7 @@ fi
 if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
   ZSH_THEME="powerlevel10k/powerlevel10k" 
 
-  eval "$(ssh-agent)" 1> /dev/null
+  # eval "$(ssh-agent)" 1> /dev/null
 
   # NOTE: instant prompt for p10k
   if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
