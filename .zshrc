@@ -116,6 +116,7 @@ alias wayreset='killall -SIGUSR2 waybar &!'
 # NOTE: weird stuff I need for testing
 alias hyprkill='hyprctl dispatch exit'
 alias cleanpavu='rm ~/.config/pavucontrol.ini'
+alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
 
 # INFO: macOS specific
 if [[ $(uname) == "Darwin" ]]; then
@@ -133,7 +134,6 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     # alias getdisplays='swaymsg -t get_outputs'
     alias getids='swaymsg -t get_tree'
     alias wayreset='killall -SIGUSR2 waybar &!'
-    alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
     alias swayedit='nvim $HOME/.config/sway'
 
     alias set_primary_display='~/.local/scripts/set_default_monitor.sh'
@@ -179,6 +179,11 @@ if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
 
   # eval "$(ssh-agent)" 1> /dev/null
 
+    if [[ -z "$TMUX" ]]; then
+    tmux attach || tmux
+    fi
+
+
   # NOTE: instant prompt for p10k
   if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -207,11 +212,6 @@ if [[ $(uname) == "Darwin" ]]; then
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
-
-if [[ -z "$TMUX" ]]; then
-  tmux attach || tmux
-fi
-
 # source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # NOTE: ZSH plugins
