@@ -7,127 +7,123 @@ configuration {
 }
 
 * {
-    font: "Jetbrains Mono 12";
-    foreground: #f8f8f2;
-    background-color: #282a36;
-    active-background: #6272a4;
-    urgent-background: #ff5555;
-    urgent-foreground: #282a36;
-    selected-background: @active-background;
-    selected-urgent-background: @urgent-background;
-    selected-active-background: @active-background;
-    separatorcolor: @active-background;
-    bordercolor: @active-background;
+    font: "FiraCode Nerd Font Mono 14";
+
+    BG:#282a36;
+    FG:#f8f8f2;
+    BR:#44475a;
+    CYAN:#8be9fd;
+    GREEN:#50fa7b;
+    ORANGE:#ffb86c;
+    PINK:#ff79c6;
+    PURPLE:#bd93f9;
+    RED:#ff5555;
+    YELLOW:#f1fa8c;
+
+    accent : @CYAN;
+    urgent : @RED;
+
+    background-color : transparent;
+    text-color       : @FG;
+
+    margin  : 0;
+    padding : 0;
+    spacing : 0;
 }
 
-#window {
-    background-color: @background-color;
-    border:           3;
-    border-radius:    6;
-    border-color:     @bordercolor;
-    padding:          15;
+element-icon, element-text, scrollbar {
+  cursor: pointer;
 }
-#mainbox {
-    border:  0;
-    padding: 0;
+
+window {
+  location : south west;
+  width    : 600px;
+  height   : 600px;
+  y-offset : -4px;
+
+  background-color : @BR;
+  border-radius    : 8px;
 }
-#message {
-    border:       0px;
-    border-color: @separatorcolor;
-    padding:      1px;
+
+mainbox {
+  padding : 24px;
+  spacing : 24px;
 }
-#textbox {
-    text-color: @foreground;
+
+inputbar {
+  padding          : 8px;
+  spacing          : 4px;
+  children         : [ icon-search, entry ];
+  border           : 0 0 2px 0 solid;
+  border-color     : @accent;
+  border-radius    : 2px;
+  background-color : @BG;
 }
-#listview {
-    fixed-height: 0;
-    border:       0px;
-    border-color: @bordercolor;
-    spacing:      2px ;
-    scrollbar:    false;
-    padding:      2px 0px 0px ;
+
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
 }
-#element {
-    border:  0;
-    padding: 3px ;
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 24px;
 }
-#element.normal.normal {
-    background-color: @background-color;
-    text-color:       @foreground;
+
+entry {
+  font              : "Roboto 12";
+  placeholder       : "Type here to search";
+  placeholder-color : @FG;
 }
-#element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
+
+textbox {
+  padding          : 4px 8px;
+  background-color : @BG;
 }
-#element.normal.active {
-    background-color: @active-background;
-    text-color:       @foreground;
+
+listview {
+  columns       : 6;
+  spacing       : 8px;
+  fixed-height  : true;
+  fixed-columns : true;
 }
-#element.selected.normal {
-    background-color: @selected-background;
-    text-color:       @foreground;
+
+element {
+  orientation   : vertical;
+  spacing       : 4px;
+  padding       : 8px;
+  border-radius : 2px;
 }
-#element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @foreground;
+
+element normal urgent {
+  text-color: @urgent;
 }
-#element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @foreground;
+
+element normal active {
+  text-color: @accent;
 }
-#element.alternate.normal {
-    background-color: @background-color;
-    text-color:       @foreground;
+
+element alternate active {
+  text-color: @accent;
 }
-#element.alternate.urgent {
-    background-color: @urgent-background;
-    text-color:       @foreground;
+
+element selected active {
+  text-color: @accent;
 }
-#element.alternate.active {
-    background-color: @active-background;
-    text-color:       @foreground;
+
+element selected {
+  background-color: @BR;
 }
-#scrollbar {
-    width:        2px ;
-    border:       0;
-    handle-width: 8px ;
-    padding:      0;
+
+element selected urgent {
+  background-color: @urgent;
 }
-#sidebar {
-    border:       2px dash 0px 0px ;
-    border-color: @separatorcolor;
+
+element-icon {
+  size: 2em;
 }
-#button.selected {
-    background-color: @selected-background;
-    text-color:       @foreground;
-}
-#inputbar {
-    spacing:    0;
-    text-color: @foreground;
-    padding:    1px ;
-}
-#case-indicator {
-    spacing:    0;
-    text-color: @foreground;
-}
-#entry {
-    spacing:    0;
-    text-color: @foreground;
-}
-#prompt {
-    spacing:    0;
-    text-color: @foreground;
-}
-#inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-#textbox-prompt-colon {
-    expand:     false;
-    str:        "->";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
-}
-element-text, element-icon {
-    background-color: inherit;
-    text-color: inherit;
+
+element-text {
+  text-color       : inherit;
+  horizontal-align : 0.5;
 }
