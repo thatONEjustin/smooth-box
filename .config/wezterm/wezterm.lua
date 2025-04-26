@@ -19,6 +19,4 @@ config.font = wezterm.font({
 
 config.font_size = 18
 
--- config.default_prog = { "/usr/bin/nu", "-l" }
-
 return config

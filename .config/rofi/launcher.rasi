@@ -4,6 +4,15 @@ configuration {
     show-icons:      true;
     display-drun:    "";
     disable-history: false;
+
+    monitor: -5;
+    mode: "calc";
+    combi-modes: ["drun", "window", "emoji:rofimoji"];
+    mode: "combi";
+    modes: ["combi","calc","filebrowser"];
+    display-combi: " ";
+    display-calc: " ";
+    display-filebrowser: "󱧶 ";
 }
 
 * {

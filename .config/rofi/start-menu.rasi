@@ -2,6 +2,9 @@
 
 configuration {
     show-icons:      true;
+
+    monitor: -5;
+    mode: "drun";
     display-drun:    "";
     disable-history: false;
 }
@@ -41,7 +44,7 @@ window {
   height   : 600px;
   y-offset : -4px;
 
-  background-color : @BR;
+  background-color : @BG;
   border-radius    : 8px;
 }
 
@@ -82,7 +85,7 @@ textbox {
 }
 
 listview {
-  columns       : 6;
+  columns       : 4;
   spacing       : 8px;
   fixed-height  : true;
   fixed-columns : true;
@@ -90,9 +93,10 @@ listview {
 
 element {
   orientation   : vertical;
-  spacing       : 4px;
+  spacing       : 8px;
   padding       : 8px;
   border-radius : 2px;
+
 }
 
 element normal urgent {

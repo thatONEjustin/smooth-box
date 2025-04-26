@@ -6,5 +6,5 @@ $env.config.show_banner = false
 alias z = zoxide
 alias ll = ls -lah
 
-source ~/.oh-my-posh.nu
+# source ~/.oh-my-posh.nu
 source ~/github/smooth-box/.config/nushell/.zoxide.nu

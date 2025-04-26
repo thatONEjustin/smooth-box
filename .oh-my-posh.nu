@@ -10,7 +10,7 @@ $env.POSH_SESSION_ID = (echo "5ace19d0-15a3-436c-9234-cbf72046c106")
 $env.POSH_SHELL = "nu"
 $env.POSH_SHELL_VERSION = (version | get version)
 
-let _omp_executable: string = (echo "/opt/homebrew/bin/oh-my-posh")
+let _omp_executable: string = (echo "/usr/bin/oh-my-posh")
 
 # PROMPTS
 
