@@ -120,8 +120,20 @@ alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
 
 # INFO: macOS specific
 if [[ $(uname) == "Darwin" ]]; then
-  # eval "$(ssh-agent)"
-  alias sketchyreload='sketchybar --reload'
+    # Herd injected PHP binary.
+    export PATH="/Users/justin/Library/Application Support/Herd/bin/":$PATH
+    # Herd injected PHP 8.3 configuration.
+    export HERD_PHP_83_INI_SCAN_DIR="/Users/justin/Library/Application Support/Herd/config/php/83/"
+    # Herd injected PHP 8.4 configuration.
+    export HERD_PHP_84_INI_SCAN_DIR="/Users/justin/Library/Application Support/Herd/config/php/84/"
+
+
+    # TODO: Clean up nvm mess
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+    alias sketchyreload='sketchybar --reload'
+    eval "$(ssh-agent)" 1> /dev/null
 fi 
 
 # INFO: linux specific aliases
@@ -175,50 +187,25 @@ fi
 # TODO: Continue learning omp format to move away from all of this.
 # NOTE: ZSH Theme configuration 
 if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
-  ZSH_THEME="powerlevel10k/powerlevel10k" 
-
-  # eval "$(ssh-agent)" 1> /dev/null
+    ZSH_THEME="powerlevel10k/powerlevel10k" 
 
     if [[ -z "$TMUX" ]]; then
-    tmux attach || tmux
+        tmux attach || tmux
     fi
 
+    # NOTE: instant prompt for p10k
+    if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+        source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    fi
 
-  # NOTE: instant prompt for p10k
-  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-  fi
-
-  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 else 
   # NOTE: should only effect WSL
   # WARN: So I had this which was a duplicate of the entry below it, which seems to have a much cleaner test for WSL.
   # eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
 fi
 
-
-# NOTE: macOS detection
-if [[ $(uname) == "Darwin" ]]; then
-    # Herd injected PHP binary.
-    export PATH="/Users/justin/Library/Application Support/Herd/bin/":$PATH
-    # Herd injected PHP 8.3 configuration.
-    export HERD_PHP_83_INI_SCAN_DIR="/Users/justin/Library/Application Support/Herd/config/php/83/"
-    # Herd injected PHP 8.4 configuration.
-    export HERD_PHP_84_INI_SCAN_DIR="/Users/justin/Library/Application Support/Herd/config/php/84/"
-
-    alias sketchyreload='sketchybar --reload'
-
-    # TODO: Clean up nvm mess
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-fi
-# source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
 # NOTE: ZSH plugins
 plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
-
-
-
-
