@@ -3,8 +3,4 @@ font-size = 18
 
 theme = Dracula+
 
-initial-command = /opt/homebrew/bin/nu --config="$HOME/.config/nushell/config.nu" -l
-quick-terminal-position = top
-initial-window = false
-
-keybind=global:cmd+backslash=toggle_quick_terminal
+initial-command = /usr/bin/nu --config="$HOME/.config/nushell/config.nu" -l

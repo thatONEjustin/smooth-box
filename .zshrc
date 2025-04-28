@@ -200,9 +200,9 @@ if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
 
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 else 
-  # NOTE: should only effect WSL
-  # WARN: So I had this which was a duplicate of the entry below it, which seems to have a much cleaner test for WSL.
-  # eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
+    # NOTE: should only effect WSL
+    # WARN: So I had this which was a duplicate of the entry below it, which seems to have a much cleaner test for WSL.
+    # eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
 fi
 
 # NOTE: ZSH plugins
