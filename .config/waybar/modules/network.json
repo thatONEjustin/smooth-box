@@ -1,7 +1,8 @@
 {
-  "network": {
-    "interface": "enp6s0",
-    "format": "{bandwidthTotalBytes} <span size='x-large' rise='-3pt'>󰈀</span>",
-    "format-disconnected": "<span color='#ff3e5e'>󰌙</span>"
-  }
+    "network": {
+        "interface": "enp6s0",
+        "tooltip-format": "{gwaddr} via {ifname}",
+        "format": "{bandwidthTotalBytes} <span size='x-large' rise='-3pt'>󰈀</span>",
+        "format-disconnected": "<span color='#ff3e5e'>󰌙</span>"
+    }
 }

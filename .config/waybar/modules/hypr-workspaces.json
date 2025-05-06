@@ -2,13 +2,15 @@
     "hyprland/workspaces": {
         "format": "<span size='x-large'>{icon}</span>",
         "format-icons": {
-            "1": "󱄄",
+            "1": "󰨇",
             "2": "",
-            "3": "󰨇",
+            "3": "󰭹",
             "4": "󰓓",
+            "6": "󱄄",
             "TV": "",
             "urgent": ""
         },
+        "tooltip": false,
         "on-click": "activate"
     }
 }

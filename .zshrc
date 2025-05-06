@@ -189,9 +189,9 @@ fi
 if [[ "$OSTYPE" == *"linux-gnu"* || $(uname) == "Darwin" ]]; then
     ZSH_THEME="powerlevel10k/powerlevel10k" 
 
-    if [[ -z "$TMUX" ]]; then
-        tmux attach || tmux
-    fi
+    # if [[ -z "$TMUX" ]]; then
+    #     tmux attach || tmux
+    # fi
 
     # NOTE: instant prompt for p10k
     if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -209,3 +209,6 @@ fi
 plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'

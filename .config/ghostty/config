@@ -1,6 +1,11 @@
-font-family = FiraCode Nerd Font
+font-family = Lilex Nerd Font Propo
 font-size = 18
 
-theme = Dracula+
+theme = Dracula
 
-initial-command = /usr/bin/nu --config="$HOME/.config/nushell/config.nu" -l
+window-save-state = always
+window-padding-x = 8,0
+window-padding-y = 8,4
+window-padding-balance = true
+confirm-close-surface = false
+shell-integration = zsh

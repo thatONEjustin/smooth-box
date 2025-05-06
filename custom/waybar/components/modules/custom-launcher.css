@@ -2,10 +2,9 @@
   $icon_font_size: 24px;
   $arch_icon_size: calc($icon_font_size + 4px);
 
-  color: $yellow;
 
   &.module {
-    color: $cyan;
+    color: $foreground;
     background-color: $background;
     border: 3px solid transparent;
     border-radius: $module_spacing;

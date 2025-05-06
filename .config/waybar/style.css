@@ -161,6 +161,7 @@ window#waybar.top.DP-1 {
 
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+    font-size: 22px;
 }
 #network {
   background-color: #282a36;
@@ -170,11 +171,9 @@ window#waybar.top.DP-1 {
   color: #ff79c6;
 }
 #custom-launcher {
-
-  color: #f1fa8c;
 }
 #custom-launcher.module {
-    color: #8be9fd;
+    color: #f8f8f2;
     background-color: #282a36;
     border: 3px solid transparent;
     border-radius: 8px;

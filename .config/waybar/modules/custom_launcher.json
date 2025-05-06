@@ -1,7 +1,8 @@
 {
     "custom/launcher": {
-        "on-click": "pkill nwg-menu || nwg-menu",
+        "on-click": "pkill nwg-menu || nwg-menu -ml 16 -mb 16",
         "format": "<span size='x-large'>{icon}</span>",
-        "format-icons": ""
+        "format-icons": "",
+        "tooltip": false
     }
 }

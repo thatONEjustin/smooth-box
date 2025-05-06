@@ -1,6 +1,8 @@
 window {
     background-color: #282a36;
     color: #eeeeee;
+    margin-left: 16px;
+    margin-bottom: 16px;
 }
 entry {
     background-color: rgba (0, 0, 0, 0.2)
