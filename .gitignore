@@ -1,5 +1,6 @@
 home/.config/**/packer_compiled.lua
 *packer_compiled.lua
+.DS_STORE
 *.uuid
 .config/nvim/lazyvim.json
 .config/nvim/lazy-lock.json
