@@ -145,7 +145,6 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   if command -v sway > /dev/null; then
     # alias getdisplays='swaymsg -t get_outputs'
     alias getids='swaymsg -t get_tree'
-    alias wayreset='killall -SIGUSR2 waybar &!'
     alias swayedit='nvim $HOME/.config/sway'
 
     alias set_primary_display='~/.local/scripts/set_default_monitor.sh'
