@@ -1,0 +1,4 @@
+
+@reboot /usr/local/bin/homelab_start >/dev/null 2>&1
+0 */12 * * * /usr/local/bin/internet_check >/dev/null 2>&1
+# 0 */4 * * * /home/justinprime/git/smooth-box/.local/scripts/starbound_backup.sh >/dev/null 2>&1
