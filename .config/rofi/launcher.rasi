@@ -3,7 +3,7 @@
 configuration {
     show-icons:      true;
     display-drun:    "";
-    disable-history: true;
+    disable-history: false;
 
     monitor: -5;
     combi-modes: ["drun", "window", "emoji:rofimoji"];

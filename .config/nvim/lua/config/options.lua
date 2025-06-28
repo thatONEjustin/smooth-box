@@ -9,6 +9,9 @@ vim.g.lazyvim_statuscolumn = {
   folds_githl = true, -- highlight fold sign with git sign color
 }
 
+vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#9ba0c0" })
+vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#9ba0c0" })
+
 opt.shiftwidth = 4 -- Size of an indent
 opt.tabstop = 4
 

@@ -10,7 +10,11 @@ return {
     picker = {
       hidden = true,
       sources = {
+        files = { hidden = true },
+        grep = { hidden = true },
         explorer = {
+          hidden = true,
+          exclude = { "node_modules", ".git" },
           win = {
             list = {
               wo = {
