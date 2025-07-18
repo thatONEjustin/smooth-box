@@ -1,0 +1,64 @@
+/**
+ * This theme is intended for a 5 items wide menu on a 1920x1080 pixels resolution.
+ * You may have to tweak values such as the window padding if you have a different resolution.
+ */
+@import "./theme.rasi"
+
+configuration {
+    show-icons: true;
+
+}
+
+* {
+  background-color: @background;
+  text-color: @foreground;
+  font: @power-icon-font;
+}
+
+#window {
+    width: 1290px;
+    height: 200px;
+    // height: 100%;
+    children: [ horibox ];
+}
+
+#horibox {
+    children: [ listview ];
+}
+
+#listview {
+    layout: horizontal;
+}
+
+element {
+    // padding: 88px  100px 81px  4px;
+    // padding: 5px;
+    width: 220px;
+    padding: 30px 0px 30px 0px;
+    // align-text: center;
+    border-radius: 16px;
+}
+
+element.normal.normal,
+element.alternate.normal {
+    background-color: @background-light;
+}
+
+element.selected.normal {
+    background-color: @pink;
+    text-color: @background;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+#window {
+    padding: 20px 20px 20px 20px;
+}
+
+#listview {
+  spacing: 35px;
+  lines: 5;
+}
