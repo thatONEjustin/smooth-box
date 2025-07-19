@@ -1,4 +1,5 @@
 @import './modules/audio-slider.css';
+@import './modules/battery.css';
 @import './modules/keyboard-state.css';
 @import './modules/idle_inhibitor.css';
 @import './modules/cpu.css';

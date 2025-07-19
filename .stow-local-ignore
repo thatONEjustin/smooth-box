@@ -1,7 +1,31 @@
-\.git
-\.gitignore
 etc*
 custom*
 alacritty*
+first_run.sh
+kde_reset.sh
+mix-manifest.json
+yakuakerc
+
+# Comments and blank lines are allowed.
+
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+\.gitmodules
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
 
 ^/README.*
+^/LICENSE.*
+^/COPYING

@@ -1,0 +1,15 @@
+#battery {
+    background-color: $background;
+    color: $green;
+
+    border-top-left-radius: $module_spacing;
+    border-bottom-left-radius: $module_spacing;
+}
+
+#battery.warning {
+    color: $yellow;
+}
+
+#battery.critical {
+    color: $red;
+}
