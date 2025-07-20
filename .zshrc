@@ -1,9 +1,43 @@
 # TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# NOTE: zsh path
+export ZSH="$HOME/.oh-my-zsh"
+
+# NOTE: personalized directories
+export configd="$HOME/.config"
+export workd="$HOME/work"
+export gitd="$HOME/github"
+export smooth="$gitd/smooth-box"
+export tmuxd="$HOME/.config/tmux"
+
+# NOTE: additional package directories
+export NVM_DIR="$HOME/.nvm"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# NOTE: this repo's scripts
+export PATH="$smooth/.local/scripts:$PATH"
+
+
+# NOTE: neovim please
+export VISUAL=nvim
+export EDITOR=nvim
+
+# NOTE: ZSH_HIST settings so we remove dupes
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 # HACK: This should be incorporated into first_run.sh
 # export NPROCS=$(grep -c proc /proc/cpuinfo)
 # export PREFIX=$([ $(id -u) -eq 0 ] && echo /usr || echo ~/.local)
+
 
 if [ -d "$HOME/.config/herd-lite" ]; then
     export PATH="$HOME/.config/herd-lite/bin:$PATH"
@@ -43,45 +77,9 @@ if [ -s "/usr/bin/cargo" ]; then
   export PATH=$HOME/.cargo/bin:$PATH
 fi
 
-# NOTE: zsh path
-export ZSH="$HOME/.oh-my-zsh"
-
-# NOTE: ZSH_HIST settings so we remove dupes
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
-
-# NOTE: neovim please
-export VISUAL=nvim
-export EDITOR=nvim
-
-# NOTE: pager
-# if command -v sway > /dev/null; then
-#   export MANPAGER="/usr/bin/most -s"
-# fi
-
-
 if [ -s "/usr/bin/most" ]; then
     export MANPAGER="/usr/bin/most -s"
 fi
-
-# NOTE: personalized directories
-export configd="$HOME/.config"
-export workd="$HOME/work"
-export gitd="$HOME/github"
-export smooth="$gitd/smooth-box"
-export tmuxd="$HOME/.config/tmux"
-
-# NOTE: additional package directories
-export NVM_DIR="$HOME/.nvm"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
@@ -117,6 +115,9 @@ alias wayreset='killall -SIGUSR2 waybar &!'
 alias hyprkill='hyprctl dispatch exit'
 alias cleanpavu='rm ~/.config/pavucontrol.ini'
 alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
 # INFO: macOS specific
 if [[ $(uname) == "Darwin" ]]; then
@@ -154,7 +155,6 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   fi
 fi
 
-
 # INFO: Dev Tools like **nvm**, **rvm**, **bun**, etc. 
 if [ -d '/usr/share/nvm' ]; then
   source /usr/share/nvm/init-nvm.sh
@@ -164,7 +164,6 @@ if [ -d "$HOME/.rvm/scripts/" ]; then
   source $HOME/.rvm/scripts/rvm
 fi
 
-
 # WARN: bun shouldn't be tied to the user directory like this. just need to make sure I point to the .bun/_bun dirs?
 # bun completions
 [ -s "/home/justinprime/.bun/_bun" ] && source "/home/justinprime/.bun/_bun"
@@ -173,14 +172,6 @@ fi
 # NOTE: leaving this in because keychain availability means auto login quietly
 # if command -V keychain > /dev/null; then
 #   eval "$(keychain --eval --quiet id_ed25519 id_rsa)"
-# fi
-#
-# if [[ $(uname) == "Darwin" ]]; then
-#   eval "$(ssh-agent)"
-# fi
-
-# if eval "$(ssh-agent)" 1> /dev/null; then
-#
 # fi
 
 # TODO: Continue learning omp format to move away from all of this.
