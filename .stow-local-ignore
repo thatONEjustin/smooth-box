@@ -29,3 +29,7 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+first_run.sh
+kde_reset.sh
+mix-manifest.json
