@@ -1,7 +1,4 @@
 #!/bin/bash
-# first_run.sh
-#
-# Working on my first install script!
 
 personal_directories=("work" "github")
 
@@ -11,27 +8,22 @@ for i in "${personal_directories[@]}"; do
     fi
 done
 
-if [! -d "$HOME/.ssh" ]; then
-    eval "$(ssh-keygen)"
-    wait
-fi
-
-if [! command -v git 2>&1 >/dev/null]; then
+if ! command -v git &>/dev/null; then
     eval "$(pacman -S git)"
     wait
 fi
 
-if [! command -v stow 2>&1 >/dev/null]; then
+if ! command -v stow &>/dev/null; then
     eval "$(pacman -S stow)"
     wait
 fi
 
-if [! command -v zsh 2>&1 >/dev/null]; then
+if ! command -v zsh &>/dev/null; then
     eval "$(pacman -S zsh)"
     wait
 fi
 
-if [! command -v yay 2>&1 >/dev/null]; then
+if ! command -v yay &>/dev/null; then
     eval "$(pacman -S --needed git base-devel)"
     wait
     cd "$HOME/github"
@@ -42,22 +34,22 @@ if [! command -v yay 2>&1 >/dev/null]; then
     wait
 fi
 
-if [! command -v steam 2>&1 >/dev/null]; then
+if ! command -v steam &>/dev/null; then
     eval "$(yay --sudoloop --noconfirm -S steam)"
     wait
 fi
 
-if [! command -v vesktop 2>&1 >/dev/null]; then
+if ! command -v vesktop &>/dev/null; then
     eval "$(yay --sudoloop --noconfirm -S vesktop)"
     wait
 fi
 
-if [! -d "$HOME/.tmux/plugins/tpm" ]; then
+if ! -d "$HOME/.tmux/plugins/tpm"; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     wait
 fi
 
-if [! -d "$HOME/github/smooth-box/" ]; then
+if ! -d "$HOME/github/smooth-box/"; then
     cd "$HOME/github"
     git clone git@github.com:thatONEjustin/smooth-box.git
     wait
