@@ -19,8 +19,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # NOTE: this repo's scripts
-export PATH="$smooth/.local/scripts:$PATH"
-
+export PATH="$HOME/.local/scripts:$PATH"
 
 # NOTE: neovim please
 export VISUAL=nvim
@@ -114,8 +113,13 @@ alias wayreset='killall -SIGUSR2 waybar &!'
 # NOTE: weird stuff I need for testing
 alias hyprkill='hyprctl dispatch exit'
 alias cleanpavu='rm ~/.config/pavucontrol.ini'
-alias clean_zsh_history='~/.local/scripts/fix_zsh_history.sh'
+alias clean_zsh_history="$HOME/.local/scripts/zsh/fix_history.sh"
 
+# NOTE: script aliases
+alias rofi_power_menu="$HOME/.local/scripts/rofi/power_menu.sh"
+alias rofi_launcher="$HOME/.local/scripts/rofi/launcher.sh"
+
+# INFO: work stuff
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 

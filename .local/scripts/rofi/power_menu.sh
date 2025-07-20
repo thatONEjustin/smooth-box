@@ -3,7 +3,7 @@
 # A rofi powered menu to execute power related action.
 # Uses: amixer mpc poweroff reboot rofi rofi-prompt
 
-power_off=''
+power_off=' '
 reboot=' '
 lock=' '
 suspend='󰒲 '

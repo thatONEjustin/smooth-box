@@ -1,5 +1,4 @@
 #!/bin/zsh
-# fix_zsh_history.sh
 
 cd ~
 mv .zsh_history .zsh_history_bad

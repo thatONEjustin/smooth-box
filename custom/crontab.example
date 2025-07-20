@@ -1,4 +1,5 @@
-
-@reboot /usr/local/bin/homelab_start >/dev/null 2>&1
-0 */12 * * * /usr/local/bin/internet_check >/dev/null 2>&1
+# These crontab rules are used in my server setup but unused right now because
+# I'm using OMV
+@reboot $HOME/.local/scripts/homelab_start.sh >/dev/null 2>&1
+0 */12 * * * $HOME/.local/scripts/internet_check.sh >/dev/null 2>&1
 # 0 */4 * * * /home/justinprime/git/smooth-box/.local/scripts/starbound_backup.sh >/dev/null 2>&1

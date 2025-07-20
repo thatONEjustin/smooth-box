@@ -14,7 +14,7 @@ return {
       HACK = { icon = " ", color = "#FFB86C" },
       WARN = { icon = " ", color = "#F1FA8C", alt = { "WARNING", "XXX" } },
       NOTE = { icon = " ", color = "custom_note" },
-      INFO = { icon = " ", color = "custom_info" },
+      INFO = { icon = " ", color = "custom_info", alt = { "TESTING", "PASSED", "FAILED" } },
       TEST = { icon = "󰇉 ", color = "custom_info", alt = { "TESTING", "PASSED", "FAILED" } },
     },
     colors = {
