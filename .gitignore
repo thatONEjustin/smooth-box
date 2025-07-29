@@ -7,3 +7,5 @@ home/.config/**/packer_compiled.lua
 .config/nvim/lazy-lock.json
 .config/nushell/.oh-my-posh.nu
 .config/nushell/history.txt
+.local/share/nvim*
+.local/share/zoxide*
