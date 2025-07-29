@@ -14,7 +14,7 @@ return {
       HACK = { icon = " ", color = "#FFB86C" },
       WARN = { icon = " ", color = "#F1FA8C", alt = { "WARNING", "XXX" } },
       NOTE = { icon = " ", color = "custom_note" },
-      INFO = { icon = " ", color = "custom_info", alt = { "TESTING", "PASSED", "FAILED" } },
+      INFO = { icon = " ", color = "custom_info", alt = { "INFO" } }, -- HACK: this works now?
       TEST = { icon = "󰇉 ", color = "custom_info", alt = { "TESTING", "PASSED", "FAILED" } },
     },
     colors = {
@@ -30,7 +30,7 @@ return {
       -- WARN: text
       -- -- XXX: this alt works
       -- NOTE: text identifier should assign "hint"
-      -- -- INFO: this alt no longer works
+      -- -- INFO: this alt now works
       -- TEST: okay the customs work works
     },
   },

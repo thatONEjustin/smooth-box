@@ -1,3 +1,11 @@
+# NOTE: ZSH_HIST settings so we remove dupes
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 # TODO: learn how to expand paths with ${} for cleaner shell environment
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -25,13 +33,6 @@ export PATH="$HOME/.local/scripts:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
 
-# NOTE: ZSH_HIST settings so we remove dupes
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
 
 # HACK: This should be incorporated into first_run.sh
 # export NPROCS=$(grep -c proc /proc/cpuinfo)
@@ -94,34 +95,6 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-# INFO: OS agnostic aliases
-alias zload='source $HOME/.zshrc'
-alias zedit='nvim $HOME/.zshrc'
-alias tedit='nvim $HOME/.tmux.conf'
-alias tkill='tmux kill-session -a'
-alias nedit='$HOME/.config/nvim/ && nvim .'
-alias ll='ls -lah'
-alias ln='ls -lahtr'
-alias linksettings='cd $smooth/ && stow --target="$HOME" --dir="$HOME/github/smooth-box" .'
-
-# INFO: debugging
-alias getdisplays='xrandr --listmonitors'
-
-# INFO: waybar specific
-alias wayreset='killall -SIGUSR2 waybar &!'
-
-# NOTE: weird stuff I need for testing
-alias hyprkill='hyprctl dispatch exit'
-alias cleanpavu='rm ~/.config/pavucontrol.ini'
-alias clean_zsh_history="$HOME/.local/scripts/zsh/fix_history.sh"
-
-# NOTE: script aliases
-alias rofi_power_menu="$HOME/.local/scripts/rofi/power_menu.sh"
-alias rofi_launcher="$HOME/.local/scripts/rofi/launcher.sh"
-
-# INFO: work stuff
-# Shopify Hydrogen alias to local projects
-alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
 # INFO: macOS specific
 if [[ $(uname) == "Darwin" ]]; then
@@ -199,7 +172,36 @@ else
     # eval "$(oh-my-posh init zsh --config $smooth/custom/oh-my-posh/themes/dracula.omp.json)"
 fi
 
+# INFO: OS agnostic aliases
+alias zload='source $HOME/.zshrc'
+alias zedit='nvim $HOME/.zshrc'
+alias tedit='nvim $HOME/.tmux.conf'
+alias tkill='tmux kill-session -a'
+alias nedit='$HOME/.config/nvim/ && nvim .'
+alias ll='ls -lah'
+alias ln='ls -lahtr'
+alias linksettings='cd $smooth/ && stow --target="$HOME" --dir="$HOME/github/smooth-box" .'
+
+# INFO: debugging
+alias getdisplays='xrandr --listmonitors'
+
+# INFO: waybar specific
+alias wayreset='killall -SIGUSR2 waybar &!'
+
+# NOTE: weird stuff I need for testing
+alias hyprkill='hyprctl dispatch exit'
+alias cleanpavu='rm ~/.config/pavucontrol.ini'
+alias clean_zsh_history="$HOME/.local/scripts/zsh/fix_history.sh"
+
+# NOTE: script aliases
+alias rofi_power_menu="$HOME/.local/scripts/rofi/power_menu.sh"
+alias rofi_launcher="$HOME/.local/scripts/rofi/launcher.sh"
+
+# INFO: work stuff
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
 # NOTE: ZSH plugins
-plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh

@@ -10,3 +10,5 @@ window-padding-balance = true
 confirm-close-surface = false
 shell-integration = zsh
 term=tmux-256color
+
+wait-after-command = true

@@ -15,6 +15,7 @@ config.enable_tab_bar = false
 config.font = wezterm.font({
 	family = "FiraCode Nerd Font",
 })
+
 -- config.font = wezterm.font 'Fira Code'
 
 config.font_size = 18
