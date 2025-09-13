@@ -15,6 +15,7 @@ require("lazy").setup({
 
     -- coding
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    { import = "lazyvim.plugins.extras.editor.neo-tree" },
 
     -- languages
     { import = "lazyvim.plugins.extras.lang.gleam" },
