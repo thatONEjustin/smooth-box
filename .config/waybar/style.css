@@ -80,13 +80,13 @@ window#waybar {
 window#waybar.top.DP-1 {
       background-color: #282a36;
     }
-.HDMI-A-1 .modules-left,
-    .HDMI-A-1 .modules-center,
-    .HDMI-A-1 .modules-right {
+.DP-2 .modules-left,
+    .DP-2 .modules-center,
+    .DP-2 .modules-right {
       margin-top: 10px;
     }
-.HDMI-A-1 .modules-left,
-    .HDMI-A-1 .modules-right {
+.DP-2 .modules-left,
+    .DP-2 .modules-right {
       padding: 8px 0;
       background-color: #282a36;
       border-radius: 8px;
@@ -114,6 +114,19 @@ window#waybar.top.DP-1 {
     border-radius: 5px;
     background-color: alpha(#8be9fd, 0.3);
   }
+#battery {
+    background-color: #282a36;
+    color: #50fa7b;
+
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+#battery.warning {
+    color: #f1fa8c;
+}
+#battery.critical {
+    color: #ff5555;
+}
 #keyboard-state {
   background-color: #282a36;
   color: #8be9fd;
@@ -152,8 +165,8 @@ window#waybar.top.DP-1 {
   background-color: #282a36;
   color: #ffb86c;
 
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  /* border-top-left-radius: $module_spacing; */
+  /* border-bottom-left-radius: $module_spacing; */
 }
 #pulseaudio {
   background-color: #282a36;

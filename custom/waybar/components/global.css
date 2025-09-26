@@ -2,8 +2,8 @@
  * Dracula color scheme
  * */
 $main_monitor: DP-1;
-$secondary_monitor: DP-2;
-$TV: HDMI-A-1;
+$secondary_monitor: HDMI-A-1;
+$TV: DP-2;
 
 $background: #282a36;
 $darker: $background;
