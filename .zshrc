@@ -178,9 +178,7 @@ alias zedit='nvim $HOME/.zshrc'
 alias tedit='nvim $HOME/.tmux.conf'
 alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
-alias ll='ls -lah'
-alias ln='ls -lahtr'
-alias linksettings='cd $smooth/ && stow --target="$HOME" --dir="$HOME/github/smooth-box" .'
+alias linksettings='$HOME/.local/scripts/link_settings.sh'
 
 # INFO: debugging
 alias getdisplays='xrandr --listmonitors'
