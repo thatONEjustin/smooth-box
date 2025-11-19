@@ -9,4 +9,3 @@ home/.config/**/packer_compiled.lua
 .config/nushell/history.txt
 .local/share/nvim*
 .local/share/zoxide*
-
