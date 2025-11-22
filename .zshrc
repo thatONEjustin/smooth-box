@@ -19,6 +19,8 @@ export gitd="$HOME/github"
 export smooth="$gitd/smooth-box"
 export tmuxd="$HOME/.config/tmux"
 
+export ZSH_CUSTOM="$smooth/.oh-my-zsh/custom"
+
 # NOTE: additional package directories
 export NVM_DIR="$HOME/.nvm"
 
