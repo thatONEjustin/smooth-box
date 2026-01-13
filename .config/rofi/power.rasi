@@ -6,7 +6,9 @@
 
 configuration {
     show-icons: true;
-
+    me-select-entry: "";
+    me-accept-entry: "!MousePrimary"; 
+    kb-cancel: "MousePrimary";
 }
 
 * {
