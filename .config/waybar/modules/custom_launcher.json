@@ -1,6 +1,6 @@
 {
     "custom/launcher": {
-        "on-click": "pkill nwg-menu || nwg-menu -ml 16 -mb 16",
+        "on-click": "pkill rofi || $HOME/.local/scripts/rofi/power_menu.sh",
         "format": "<span size='x-large'>{icon}</span>",
         "format-icons": "",
         "tooltip": false
