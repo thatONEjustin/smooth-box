@@ -4,7 +4,7 @@ personal_directories=("work" "github")
 
 echo "checking for local dirs \n"
 for i in "${personal_directories[@]}"; do
-    if [ ! -d "$HOME/$i" ]; then
+    if [[ ! -d "$HOME/$i" ]]; then
         mkdir -p $HOME/$i
     fi
 done
@@ -14,13 +14,13 @@ eval "$(pacman -Syu)"
 wait
 
 echo "get git \n"
-if ! command -v git &>/dev/null; then
+if [[ ! command -v git &>/dev/null ]] then
     eval "$(pacman -S git)"
     wait
 fi
 
 echo "get yay \n"
-if ! command -v yay &>/dev/null; then
+if [[ ! command -v yay &>/dev/null ]] then
     eval "$(pacman -S --needed git base-devel)"
     wait
     cd "$HOME/github"
@@ -31,23 +31,23 @@ if ! command -v yay &>/dev/null; then
     wait
 fi
 
-if ! command -v steam &>/dev/null; then
+if [[ ! command -v steam &>/dev/null ]] then
     eval "$(yay --sudoloop --noconfirm -S steam)"
     wait
 fi
 
-if ! command -v vesktop &>/dev/null; then
+if [[ ! command -v vesktop &>/dev/null ]] then
     eval "$(yay --sudoloop --noconfirm -S vesktop)"
     wait
 fi
 
-if ! -d "$HOME/.tmux/plugins/tpm"; then
+if [[ ! -d "$HOME/.tmux/plugins/tpm" ]] then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     wait
 fi
 
 echo "get zsh \n"
-if ! command -v zsh &>/dev/null; then
+if [[ ! command -v zsh &>/dev/null ]] then
     eval "$(pacman --sudoloop --noconfirm -S zsh)"
     wait
 
@@ -61,13 +61,13 @@ if ! command -v zsh &>/dev/null; then
 fi
 
 echo "get stow \n"
-if ! command -v stow &>/dev/null; then
+if [[ ! command -v stow &>/dev/null ]] then
     eval "$(yay --sudoloop --noconfirm -S stow)"
     wait
 fi
 
 echo "get the dotfiles and link them \n"
-if ! -d "$HOME/github/smooth-box/"; then
+if [[ ! -d "$HOME/github/smooth-box/" ]] then
     cd "$HOME/github"
     git clone git@github.com:thatONEjustin/smooth-box.git
     wait
