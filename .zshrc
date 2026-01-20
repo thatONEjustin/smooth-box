@@ -181,6 +181,7 @@ alias tedit='nvim $HOME/.tmux.conf'
 alias tkill='tmux kill-session -a'
 alias nedit='$HOME/.config/nvim/ && nvim .'
 alias linksettings='$HOME/.local/scripts/link_settings.sh'
+alias clean_vendors='rm -rfv vendor composer.lock package-lock.json node_modules'
 
 # INFO: debugging
 alias getdisplays='xrandr --listmonitors'
