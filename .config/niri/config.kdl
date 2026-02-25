@@ -14,17 +14,8 @@ input {
     // Omitting settings disables them, or leaves them at their default values.
     // All commented-out settings here are examples, not defaults.
     touchpad {
-        // off
         tap
-        // dwt
-        // dwtp
-        // drag false
-        // drag-lock
         natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "two-finger"
-        // disabled-on-external-mouse
     }
 
     mouse {
@@ -50,6 +41,7 @@ output "DP-1" {
 output "HDMI-A-1" {
     mode "3840x2160@60.000"
     position x=2560 y=0
+    scale 2
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -206,11 +198,13 @@ layout {
         // top 64
         // bottom 64
     }
+
+    background-color "transparent"
 }
 
 // Add lines like this to spawn processes at startup.
-// spawn-at-startup "qs" "-c" "noctalia-shell"
-spawn-sh-at-startup "waybar"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+// spawn-sh-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -235,9 +229,18 @@ animations {
     // slowdown 3.0
 }
 
-// Window rules let you adjust behavior for individual windows.
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Window-Rules
+// Set the regular wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}
+
+// Optionally, disable the workspace shadows in the overview.
+overview {
+  workspace-shadow {
+    off
+  }
+}
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
@@ -254,8 +257,17 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
     open-floating true
+
+    default-window-height { proportion 0.33; }
+    default-floating-position x=24 y=24 relative-to="bottom-right"
+    // default-window-height { fixed 270; }
+
+    // min-width 100
+    // max-width 200
+    // min-height 300
+    // max-height 300
 }
 
 // Example: block out two password managers from screen capture.
@@ -300,9 +312,8 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="launch terminal" { spawn-sh "$HOME/.local/scripts/launch_terminal.sh"; }
-    Mod+Space hotkey-overlay-title="show launcher" { spawn-sh "$HOME/.local/scripts/rofi/launcher.sh"; }
-    // Mod+Space hotkey-overlay-title="show launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Super+Alt+L hotkey-overlay-title="screenlock" { spawn-sh "$HOME/.local/scripts/gtklock.sh"; }
+    Mod+Space hotkey-overlay-title="show launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    // Super+Alt+L hotkey-overlay-title="screenlock" { spawn-sh "$HOME/.local/scripts/gtklock.sh"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // : the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -310,9 +321,6 @@ binds {
     // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
-    // The allow-when-locked=true property makes them work even when the session is locked.
-    // Using spawn-sh allows to pass multiple arguments together with the command.
-    // "-l 1.0" limits the volume to 100%.
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
@@ -336,7 +344,7 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { close-window; }
+    Mod+Shift+Q repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
@@ -543,9 +551,11 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    // Print { screenshot; }
+
+    // Mod+Space hotkey-overlay-title="show launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+Shift+P { spawn-sh "$HOME/.local/scripts/screenshot_to_clipboard.sh"; }
+    // Mod+P { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -563,5 +573,5 @@ binds {
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    // Mod+Shift+P { power-off-monitors; }
 }
