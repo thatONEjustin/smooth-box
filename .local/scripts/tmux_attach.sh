@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if [[ -z "$TMUX" ]]; then
+if [ -z "$TMUX" ]; then
     tmux attach || tmux
 fi
