@@ -202,6 +202,8 @@ alias rofi_launcher="$HOME/.local/scripts/rofi/launcher.sh"
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
+alias unreal='~/.local/share/OldUnreal/UT2004/System/UT2004'
+
 # NOTE: ZSH plugins
 plugins=(git fzf sudo zoxide zsh-autosuggestions zsh-syntax-highlighting)
 
