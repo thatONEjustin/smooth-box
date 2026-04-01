@@ -1,0 +1,6 @@
+// Add lines like this to spawn processes at startup.
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "vesktop"
+spawn-at-startup "wezterm"
+spawn-at-startup "zen"
+spawn-at-startup "obsidian"

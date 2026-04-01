@@ -1,0 +1,19 @@
+workspace "󰨇" {
+    open-on-output "DP-1"
+}
+
+workspace "󰭹" {
+    open-on-output "DP-1"
+}
+
+workspace "󰓓" {
+    open-on-output "DP-1"
+}
+
+workspace "󱄄" {
+    open-on-output "DP-1"
+}
+
+workspace "" {
+    open-on-output "HDMI-A-1"
+}

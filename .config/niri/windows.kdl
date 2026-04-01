@@ -1,0 +1,53 @@
+window-rule {
+  // Rounded corners for a modern look.
+  geometry-corner-radius 20
+
+  // Clips window contents to the rounded corner boundaries.
+  clip-to-geometry true
+}
+
+window-rule {
+    match app-id=r#"obsidian"#
+    open-on-workspace "󰨇"
+}
+
+window-rule {
+    match app-id=r#"vesktop"#
+    match app-id=r#"slack"#
+    open-on-workspace "󰭹"
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    open-floating true
+
+    default-window-height { proportion 0.33; }
+    default-floating-position x=24 y=24 relative-to="bottom-right"
+}
+
+// Steam friends list kept causing games to lose focus
+window-rule {
+    match app-id=r#"steam"#
+    match app-id=r#"steam"# title="^Friends List$"
+    open-focused false
+    open-on-workspace "󰓓"
+}
+
+window-rule {
+    match app-id=r#"steam_app_[(0-9\_)+]"#
+    open-on-workspace "󰓓"
+    open-fullscreen true
+    // open-maximized-to-edges true
+}
+
+// Bitwarden in Mozilla based browsers plays weird with wayland
+window-rule {
+    match app-id="zen" title="^Extension: (Bitwarden Password Manager) - Bitwarden — Zen Browser$"
+    open-floating true
+    open-focused true
+    block-out-from "screencast"
+    shadow {
+        on
+    }
+}
