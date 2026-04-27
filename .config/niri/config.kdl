@@ -1,7 +1,7 @@
 include "./monitors.kdl"
 include "./workspaces.kdl"
 include "./start-up.kdl"
-include "./windows.kdl"
+include "./applications.kdl"
 include "./keybinds.kdl"
 
 prefer-no-csd
@@ -178,6 +178,7 @@ layout {
     background-color "transparent"
 }
 
+
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
     // skip-at-startup
@@ -205,6 +206,14 @@ overview {
   workspace-shadow {
     off
   }
+}
+
+window-rule {
+  // Rounded corners for a modern look.
+  geometry-corner-radius 20
+
+  // Clips window contents to the rounded corner boundaries.
+  clip-to-geometry true
 }
 
 debug {

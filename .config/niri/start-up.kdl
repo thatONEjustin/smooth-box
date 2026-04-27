@@ -1,6 +1,8 @@
 // Add lines like this to spawn processes at startup.
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-sh-at-startup "qs -c noctalia-shell"
+
 spawn-at-startup "vesktop"
-spawn-at-startup "wezterm"
-spawn-at-startup "zen"
+spawn-at-startup "zen-browser"
 spawn-at-startup "obsidian"
+spawn-sh-at-startup "$HOME/.local/scripts/launch_terminal.sh"
+spawn-at-startup "steam"
