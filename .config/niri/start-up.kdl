@@ -1,5 +1,5 @@
 // Add lines like this to spawn processes at startup.
-spawn-sh-at-startup "qs -c noctalia-shell"
+spawn-sh-at-startup "noctalia"
 
 spawn-at-startup "vesktop"
 spawn-at-startup "zen-browser"

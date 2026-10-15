@@ -4,7 +4,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="launch terminal" { spawn-sh "$HOME/.local/scripts/launch_terminal.sh"; }
-    Mod+Space hotkey-overlay-title="show launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+Space hotkey-overlay-title="show launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
 
     // For example, this is a standard bind to toggle the screen reader (orca).
     // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }

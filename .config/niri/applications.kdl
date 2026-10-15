@@ -18,7 +18,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"vesktop"#
-    open-maximized true
+    open-maximized false
 }
 
 
@@ -32,8 +32,19 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"galculator"# title="^galculator$"
+    open-floating true
+}
+
+window-rule {
     match app-id=r#"steam"# title="^Steam$"
     default-column-width { proportion 0.70; }
+}
+
+window-rule {
+    match app-id=r#"steam"# title=r#"^Steam Big Picture Mode$"#
+    open-floating false
+    open-fullscreen true
 }
 
 window-rule {
@@ -47,6 +58,8 @@ window-rule {
     match app-id=r#"steam"# title="^Steam$"
     match app-id=r#"steam"# title="^Friends List$"
     match app-id=r#"steam"# title=r#"^Recordings \& Screenshots$"#
+    match app-id=r#"steam"# title=r#"^Steam - Browser$"#
+    match app-id=r#"steam"# title=r#"^Steam Settings$"#
     open-focused false
     open-on-workspace "󰓓"
 }
@@ -56,6 +69,10 @@ window-rule {
     match app-id=r#"steam"#
     exclude app-id=r#"steam"# title=r#"^Steam$"#
     exclude app-id=r#"steam"# title=r#"^Friends List$"#
+    exclude app-id=r#"steam"# title=r#"^Steam - Browser$"#
+    exclude app-id=r#"steam"# title=r#"^Special Offers$"#
+    exclude app-id=r#"steam"# title=r#"^Steam Settings$"#
+
     exclude app-id=r#"steam_app_[(0-9\_)+]"#
     exclude app-id=r#"steam"# title=r#"^Recordings \& Screenshots$"#
 
@@ -68,17 +85,29 @@ window-rule {
     default-floating-position x=24 y=24 relative-to="bottom-right"
 }
 
+// Steam misc floating windows
 window-rule {
     match app-id=r#"steam"# title=r#"^Recordings \& Screenshots$"#
+    match app-id=r#"steam"# title=r#"^Steam - Browser$"#
     open-floating true
 
     default-column-width { proportion 0.66; }
     // default-window-height { proportion 0.33; }
 }
 
+// Steam misc floating windows
 window-rule {
-    match app-id=r#"steam_app_[(0-9\_)+]"#
-    open-on-workspace "󱄄"
+    match app-id=r#"steam"# title=r#"^Special Offers$"#
+    match app-id=r#"steam"# title=r#"^Steam Settings$"#
+    open-floating true
+
+    default-column-width { proportion 0.8; }
+}
+
+// Steam games
+window-rule {
+    match app-id=r#"steam_app_[(a-zA-Z0-9\_)+]"#
+    open-on-workspace "󰓓"
     open-fullscreen true
     open-maximized-to-edges true
 }
