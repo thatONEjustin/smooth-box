@@ -13,6 +13,7 @@ window-rule {
 window-rule {
     match app-id=r#"vesktop"#
     match app-id=r#"slack"#
+    match app-id=r#"app.fluxer.FluxerDesktop"#
     open-on-workspace "󰭹"
 }
 
